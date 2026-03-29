@@ -1,0 +1,2612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Complete Violin & Music Theory Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --ivory: #FAF7F2;
+    --parchment: #EDE5D4;
+    --gold: #C8963E;
+    --gold-light: #E8B85A;
+    --gold-dark: #9A6E28;
+    --crimson: #8B1A1A;
+    --crimson-light: #B52A2A;
+    --forest: #1A3320;
+    --forest-light: #2A5535;
+    --charcoal: #1C1C1C;
+    --ink: #2C2416;
+    --ink-light: #4A3E2E;
+    --muted: #7A6E5E;
+    --border: #C8B89A;
+    --shadow: rgba(28,20,10,0.15);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--charcoal);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(139,26,26,0.3) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(200,150,62,0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(26,51,32,0.4) 0%, transparent 50%);
+    color: var(--cream);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8963E' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.6;
+  }
+
+  .hero-ornament {
+    font-size: 3rem;
+    color: var(--gold);
+    letter-spacing: 0.5rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+    color: var(--cream);
+  }
+
+  .hero h1 span { color: var(--gold-light); font-style: italic; }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2.5vw, 1.35rem);
+    font-style: italic;
+    color: rgba(245,240,232,0.75);
+    margin: 1rem auto 2rem;
+    max-width: 700px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-badges {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+    justify-content: center; margin-bottom: 2.5rem;
+  }
+
+  .badge {
+    background: rgba(200,150,62,0.15);
+    border: 1px solid rgba(200,150,62,0.4);
+    color: var(--gold-light);
+    padding: 0.35rem 1rem;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .hero-divider {
+    width: 120px; height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 0 auto 2rem;
+  }
+
+  /* NAVIGATION */
+  .nav-container {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--charcoal);
+    border-bottom: 2px solid var(--gold-dark);
+    padding: 0 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-container::-webkit-scrollbar { display: none; }
+
+  .nav-tabs {
+    display: flex; gap: 0; min-width: max-content;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .nav-tab {
+    background: none; border: none; cursor: pointer;
+    color: rgba(245,240,232,0.6);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  .nav-tab:hover { color: var(--gold-light); }
+  .nav-tab.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+    background: rgba(200,150,62,0.07);
+  }
+
+  /* MAIN LAYOUT */
+  .main-wrapper {
+    max-width: 1200px; margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  /* SECTIONS */
+  .section { display: none; }
+  .section.active { display: block; animation: fadeIn 0.4s ease; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* LEVEL CARDS */
+  .level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem; margin: 2rem 0;
+  }
+
+  .level-card {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--gold);
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .level-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(200,150,62,0.05) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+
+  .level-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px var(--shadow); }
+  .level-card:hover::before { opacity: 1; }
+
+  .level-card.crimson { border-top-color: var(--crimson); }
+  .level-card.forest { border-top-color: var(--forest-light); }
+  .level-card.charcoal-card { border-top-color: var(--charcoal); }
+
+  .level-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem; font-weight: 900;
+    color: var(--gold); opacity: 0.25;
+    line-height: 1; margin-bottom: 0.5rem;
+  }
+  .level-card.crimson .level-number { color: var(--crimson); }
+  .level-card.forest .level-number { color: var(--forest-light); }
+  .level-card.charcoal-card .level-number { color: var(--charcoal); }
+
+  .level-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.75rem;
+  }
+
+  .level-desc {
+    font-size: 0.95rem; color: var(--ink-light);
+    line-height: 1.6; margin-bottom: 1.25rem;
+  }
+
+  .level-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .level-tag {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.04em;
+    border-radius: 2px;
+  }
+
+  /* LESSON PANELS */
+  .lesson-panel { display: none; }
+  .lesson-panel.active { display: block; animation: fadeIn 0.3s ease; }
+
+  .panel-header {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 2rem 2.5rem;
+    margin: 2rem 0 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel-header::after {
+    content: attr(data-level);
+    position: absolute; right: 2rem; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem; font-weight: 900;
+    color: rgba(255,255,255,0.04);
+    line-height: 1;
+  }
+
+  .panel-back {
+    background: none; border: 1px solid rgba(200,150,62,0.4);
+    color: var(--gold-light); cursor: pointer;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem; padding: 0.4rem 1rem;
+    margin-bottom: 1rem; transition: all 0.2s;
+    letter-spacing: 0.05em;
+  }
+  .panel-back:hover { background: rgba(200,150,62,0.1); }
+
+  .panel-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700; color: var(--cream);
+  }
+  .panel-title span { color: var(--gold-light); font-style: italic; }
+
+  /* CONTENT BLOCKS */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; margin: 2rem 0;
+  }
+  @media(max-width: 768px) { .content-grid { grid-template-columns: 1fr; } }
+
+  .content-block {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    padding: 1.75rem;
+  }
+
+  .content-block.full { grid-column: 1 / -1; }
+  .content-block.gold-accent { border-left: 4px solid var(--gold); }
+  .content-block.crimson-accent { border-left: 4px solid var(--crimson); }
+  .content-block.forest-accent { border-left: 4px solid var(--forest-light); }
+
+  .block-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+
+  .block-title .icon { font-size: 1.1rem; }
+
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--ink); margin: 1.25rem 0 0.6rem;
+  }
+
+  h3:first-child { margin-top: 0; }
+
+  p { margin-bottom: 0.75rem; color: var(--ink-light); font-size: 0.96rem; }
+  p:last-child { margin-bottom: 0; }
+
+  ul, ol {
+    padding-left: 1.5rem; color: var(--ink-light);
+    font-size: 0.95rem;
+  }
+
+  li { margin-bottom: 0.4rem; line-height: 1.6; }
+
+  /* EXERCISE BOXES */
+  .exercise-box {
+    background: linear-gradient(135deg, #1C1C1C 0%, #2A2A2A 100%);
+    color: var(--cream);
+    padding: 1.5rem 1.75rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--gold);
+    position: relative;
+  }
+
+  .exercise-box .ex-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.6rem; display: block;
+  }
+
+  .exercise-box h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--cream);
+    margin-bottom: 0.6rem; font-style: italic;
+  }
+
+  .exercise-box p, .exercise-box li {
+    color: rgba(245,240,232,0.8); font-size: 0.9rem;
+  }
+
+  .exercise-box ul { padding-left: 1.25rem; }
+
+  /* PRACTICE ROUTINE */
+  .routine-block {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .routine-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: var(--gold-dark);
+    letter-spacing: 0.1em; font-weight: 500;
+    display: block; margin-bottom: 0.3rem;
+  }
+
+  .routine-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--ink);
+    margin-bottom: 0.75rem; font-weight: 700;
+  }
+
+  .routine-items { list-style: none; padding: 0; }
+  .routine-items li {
+    display: flex; gap: 0.75rem; align-items: flex-start;
+    padding: 0.4rem 0; border-bottom: 1px solid var(--border);
+    font-size: 0.9rem; color: var(--ink-light);
+  }
+  .routine-items li:last-child { border-bottom: none; }
+  .routine-items .dur {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem; color: var(--gold-dark);
+    min-width: 55px; padding-top: 0.1rem;
+  }
+
+  /* THEORY NOTATION */
+  .notation-box {
+    background: var(--ivory);
+    border: 2px solid var(--border);
+    padding: 1.5rem; text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+    margin: 1rem 0;
+  }
+
+  .notation-box .staff-visual {
+    font-size: 2rem; letter-spacing: 0.15em;
+    color: var(--ink); margin: 0.5rem 0;
+    line-height: 1.3;
+  }
+
+  .notation-box .caption {
+    font-size: 0.8rem; color: var(--muted);
+    font-style: italic; font-family: 'Cormorant Garamond', serif;
+    margin-top: 0.5rem;
+  }
+
+  /* QUIZ SECTION */
+  .quiz-container { margin: 1.5rem 0; }
+
+  .quiz-question {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--gold);
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .quiz-q {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--ink);
+    margin-bottom: 1rem; font-style: italic;
+  }
+
+  .quiz-options { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .quiz-option {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem; color: var(--ink-light);
+    transition: all 0.2s;
+    border-radius: 2px;
+    text-align: left;
+  }
+
+  .quiz-option:hover { background: var(--border); color: var(--ink); }
+  .quiz-option.correct { background: #d4edda; border-color: #28a745; color: #155724; }
+  .quiz-option.wrong { background: #f8d7da; border-color: #dc3545; color: #721c24; }
+
+  .quiz-feedback {
+    display: none; margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem; border-radius: 2px;
+  }
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct-fb { background: #d4edda; color: #155724; border: 1px solid #28a745; }
+  .quiz-feedback.wrong-fb { background: #f8d7da; color: #721c24; border: 1px solid #dc3545; }
+
+  /* PROGRESS TRACKER */
+  .tracker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem; margin: 1.5rem 0;
+  }
+
+  .tracker-item {
+    background: var(--ivory);
+    border: 1px solid var(--border);
+    padding: 1.25rem;
+    display: flex; flex-direction: column; gap: 0.5rem;
+  }
+
+  .tracker-label {
+    font-size: 0.8rem; color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  .tracker-skill {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; color: var(--ink); font-weight: 700;
+  }
+
+  .progress-bar {
+    height: 6px; background: var(--parchment);
+    border-radius: 3px; overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%; border-radius: 3px;
+    background: linear-gradient(to right, var(--gold-dark), var(--gold-light));
+    transition: width 1s ease;
+  }
+
+  .tracker-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: var(--gold-dark); text-align: right;
+  }
+
+  /* REPERTOIRE TABLE */
+  .repertoire-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 0.88rem; margin: 1rem 0;
+  }
+
+  .repertoire-table th {
+    background: var(--charcoal); color: var(--gold);
+    padding: 0.75rem 1rem; text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 500;
+  }
+
+  .repertoire-table td {
+    padding: 0.65rem 1rem; border-bottom: 1px solid var(--border);
+    color: var(--ink-light); vertical-align: top;
+  }
+
+  .repertoire-table tr:hover td { background: var(--parchment); }
+
+  .diff-badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px; font-size: 0.72rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+  .diff-1 { background: #d4edda; color: #155724; }
+  .diff-2 { background: #fff3cd; color: #856404; }
+  .diff-3 { background: #f8d7da; color: #721c24; }
+  .diff-4 { background: #6f42c1; color: white; }
+
+  /* SCALE DIAGRAM */
+  .scale-diagram {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 1.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .scale-diagram .scale-label {
+    color: var(--gold); font-size: 0.8rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    margin-bottom: 0.75rem; display: block;
+  }
+
+  .scale-row {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 0.4rem 0;
+  }
+
+  .scale-name { color: var(--gold-light); min-width: 160px; font-size: 0.8rem; }
+  .scale-notes { display: flex; gap: 0.4rem; }
+  .note-box {
+    background: rgba(200,150,62,0.2);
+    border: 1px solid rgba(200,150,62,0.4);
+    padding: 0.2rem 0.5rem; border-radius: 2px;
+    font-size: 0.78rem; color: var(--cream);
+    min-width: 30px; text-align: center;
+  }
+  .note-box.root { background: var(--gold-dark); color: var(--cream); font-weight: 700; }
+  .note-box.semitone { background: rgba(139,26,26,0.4); border-color: rgba(139,26,26,0.6); }
+
+  /* SECTION HEADERS */
+  .section-header {
+    margin: 3rem 0 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-end; gap: 1.5rem;
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700; color: var(--ink); line-height: 1.1;
+  }
+
+  .section-header h2 em { color: var(--gold-dark); }
+
+  .section-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem; font-weight: 900;
+    color: var(--border); line-height: 1; flex-shrink: 0;
+  }
+
+  /* CALLOUT */
+  .callout {
+    padding: 1.25rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 2px;
+    font-size: 0.9rem;
+  }
+  .callout-gold {
+    background: linear-gradient(135deg, rgba(200,150,62,0.08) 0%, rgba(200,150,62,0.03) 100%);
+    border: 1px solid rgba(200,150,62,0.3);
+    border-left: 4px solid var(--gold);
+    color: var(--ink-light);
+  }
+  .callout-gold strong { color: var(--gold-dark); }
+  .callout-crimson {
+    background: rgba(139,26,26,0.05);
+    border: 1px solid rgba(139,26,26,0.2);
+    border-left: 4px solid var(--crimson);
+    color: var(--ink-light);
+  }
+  .callout-crimson strong { color: var(--crimson); }
+
+  /* MILESTONE */
+  .milestone-list { list-style: none; padding: 0; }
+  .milestone-list li {
+    display: flex; gap: 1rem; padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border); font-size: 0.93rem;
+    color: var(--ink-light); align-items: flex-start;
+  }
+  .milestone-list li:last-child { border-bottom: none; }
+  .milestone-list .check {
+    color: var(--gold); font-size: 1.1rem; flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  /* EAR TRAINING */
+  .ear-card {
+    background: var(--charcoal);
+    padding: 1.5rem; color: var(--cream);
+    border-bottom: 3px solid var(--gold);
+    cursor: pointer; transition: all 0.2s;
+  }
+  .ear-card:hover { background: #252525; }
+  .ear-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: var(--gold-light);
+    font-style: italic; margin-bottom: 0.5rem;
+  }
+  .ear-card p { font-size: 0.87rem; color: rgba(245,240,232,0.75); margin: 0; }
+
+  .ear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem; margin: 1rem 0;
+  }
+
+  /* INTERACTIVE NOTE CHECKER */
+  .note-checker {
+    background: var(--ivory); border: 1px solid var(--border);
+    padding: 1.75rem; margin: 1.5rem 0;
+  }
+
+  .note-checker h3 { margin-bottom: 1rem; }
+
+  .note-buttons {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0;
+  }
+
+  .note-btn {
+    background: var(--parchment);
+    border: 2px solid var(--border);
+    color: var(--ink); font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; font-weight: 600;
+    width: 48px; height: 48px;
+    cursor: pointer; transition: all 0.2s;
+    border-radius: 2px;
+  }
+  .note-btn:hover { background: var(--gold); color: white; border-color: var(--gold); }
+  .note-btn.sharp { color: var(--crimson); }
+  .note-btn.selected { background: var(--gold); color: white; border-color: var(--gold-dark); }
+
+  .note-display {
+    background: var(--charcoal); color: var(--gold-light);
+    padding: 1rem 1.5rem; font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem; min-height: 60px; margin: 1rem 0;
+    display: flex; align-items: center;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width: 600px) {
+    .main-wrapper { padding: 2rem 1rem; }
+    .panel-header { padding: 1.5rem; }
+    .content-block { padding: 1.25rem; }
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--charcoal);
+    color: rgba(245,240,232,0.5);
+    text-align: center; padding: 2rem;
+    font-size: 0.85rem; margin-top: 4rem;
+    border-top: 1px solid rgba(200,150,62,0.2);
+  }
+  .footer strong { color: var(--gold); }
+
+  /* RESOURCES */
+  .resource-link {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 0.85rem 0; border-bottom: 1px solid var(--border);
+    text-decoration: none; color: inherit; transition: all 0.2s;
+  }
+  .resource-link:last-child { border-bottom: none; }
+  .resource-link:hover .res-title { color: var(--gold-dark); }
+  .res-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .res-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700; color: var(--ink); font-size: 0.95rem;
+    margin-bottom: 0.2rem; transition: color 0.2s;
+  }
+  .res-desc { font-size: 0.85rem; color: var(--muted); }
+  .res-url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; color: var(--gold-dark);
+    margin-top: 0.25rem; display: block;
+  }
+
+  /* BOWING DIAGRAM */
+  .bowing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem; margin: 1rem 0;
+  }
+  .bowing-item {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    padding: 1.1rem;
+  }
+  .bowing-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--ink); margin-bottom: 0.4rem;
+  }
+  .bowing-term {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; color: var(--gold-dark);
+    letter-spacing: 0.06em; margin-bottom: 0.6rem; display: block;
+  }
+  .bowing-desc { font-size: 0.85rem; color: var(--ink-light); }
+
+  /* WEEK PLAN */
+  .week-plan { margin: 1rem 0; }
+  .week-day {
+    background: var(--ivory); border: 1px solid var(--border);
+    display: flex; gap: 1.5rem; margin-bottom: 0.5rem;
+    overflow: hidden;
+  }
+  .day-label {
+    background: var(--charcoal); color: var(--gold);
+    padding: 1rem 1.25rem; min-width: 110px;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .day-content { padding: 0.85rem 1rem; font-size: 0.88rem; color: var(--ink-light); }
+  .day-content strong { color: var(--ink); font-family: 'Playfair Display', serif; }
+
+  /* INTERVAL TABLE */
+  .interval-table {
+    width: 100%; border-collapse: collapse; font-size: 0.85rem;
+    margin: 1rem 0;
+  }
+  .interval-table th {
+    background: var(--ink); color: var(--gold);
+    padding: 0.6rem 0.85rem; text-align: left;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+  .interval-table td {
+    padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--border);
+    color: var(--ink-light);
+  }
+  .interval-table tr:nth-child(even) td { background: var(--parchment); }
+  .interval-table .semitones {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--gold-dark); font-size: 0.8rem;
+  }
+
+  /* FINGERBOARD SVG DIAGRAMS */
+  .fb-wrap {
+    background: var(--charcoal);
+    padding: 1.25rem 1.5rem;
+    margin: 1.25rem 0;
+    overflow-x: auto;
+    border-left: 4px solid var(--gold);
+  }
+  .fb-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .fb-label::before { content: '\1F4CD  '; }
+  .fb-wrap svg { display: block; min-width: 400px; }
+  .fb-hint {
+    margin-top: 0.6rem; font-size: 0.82rem;
+    color: rgba(245,240,232,0.45);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    min-height: 1.2rem;
+  }
+
+  /* HOLDING VIOLIN IMAGE GALLERY */
+  .holding-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin: 1.25rem 0 0.5rem;
+  }
+  @media(max-width: 600px) {
+    .holding-images { grid-template-columns: 1fr; }
+  }
+  .holding-img-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .holding-img-wrap img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border: 2px solid var(--border);
+    display: block;
+  }
+  .holding-img-caption {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--gold-dark);
+    text-align: center;
+  }
+
+  /* STAFF EXPLAINER */
+  .staff-explainer {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--crimson);
+    padding: 1.1rem 1.3rem;
+    margin: 0.75rem 0;
+    font-size: 0.9rem;
+    color: var(--ink-light);
+  }
+  .staff-explainer strong { color: var(--ink); }
+  .staff-explainer .se-row {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    padding: 0.45rem 0; border-bottom: 1px dashed var(--border);
+    line-height: 1.5;
+  }
+  .staff-explainer .se-row:last-child { border-bottom: none; }
+  .staff-explainer .se-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; letter-spacing: 0.07em;
+    color: var(--crimson); min-width: 70px;
+    padding-top: 0.1rem; flex-shrink: 0;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <span class="hero-ornament">𝄞 ♩ ♪ ♫ ♬ 𝄞</span>
+  <h1>The Complete <span>Violin & Music Theory</span><br>Academy</h1>
+  <p class="hero-subtitle">A conservatory-grade curriculum from the traditions of Juilliard, Trinity College London & the Russian School of Ivan Galamian — from first bow stroke to concert virtuoso</p>
+  <div class="hero-badges">
+    <span class="badge">4 Mastery Levels</span>
+    <span class="badge">Galamian Method</span>
+    <span class="badge">Full Music Theory</span>
+    <span class="badge">Daily Practice Plans</span>
+    <span class="badge">Ear Training</span>
+    <span class="badge">Repertoire Paths</span>
+    <span class="badge">Quizzes & Drills</span>
+  </div>
+  <div class="hero-divider"></div>
+  <p style="color:rgba(245,240,232,0.5); font-size:0.85rem; font-family:'JetBrains Mono',monospace; letter-spacing:0.06em;">SELECT A MODULE BELOW TO BEGIN</p>
+</header>
+
+<!-- NAV -->
+<nav class="nav-container">
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showSection('overview')">Overview</button>
+    <button class="nav-tab" onclick="showSection('level1')">Level I · Beginner</button>
+    <button class="nav-tab" onclick="showSection('level2')">Level II · Intermediate</button>
+    <button class="nav-tab" onclick="showSection('level3')">Level III · Advanced</button>
+    <button class="nav-tab" onclick="showSection('level4')">Level IV · Elite</button>
+    <button class="nav-tab" onclick="showSection('theory')">Music Theory</button>
+    <button class="nav-tab" onclick="showSection('practice')">Practice System</button>
+    <button class="nav-tab" onclick="showSection('eartraining')">Ear Training</button>
+    <button class="nav-tab" onclick="showSection('resources')">Resources</button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="main-wrapper">
+
+  <!-- ===== OVERVIEW ===== -->
+  <div id="overview" class="section active">
+    <div class="section-header">
+      <div class="section-num">00</div>
+      <h2>Curriculum <em>Overview</em></h2>
+    </div>
+
+    <p style="font-size:1.05rem; color:var(--ink-light); max-width:800px; margin-bottom:2rem;">This is a complete, structured mastery system spanning four levels — from absolute beginner to professional concert performer. Each level integrates violin technique with music theory, ear training, and deliberate practice methodology drawn from the world's finest conservatoires.</p>
+
+    <div class="level-grid">
+      <div class="level-card" onclick="showSection('level1'); setNavActive(1);">
+        <div class="level-number">I</div>
+        <div class="level-title">Beginner Foundation</div>
+        <div class="level-desc">Posture, bow hold, open strings, first position, basic theory (notes, rhythms, major scales). Suzuki Books 1–2. Duration: 12–18 months.</div>
+        <div class="level-tags">
+          <span class="level-tag">Bow hold</span>
+          <span class="level-tag">1st position</span>
+          <span class="level-tag">Major scales</span>
+          <span class="level-tag">Notes & staff</span>
+        </div>
+      </div>
+      <div class="level-card crimson" onclick="showSection('level2'); setNavActive(2);">
+        <div class="level-number">II</div>
+        <div class="level-title">Intermediate Skills</div>
+        <div class="level-desc">Shifting, vibrato, double stops, dynamic control. Intervals, chords, circle of fifths. Kreutzer etudes. Suzuki Books 3–5. Duration: 2–3 years.</div>
+        <div class="level-tags">
+          <span class="level-tag">Vibrato</span>
+          <span class="level-tag">Shifting</span>
+          <span class="level-tag">Harmony</span>
+          <span class="level-tag">Kreutzer</span>
+        </div>
+      </div>
+      <div class="level-card forest" onclick="showSection('level3'); setNavActive(3);">
+        <div class="level-number">III</div>
+        <div class="level-title">Advanced Technique</div>
+        <div class="level-desc">Spiccato, sautillé, harmonics, high positions, polyphony. Advanced harmony, counterpoint, voice leading. Dont Op.35, concertos. Duration: 2–4 years.</div>
+        <div class="level-tags">
+          <span class="level-tag">Spiccato</span>
+          <span class="level-tag">Harmonics</span>
+          <span class="level-tag">Counterpoint</span>
+          <span class="level-tag">Concertos</span>
+        </div>
+      </div>
+      <div class="level-card charcoal-card" onclick="showSection('level4'); setNavActive(4);">
+        <div class="level-number">IV</div>
+        <div class="level-title">Elite / Virtuoso</div>
+        <div class="level-desc">Paganini-level technique, orchestration, improvisation, performance practice, sight-reading mastery. Full conservatory knowledge. Duration: Ongoing.</div>
+        <div class="level-tags">
+          <span class="level-tag">Paganini</span>
+          <span class="level-tag">Orchestration</span>
+          <span class="level-tag">Improvisation</span>
+          <span class="level-tag">Performance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block gold-accent full" style="margin-top:2rem;">
+      <div class="block-title"><span class="icon">🎯</span> How to Use This System</div>
+      <p>Work through each level sequentially. Do not rush to advance — mastery at each stage is the foundation of all future progress. The <strong>Galamian methodology</strong> emphasises that technical difficulties must be isolated, practised slowly, then gradually accelerated using a metronome in systematic rhythm variations.</p>
+      <ul>
+        <li><strong>Daily practice</strong> is non-negotiable — even 30 focused minutes outperforms 2 hours of mindless repetition</li>
+        <li><strong>Record yourself</strong> weekly; the ear cannot hear what the mind is not trained to notice</li>
+        <li>Integrate <strong>theory alongside technique</strong> — understanding what you play transforms muscle memory into musical intelligence</li>
+        <li>Follow the <strong>Practice System</strong> tab for structured daily and weekly routines at every level</li>
+        <li>Use the <strong>Ear Training</strong> module daily — 15 minutes minimum</li>
+      </ul>
+    </div>
+
+    <div class="content-grid" style="margin-top:1.5rem;">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">📚</span> Methodology Sources</div>
+        <ul>
+          <li><strong>Ivan Galamian</strong> — Principles of Violin Playing & Teaching</li>
+          <li><strong>Otakar Ševčík</strong> — Systematic bowing & finger exercises</li>
+          <li><strong>Rodolphe Kreutzer</strong> — 42 Etudes (the violinist's Bible)</li>
+          <li><strong>Shinichi Suzuki</strong> — Talent Education method</li>
+          <li><strong>Juilliard / Trinity</strong> — Curriculum structure</li>
+          <li><strong>Heinrich Schiff / Carl Courvoisier</strong> — Technical foundations</li>
+        </ul>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🏆</span> Final Outcomes</div>
+        <ul>
+          <li>Perform major violin concertos (Beethoven, Brahms, Sibelius)</li>
+          <li>Sight-read orchestral parts at speed</li>
+          <li>Understand and analyse any piece of tonal music</li>
+          <li>Compose and harmonise original melodies</li>
+          <li>Improvise over jazz/classical chord progressions</li>
+          <li>Pass conservatory entrance auditions</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LEVEL 1 ===== -->
+  <div id="level1" class="section">
+    <div class="panel-header" data-level="I">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title">Level I — <span>Beginner Foundation</span></div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Months 1–18 · Suzuki Books 1–2 · Sevcik Op.1 · Basic Music Theory</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">1.1</div>
+      <h2>Setting Up: <em>Instrument & Body</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">🎻</span> Holding the Violin</div>
+
+        <!-- ═══ THREE REFERENCE IMAGES ═══ -->
+        <div class="holding-images">
+          <div class="holding-img-wrap">
+            <img src="images/violin_shoulder_rest_1774787579177.png" alt="Shoulder rest attached to violin body">
+            <span class="holding-img-caption">Shoulder Rest</span>
+          </div>
+          <div class="holding-img-wrap">
+            <img src="images/violin hold.jpg" alt="violin holding posture diagram">
+            <span class="holding-img-caption">Holding Posture</span>
+          </div>
+          <div class="holding-img-wrap">
+            <img src="images/violin_hand_position_1774787562038.png" alt="Correct left hand position on the violin neck">
+            <span class="holding-img-caption">Left Hand Position</span>
+          </div>
+        </div>
+        <!-- ═══════════════════════════════ -->
+
+        <h3>Step-by-Step Setup (Galamian Method)</h3>
+        <ol>
+          <li><strong>Shoulder rest:</strong> Attach and adjust so violin rests naturally on collarbone — no tension in the neck or jaw</li>
+          <li><strong>Chin rest:</strong> Left jaw rests on the chin rest — NOT the chin itself in most cases</li>
+          <li><strong>Left arm:</strong> Bring the violin up with the left arm supporting the scroll; the instrument should be roughly parallel to the floor</li>
+          <li><strong>Scroll direction:</strong> Point the scroll toward your left front corner (not directly to the side)</li>
+          <li><strong>Left thumb:</strong> Relaxed, slightly bent, touching the neck opposite the first finger — never gripping</li>
+          <li><strong>Fingers curved:</strong> All fingers approach the strings from above, with curved knuckles (as if holding a small ball)</li>
+        </ol>
+        <div class="callout callout-gold" style="margin-top:1rem;">
+          <strong>Critical check:</strong> If you feel tension in your neck, jaw, or left shoulder — stop immediately and reset. All tension is the enemy of technique and will cause injury.
+        </div>
+      </div>
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🏹</span> The Bow Hold (Franco-Belgian)</div>
+        <h3>Galamian Bow Grip</h3>
+        <ol>
+          <li><strong>Thumb:</strong> Curved, placed on the underside of the stick opposite the middle finger — never stiff</li>
+          <li><strong>Index finger:</strong> Rests on the stick at the middle joint (not the tip), angled toward the frog</li>
+          <li><strong>Middle & ring fingers:</strong> Draped naturally over the stick, evenly spaced</li>
+          <li><strong>Pinky:</strong> Curved and placed on top of the stick — acts as a counterbalance</li>
+          <li><strong>Wrist:</strong> Slightly flexible, never rigid</li>
+        </ol>
+        <h3>Common Errors</h3>
+        <ul>
+          <li>Thumb straightening (locks the whole arm)</li>
+          <li>Gripping with all fingers (prevents tone shaping)</li>
+          <li>Collapsing pinky (lose control at the tip)</li>
+          <li>Wrist too high or too stiff</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <span class="ex-label">Exercise 1.1 — Bow Arm</span>
+      <h4>The "Windshield Wiper" Warm-Up</h4>
+      <p>Hold the bow at the balance point with your full bow grip. With the bow OFF the violin, practice slow full-arm swings from frog to tip and back. Focus only on maintaining the curved thumb and relaxed fingers. Do this 5 minutes daily for the first month before touching strings.</p>
+    </div>
+
+    <div class="exercise-box">
+      <span class="ex-label">Exercise 1.2 — Left Hand</span>
+      <h4>Finger Placement Drill (Sevcik Op.1, Part 1)</h4>
+      <ul>
+        <li>Place all four fingers on the A string in first position: B–C#–D–E</li>
+        <li>Lift each finger slowly, one at a time, keeping the others down</li>
+        <li>Each finger should fall with a light "tap" — not a press</li>
+        <li>The knuckles must remain visibly arched throughout</li>
+        <li>Repeat on D, G, and E strings — 10 min per practice session</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">1.2</div>
+      <h2>Open Strings & <em>Tone Production</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block">
+        <div class="block-title"><span class="icon">🎵</span> The Four Open Strings</div>
+        <div class="scale-diagram">
+          <span class="scale-label">String Tuning (Low → High)</span>
+          <div class="scale-row">
+            <span class="scale-name">G string (lowest)</span>
+            <div class="scale-notes">
+              <div class="note-box root">G3</div>
+            </div>
+          </div>
+          <div class="scale-row">
+            <span class="scale-name">D string</span>
+            <div class="scale-notes">
+              <div class="note-box root">D4</div>
+            </div>
+          </div>
+          <div class="scale-row">
+            <span class="scale-name">A string</span>
+            <div class="scale-notes">
+              <div class="note-box root">A4</div>
+            </div>
+          </div>
+          <div class="scale-row">
+            <span class="scale-name">E string (highest)</span>
+            <div class="scale-notes">
+              <div class="note-box root">E5</div>
+            </div>
+          </div>
+        </div>
+        <div class="fb-wrap" id="fb-open">
+          <div class="fb-label">Open Strings — On the Fingerboard</div>
+          <div class="fb-svg"></div>
+          <div class="fb-hint">Hover a note dot to see details</div>
+        </div>
+        <h3>Contact Point (Sounding Point)</h3>
+        <p>Draw the bow <strong>between the bridge and the fingerboard</strong> — approximately 2–4 cm from the bridge. Closer to the bridge = brighter, more projection. Closer to the fingerboard = softer, more hollow. This is called the <em>sounding point</em> or <em>contact point</em>.</p>
+      </div>
+      <div class="content-block">
+        <div class="block-title"><span class="icon">🎼</span> Tone Production Trinity</div>
+        <p>Every element of violin tone depends on balancing three variables simultaneously:</p>
+        <div class="routine-block">
+          <ul class="routine-items">
+            <li><span class="dur">BOW SPEED</span> Fast bow = louder, lighter tone</li>
+            <li><span class="dur">BOW PRESSURE</span> More weight = richer, fuller tone (use arm weight, not force)</li>
+            <li><span class="dur">CONTACT PT.</span> Distance from bridge (nearer = brighter)</li>
+          </ul>
+        </div>
+        <div class="callout callout-crimson">
+          <strong>Galamian's Law:</strong> Pressure and speed must always increase together. Slow bow + heavy pressure = crushed, scratchy tone. Fast bow + no pressure = thin, airy tone.
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <span class="ex-label">Exercise 1.3 — Tone Building</span>
+      <h4>Long Bow Exercise on Open Strings</h4>
+      <ul>
+        <li>Use a full bow stroke on each open string: 4 slow counts DOWN, 4 counts UP</li>
+        <li>Listen for a singing, clear, consistent tone — no scratching, no whistle</li>
+        <li>Use arm weight (let gravity help you) — do not press with the hand</li>
+        <li>Progress to 8-count strokes, then 12-count strokes</li>
+        <li>Record yourself and compare the tone quality before and after</li>
+        <li>Practice: 10 minutes daily, all 4 strings</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">1.3</div>
+      <h2>First Position <em>Mastery</em></h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">🎹</span> First Position Note Map</div>
+      <div class="scale-diagram">
+        <span class="scale-label">All Notes — First Position (Fingers 0–4)</span>
+        <div class="scale-row"><span class="scale-name">G string</span><div class="scale-notes"><div class="note-box root">G (0)</div><div class="note-box">A (1)</div><div class="note-box">B (2)</div><div class="note-box">C (3)</div><div class="note-box">D (4)</div></div></div>
+        <div class="scale-row"><span class="scale-name">D string</span><div class="scale-notes"><div class="note-box root">D (0)</div><div class="note-box">E (1)</div><div class="note-box">F# (2)</div><div class="note-box">G (3)</div><div class="note-box">A (4)</div></div></div>
+        <div class="scale-row"><span class="scale-name">A string</span><div class="scale-notes"><div class="note-box root">A (0)</div><div class="note-box">B (1)</div><div class="note-box">C# (2)</div><div class="note-box">D (3)</div><div class="note-box">E (4)</div></div></div>
+        <div class="scale-row"><span class="scale-name">E string</span><div class="scale-notes"><div class="note-box root">E (0)</div><div class="note-box">F# (1)</div><div class="note-box">G# (2)</div><div class="note-box">A (3)</div><div class="note-box">B (4)</div></div></div>
+      </div>
+      <div class="fb-wrap" id="fb-1pos" style="margin-top:1rem">
+        <div class="fb-label">First Position — All Notes on Strings</div>
+        <div class="fb-svg"></div>
+        <div class="fb-hint">Hover a note dot to see details</div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <span class="ex-label">Exercise 1.4 — Sevcik Op.1</span>
+      <h4>Finger Independence Drill</h4>
+      <ul>
+        <li>On the A string: place all four fingers down simultaneously (A-B-C#-D-E)</li>
+        <li>Play each note with a separate bow stroke: open A, 1st finger B, 2nd finger C#, 3rd finger D, 4th finger E</li>
+        <li>Repeat in reverse. Do not lift fingers when going up — only lift when coming back down</li>
+        <li>Then use Sevcik Op.1 Book 1 patterns — practice each pattern 10 times before moving to the next</li>
+        <li>Use metronome: start at ♩= 60, advance by 4 BPM per week</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">1.4</div>
+      <h2>Level I — <em>Theory Module</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">📖</span> The Staff & Clefs</div>
+
+        <div class="notation-box">
+          <div class="staff-visual">𝄞 ━━━━━━━━━━━━━━━</div>
+          <div class="staff-visual" style="font-size:1.2rem;">Lines (bottom→top): E G B D F</div>
+          <div class="staff-visual" style="font-size:1.2rem;">Spaces (bottom→top): F A C E</div>
+          <div class="caption">Treble Clef — used for violin. Memory: "Every Good Boy Does Fine" / "FACE"</div>
+        </div>
+
+        <!-- ═══ EXPANDED STAFF & CLEFS EXPLANATION ═══ -->
+        <h3>What Is a Staff?</h3>
+        <p>A <strong>staff</strong> (also called a <em>stave</em>) is the grid that all written music sits on. It consists of <strong>5 horizontal lines</strong> and the <strong>4 spaces between them</strong>. Each line and space represents a different pitch — the higher up the staff, the higher the note sounds.</p>
+
+        <div class="staff-explainer">
+          <div class="se-row">
+            <span class="se-label">The Lines</span>
+            <span>There are 5 lines, counted from the <strong>bottom upward</strong>. On the treble clef, they are: <strong>E – G – B – D – F</strong>. A note sitting directly on a line has a line running through its centre.</span>
+          </div>
+          <div class="se-row">
+            <span class="se-label">The Spaces</span>
+            <span>The 4 gaps between lines are also pitches. From bottom to top they spell: <strong>F – A – C – E</strong> — conveniently, the word "FACE". A note sitting in a space is nestled between two lines.</span>
+          </div>
+          <div class="se-row">
+            <span class="se-label">Ledger Lines</span>
+            <span>When a note is too high or too low to fit on the 5 lines, we add short extra lines called <strong>ledger lines</strong> above or below the staff. The note sits on or between these, just like on the main staff. For example, middle C (C4) on the violin sits on a ledger line just below the staff.</span>
+          </div>
+          <div class="se-row">
+            <span class="se-label">The Clef</span>
+            <span>The curling symbol at the far left is the <strong>treble clef</strong> (𝄞). It is the first thing written on every line of violin music. Its curl wraps around the <strong>second line from the bottom</strong>, telling you that line = G4. This is why it is also called the <em>G clef</em>. Once you know that one anchor note (G on line 2), you can name every other note by counting up or down the alphabet (A B C D E F G A…).</span>
+          </div>
+          <div class="se-row">
+            <span class="se-label">Reading Tip</span>
+            <span>Don't try to memorise all notes at once. Start with the two memory tricks — <strong>"Every Good Boy Does Fine"</strong> for the lines and <strong>"FACE"</strong> for the spaces — and drill them daily until they are instant. Then add ledger lines one at a time.</span>
+          </div>
+        </div>
+        <!-- ══════════════════════════════════════════ -->
+
+        <h3>Note Values</h3>
+        <table class="interval-table">
+          <tr><th>Symbol</th><th>Name</th><th>Beats (4/4)</th></tr>
+          <tr><td>𝅝</td><td>Whole note (semibreve)</td><td class="semitones">4</td></tr>
+          <tr><td>𝅗𝅥</td><td>Half note (minim)</td><td class="semitones">2</td></tr>
+          <tr><td>♩</td><td>Quarter note (crotchet)</td><td class="semitones">1</td></tr>
+          <tr><td>♪</td><td>Eighth note (quaver)</td><td class="semitones">½</td></tr>
+          <tr><td>𝅘𝅥𝅯</td><td>Sixteenth note (semiquaver)</td><td class="semitones">¼</td></tr>
+        </table>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🎼</span> Time Signatures</div>
+        <h3>Common Time Signatures</h3>
+        <table class="interval-table">
+          <tr><th>Sig.</th><th>Beats/bar</th><th>Beat unit</th></tr>
+          <tr><td><strong>4/4</strong></td><td>4</td><td>Quarter note</td></tr>
+          <tr><td><strong>3/4</strong></td><td>3</td><td>Quarter note (waltz)</td></tr>
+          <tr><td><strong>2/4</strong></td><td>2</td><td>Quarter note (march)</td></tr>
+          <tr><td><strong>6/8</strong></td><td>6 (felt as 2)</td><td>Eighth note</td></tr>
+          <tr><td><strong>12/8</strong></td><td>12 (felt as 4)</td><td>Eighth note</td></tr>
+        </table>
+        <h3>Major Scale Formula</h3>
+        <div class="scale-diagram" style="margin-top:0.75rem;">
+          <span class="scale-label">Whole (W) & Half (H) step pattern</span>
+          <div class="scale-row" style="flex-wrap:wrap; gap:0.3rem;">
+            <div class="note-box root">W</div>
+            <div class="note-box">W</div>
+            <div class="note-box semitone">H</div>
+            <div class="note-box">W</div>
+            <div class="note-box">W</div>
+            <div class="note-box">W</div>
+            <div class="note-box semitone">H</div>
+          </div>
+        </div>
+        <p style="margin-top:0.75rem; font-size:0.85rem;">Apply this to any starting note to find the major scale. Example: D major = D–E–F#–G–A–B–C#–D</p>
+      </div>
+    </div>
+
+    <!-- Level 1 Quiz -->
+    <div class="section-header">
+      <div class="section-num">1.5</div>
+      <h2>Level I — <em>Quiz & Checkpoints</em></h2>
+    </div>
+
+    <div class="quiz-container">
+      <div class="quiz-question">
+        <div class="quiz-q">1. What are the four open strings of the violin, from lowest to highest?</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q1')">A, D, G, E</button>
+          <button class="quiz-option" onclick="checkAnswer(this, true, 'q1')">G, D, A, E</button>
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q1')">G, A, D, E</button>
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q1')">C, G, D, A</button>
+        </div>
+        <div id="fb-q1" class="quiz-feedback"></div>
+      </div>
+      <div class="quiz-question">
+        <div class="quiz-q">2. In the major scale formula (W W H W W W H), what is the 3rd note of D Major?</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q2')">E</button>
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q2')">F</button>
+          <button class="quiz-option" onclick="checkAnswer(this, true, 'q2')">F#</button>
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q2')">G</button>
+        </div>
+        <div id="fb-q2" class="quiz-feedback"></div>
+      </div>
+      <div class="quiz-question">
+        <div class="quiz-q">3. What is the "sounding point" on the violin bow?</div>
+        <div class="quiz-options">
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q3')">The tip of the bow</button>
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q3')">The very bridge of the violin</button>
+          <button class="quiz-option" onclick="checkAnswer(this, true, 'q3')">The area between the bridge and fingerboard where the bow contacts the string</button>
+          <button class="quiz-option" onclick="checkAnswer(this, false, 'q3')">The frog of the bow</button>
+        </div>
+        <div id="fb-q3" class="quiz-feedback"></div>
+      </div>
+    </div>
+
+    <!-- Level 1 Practice Routine -->
+    <div class="section-header">
+      <div class="section-num">1.6</div>
+      <h2>Daily Practice <em>Routine — Level I</em></h2>
+    </div>
+
+    <div class="routine-block">
+      <span class="routine-time">1-HOUR BEGINNER ROUTINE</span>
+      <div class="routine-title">Daily Structure (Every Day, 6 Days/Week)</div>
+      <ul class="routine-items">
+        <li><span class="dur">5 min</span> Bow arm exercises (off string) — windshield wiper, wrist flexibility</li>
+        <li><span class="dur">10 min</span> Long bow open strings — full bow strokes, tone listening</li>
+        <li><span class="dur">10 min</span> Sevcik Op.1 finger exercises — all four strings</li>
+        <li><span class="dur">10 min</span> One-octave D Major scale — ascending and descending, ♩=60</li>
+        <li><span class="dur">10 min</span> One-octave A Major scale</li>
+        <li><span class="dur">10 min</span> Current Suzuki piece — slow practice, one phrase at a time</li>
+        <li><span class="dur">5 min</span> Music theory worksheet (staff reading, note naming)</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">1.7</div>
+      <h2>Repertoire Path — <em>Level I</em></h2>
+    </div>
+
+    <table class="repertoire-table">
+      <thead><tr><th>Piece</th><th>Composer</th><th>Book</th><th>Focus</th><th>Difficulty</th></tr></thead>
+      <tbody>
+        <tr><td>Twinkle, Twinkle Variations</td><td>Suzuki arr.</td><td>Suzuki Vol.1</td><td>Bow arm, rhythm, first notes</td><td><span class="diff-badge diff-1">1</span></td></tr>
+        <tr><td>Song of the Wind</td><td>Suzuki</td><td>Suzuki Vol.1</td><td>Slurs, 3rd finger</td><td><span class="diff-badge diff-1">1</span></td></tr>
+        <tr><td>Minuet No.1</td><td>Bach/Petzold</td><td>Suzuki Vol.1</td><td>Musical phrasing, dynamics</td><td><span class="diff-badge diff-1">1</span></td></tr>
+        <tr><td>Perpetual Motion</td><td>Suzuki</td><td>Suzuki Vol.1</td><td>Finger speed, articulation</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Hunters' Chorus</td><td>Weber</td><td>Suzuki Vol.2</td><td>String crossing, détaché</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Musette</td><td>Bach</td><td>Suzuki Vol.2</td><td>D Major, 4th finger</td><td><span class="diff-badge diff-2">2</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== LEVEL 2 ===== -->
+  <div id="level2" class="section">
+    <div class="panel-header" data-level="II" style="background:linear-gradient(135deg, #1C0A0A 0%, #2A1010 100%);">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title">Level II — <span>Intermediate Skills</span></div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Years 2–4 · Suzuki Books 3–5 · Kreutzer 42 Études · Intermediate Harmony</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">2.1</div>
+      <h2>Vibrato — <em>Step-by-Step System</em></h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">〜</span> The Galamian Vibrato Method</div>
+      <p>Vibrato is an oscillation of pitch produced by a rocking motion of the left hand. There are three types: <strong>arm vibrato</strong>, <strong>wrist vibrato</strong>, and <strong>finger vibrato</strong>. Galamian taught that the best vibrato combines all three, with the arm initiating the motion.</p>
+      <div class="content-grid" style="margin-top:1rem;">
+        <div>
+          <h3>Stage 1: Arm Rocking (Weeks 1–2)</h3>
+          <ol>
+            <li>Place the violin on your knee (not under chin) or on a table, scroll pointing away</li>
+            <li>Place 2nd finger lightly on the A string at C#</li>
+            <li>Rock the entire forearm forward and backward — from the elbow</li>
+            <li>The finger should roll slightly (not slide) as the arm moves</li>
+            <li>Goal: smooth, continuous wave — not nervous shaking</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Stage 2: Under the Chin (Weeks 3–4)</h3>
+          <ol>
+            <li>Transfer the arm-rocking motion to normal playing position</li>
+            <li>Start on 2nd finger — it is the most stable</li>
+            <li>Play a long open A, then switch to 2nd finger C# with vibrato</li>
+            <li>Metronome: start at ♩=60, rocking twice per beat</li>
+            <li>Progress to 3 rocks/beat, then 4, then free/musical</li>
+          </ol>
+        </div>
+      </div>
+      <div class="exercise-box" style="margin-top:1rem;">
+        <span class="ex-label">Vibrato Exercise — Daily 10 min</span>
+        <h4>The Metronome Rocking Drill</h4>
+        <p>Set metronome to ♩=60. Place 3rd finger on G string (Bb). Rock arm vibrato 2 oscillations per beat for 2 minutes. Then increase to 3 per beat for 2 minutes. Then 4 per beat. Finally, turn off metronome and let the vibrato flow naturally. Repeat on all four strings, all four fingers. This is the complete foundation of the Galamian vibrato system.</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">2.2</div>
+      <h2>Shifting — <em>Positions 1–7</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">↕</span> Understanding Positions</div>
+        <div class="scale-diagram">
+          <span class="scale-label">Position Map — A String</span>
+          <div class="scale-row"><span class="scale-name">1st Position</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box">B</div><div class="note-box">C#</div><div class="note-box">D</div></div></div>
+          <div class="scale-row"><span class="scale-name">2nd Position</span><div class="scale-notes"><div class="note-box root">B</div><div class="note-box">C#</div><div class="note-box">D</div><div class="note-box">E</div></div></div>
+          <div class="scale-row"><span class="scale-name">3rd Position</span><div class="scale-notes"><div class="note-box root">C#</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box">F#</div></div></div>
+          <div class="scale-row"><span class="scale-name">4th Position</span><div class="scale-notes"><div class="note-box root">D</div><div class="note-box">E</div><div class="note-box">F#</div><div class="note-box">G</div></div></div>
+          <div class="scale-row"><span class="scale-name">5th Position</span><div class="scale-notes"><div class="note-box root">E</div><div class="note-box">F#</div><div class="note-box">G</div><div class="note-box">A</div></div></div>
+        </div>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🔄</span> Shifting Technique</div>
+        <h3>The Galamian Shift</h3>
+        <ol>
+          <li><strong>Guide finger:</strong> Keep the shifting finger lightly on the string as you move — it "slides" the thumb and hand together</li>
+          <li><strong>Thumb leads:</strong> The thumb moves slightly before the fingers reach the new position</li>
+          <li><strong>No grip:</strong> Loosen the thumb and palm contact before shifting — never shift with tension</li>
+          <li><strong>Arrival note:</strong> The destination finger lands with a gentle placement, not a slam</li>
+          <li><strong>Practice slowly:</strong> Use the metronome at ♩=40 initially</li>
+        </ol>
+        <div class="callout callout-gold" style="margin-top:1rem;">
+          <strong>Flesch Rule:</strong> Practice shifts in isolation — play the departure note, shift (with a brief slide), arrive on the target note. The slide should be <em>inaudible</em> in performance.
+        </div>
+      </div>
+    </div>
+
+    <div class="exercise-box">
+      <span class="ex-label">Exercise 2.1 — Shifting</span>
+      <h4>Isolated Shift Drill (Galamian / Yost Method)</h4>
+      <ul>
+        <li>On the A string: play A (1st finger, 1st position). Shift to 3rd position (1st finger = C#)</li>
+        <li>Listen for the shift — it should be smooth, not jerky</li>
+        <li>Bow continues through the shift without a pause</li>
+        <li>Practice 1st→3rd, 1st→5th, 3rd→5th, 1st→7th</li>
+        <li>Then practice the same shifts on all four strings</li>
+        <li>Resource: Yost "Shifting" Exercises / Dont Op.38</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">2.3</div>
+      <h2>Bowing Techniques — <em>Expanded</em></h2>
+    </div>
+
+    <div class="bowing-grid">
+      <div class="bowing-item">
+        <div class="bowing-name">Détaché</div>
+        <span class="bowing-term">SEPARATE BOW STROKES</span>
+        <div class="bowing-desc">Smooth, separate strokes with no accent between notes. The foundation of all bowing. Full bow, middle bow, or short détaché depending on musical context.</div>
+      </div>
+      <div class="bowing-item">
+        <div class="bowing-name">Martelé</div>
+        <span class="bowing-term">HAMMERED STROKE</span>
+        <div class="bowing-desc">Each note has a sharp accent at the beginning then releases. Produced by applying pressure before the stroke, then releasing as the bow moves. Strong, assertive character.</div>
+      </div>
+      <div class="bowing-item">
+        <div class="bowing-name">Legato / Slur</div>
+        <span class="bowing-term">CONNECTED NOTES</span>
+        <div class="bowing-desc">Multiple notes played in one bow direction. The left hand does all the work; the bow flows smoothly. Essential for lyrical, singing passages.</div>
+      </div>
+      <div class="bowing-item">
+        <div class="bowing-name">Staccato</div>
+        <span class="bowing-term">SEPARATED SHORT NOTES</span>
+        <div class="bowing-desc">Short, detached notes with silence between. Can be on- or off-string. On-string staccato (solid) vs flying staccato (advanced). Begin with on-string.</div>
+      </div>
+      <div class="bowing-item">
+        <div class="bowing-name">Spiccato</div>
+        <span class="bowing-term">BOUNCING BOW (ADVANCED)</span>
+        <div class="bowing-desc">The bow bounces off the string naturally at medium speed. Played at the balance point of the bow. Introduced at late-intermediate stage (see Level III).</div>
+      </div>
+      <div class="bowing-item">
+        <div class="bowing-name">Louré / Portato</div>
+        <span class="bowing-term">PULSED LEGATO</span>
+        <div class="bowing-desc">Multiple notes in one bow but with slight separations / swellings. Creates a gentle, pulsing, connected sound. Common in slow movements.</div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">2.4</div>
+      <h2>Intermediate <em>Theory Module</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">⭕</span> Circle of Fifths</div>
+        <div class="notation-box">
+          <div style="font-family:'Playfair Display',serif; font-size:0.9rem; line-height:2;">
+            C (0) → G (1#) → D (2#) → A (3#) → E (4#) → B (5#)<br>
+            C (0) → F (1♭) → B♭ (2♭) → E♭ (3♭) → A♭ (4♭) → D♭ (5♭)
+          </div>
+          <div class="caption">Moving clockwise = add sharps. Moving counter-clockwise = add flats.</div>
+        </div>
+        <h3>Practical Application for Violinists</h3>
+        <ul>
+          <li>G Major (1 sharp: F#) — most common violin key</li>
+          <li>D Major (2 sharps: F#, C#) — brilliant, open string resonance</li>
+          <li>A Major (3 sharps) — warm, rich on violin</li>
+          <li>E Major (4 sharps) — bright, projecting</li>
+        </ul>
+      </div>
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🎯</span> Intervals</div>
+        <table class="interval-table">
+          <tr><th>Interval</th><th>Semitones</th><th>Example</th></tr>
+          <tr><td>Unison</td><td class="semitones">0</td><td>C–C</td></tr>
+          <tr><td>Minor 2nd</td><td class="semitones">1</td><td>C–D♭</td></tr>
+          <tr><td>Major 2nd</td><td class="semitones">2</td><td>C–D</td></tr>
+          <tr><td>Minor 3rd</td><td class="semitones">3</td><td>C–E♭</td></tr>
+          <tr><td>Major 3rd</td><td class="semitones">4</td><td>C–E</td></tr>
+          <tr><td>Perfect 4th</td><td class="semitones">5</td><td>C–F</td></tr>
+          <tr><td>Tritone</td><td class="semitones">6</td><td>C–F#</td></tr>
+          <tr><td>Perfect 5th</td><td class="semitones">7</td><td>C–G</td></tr>
+          <tr><td>Minor 6th</td><td class="semitones">8</td><td>C–A♭</td></tr>
+          <tr><td>Major 6th</td><td class="semitones">9</td><td>C–A</td></tr>
+          <tr><td>Minor 7th</td><td class="semitones">10</td><td>C–B♭</td></tr>
+          <tr><td>Major 7th</td><td class="semitones">11</td><td>C–B</td></tr>
+          <tr><td>Octave</td><td class="semitones">12</td><td>C–C</td></tr>
+        </table>
+        <div class="fb-wrap" id="fb-int" style="margin-top:1rem">
+          <div class="fb-label">Perfect 5ths — Shown on Strings</div>
+          <div class="fb-svg"></div>
+          <div class="fb-hint">Hover a note dot to see details — crimson = root, green = interval</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-block forest-accent full" style="margin-top:1rem;">
+      <div class="block-title"><span class="icon">🎸</span> Chords & Harmony</div>
+      <div class="content-grid" style="margin-top:0.5rem;">
+        <div>
+          <h3>Triads</h3>
+          <table class="interval-table">
+            <tr><th>Type</th><th>Formula</th><th>Sound</th></tr>
+            <tr><td>Major</td><td>Root + M3 + P5</td><td>Bright, stable</td></tr>
+            <tr><td>Minor</td><td>Root + m3 + P5</td><td>Dark, stable</td></tr>
+            <tr><td>Diminished</td><td>Root + m3 + d5</td><td>Tense, unstable</td></tr>
+            <tr><td>Augmented</td><td>Root + M3 + A5</td><td>Dreamy, unstable</td></tr>
+          </table>
+        </div>
+        <div>
+          <h3>Seventh Chords</h3>
+          <table class="interval-table">
+            <tr><th>Type</th><th>Formula</th></tr>
+            <tr><td>Major 7th</td><td>M + M3 + P5 + M7</td></tr>
+            <tr><td>Dominant 7th</td><td>M + M3 + P5 + m7</td></tr>
+            <tr><td>Minor 7th</td><td>m + m3 + P5 + m7</td></tr>
+            <tr><td>Half-dim (ø7)</td><td>dim + m3 + d5 + m7</td></tr>
+            <tr><td>Fully dim (°7)</td><td>dim + m3 + d5 + d7</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">2.5</div>
+      <h2>Level II — <em>Practice Routine</em></h2>
+    </div>
+
+    <div class="routine-block">
+      <span class="routine-time">3-HOUR INTERMEDIATE ROUTINE</span>
+      <div class="routine-title">Daily Structure (6 Days/Week)</div>
+      <ul class="routine-items">
+        <li><span class="dur">10 min</span> Warm-up: open strings, long bows, bow arm flexibility</li>
+        <li><span class="dur">15 min</span> Sevcik Op.2 — bowing variations on scales</li>
+        <li><span class="dur">20 min</span> Two-octave scales in all keys (majors first, then minors)</li>
+        <li><span class="dur">20 min</span> Shifting exercises — 1st↔3rd, 1st↔5th, 3rd↔7th</li>
+        <li><span class="dur">10 min</span> Vibrato development — metronome rocking drill</li>
+        <li><span class="dur">20 min</span> Kreutzer etude (one per week — rotate through 1–12)</li>
+        <li><span class="dur">30 min</span> Current repertoire piece — phrase by phrase</li>
+        <li><span class="dur">15 min</span> Double stops: thirds, sixths, octaves</li>
+        <li><span class="dur">15 min</span> Sight-reading — new music, cold</li>
+        <li><span class="dur">15 min</span> Music theory study / ear training</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">2.6</div>
+      <h2>Repertoire Path — <em>Level II</em></h2>
+    </div>
+
+    <table class="repertoire-table">
+      <thead><tr><th>Piece</th><th>Composer</th><th>Type</th><th>Focus</th><th>Diff.</th></tr></thead>
+      <tbody>
+        <tr><td>Etude No.1</td><td>Kreutzer</td><td>Étude</td><td>Détaché bow, evenness</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Etude No.2</td><td>Kreutzer</td><td>Étude</td><td>Slurred scales, shifting</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Gavotte in D</td><td>Bach</td><td>Piece</td><td>Baroque style, 3rd position</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Concertino in D</td><td>Rieding</td><td>Concerto</td><td>First concerto, musicality</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Seitz Student Concerto No.2</td><td>Seitz</td><td>Concerto</td><td>Multiple positions, bowing variety</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Vivaldi Concerto in A minor</td><td>Vivaldi</td><td>Concerto</td><td>Baroque ornamentation, fast runs</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Humoresque</td><td>Dvořák</td><td>Piece</td><td>Lyrical phrasing, vibrato</td><td><span class="diff-badge diff-2">2</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== LEVEL 3 ===== -->
+  <div id="level3" class="section">
+    <div class="panel-header" data-level="III" style="background:linear-gradient(135deg, #0A1C0F 0%, #102A18 100%);">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title">Level III — <span>Advanced Technique</span></div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Years 4–7 · Dont Op.35 · Galamian Scale System · Voice Leading & Counterpoint</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">3.1</div>
+      <h2>Advanced Bowing — <em>Off-String Techniques</em></h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">🏹</span> Spiccato — The Bouncing Bow</div>
+      <div class="content-grid">
+        <div>
+          <h3>Finding the Spiccato Point</h3>
+          <ol>
+            <li>Hold the bow in the air at the balance point (roughly middle-lower)</li>
+            <li>Tap the bow on the A string — it will bounce naturally</li>
+            <li>That bounce point is your spiccato zone (varies per bow)</li>
+            <li>To control: a smaller arm motion = smaller, controlled bounce</li>
+            <li>Never force the bounce — let gravity do the work</li>
+          </ol>
+          <h3>Development Stages</h3>
+          <ol>
+            <li><strong>On-string staccato fast</strong> — très détaché at ♩=120+</li>
+            <li><strong>Collé</strong> — small "pinch and release" strokes at the frog</li>
+            <li><strong>Natural spiccato</strong> — let the bow naturally lift at high speeds</li>
+            <li><strong>Controlled spiccato</strong> — consciously guide the bounce height</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Sautillé (Advanced)</h3>
+          <p>A faster, smaller spiccato where the bow barely leaves the string. Occurs naturally at high bow speeds. Not controlled consciously — it emerges from a correctly coordinated détaché at the correct bow speed.</p>
+          <div class="exercise-box" style="margin-top:1rem;">
+            <span class="ex-label">Drill — Spiccato</span>
+            <h4>The "Rain Drop" Exercise</h4>
+            <p>Play open A string with short, light strokes at the balance point. Start on the string (détaché), then gradually speed up until the bow begins to naturally lift. Sustain that speed for 30 seconds. Then slow back down to controlled. Practice 10 min daily until spiccato is reliable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">3.2</div>
+      <h2>Harmonics — <em>Natural & Artificial</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">✨</span> Natural Harmonics</div>
+        <p>Touch (do not press) the string at exact division points to produce a flute-like overtone. The most important:</p>
+        <div class="scale-diagram">
+          <span class="scale-label">Natural Harmonics — A String</span>
+          <div class="scale-row"><span class="scale-name">½ length (12th fret pos)</span><div class="scale-notes"><div class="note-box root">A5</div><div class="note-box">Octave</div></div></div>
+          <div class="scale-row"><span class="scale-name">⅓ length (7th pos)</span><div class="scale-notes"><div class="note-box root">E6</div><div class="note-box">12th above</div></div></div>
+          <div class="scale-row"><span class="scale-name">¼ length (5th pos)</span><div class="scale-notes"><div class="note-box root">A6</div><div class="note-box">2 octaves</div></div></div>
+        </div>
+        <p style="margin-top:0.75rem;">Bow closer to bridge than normal. Use very light bow pressure — the harmonic is destroyed by too much weight.</p>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🌟</span> Artificial Harmonics</div>
+        <p>Press the root note firmly with the 1st finger. Touch (not press) a perfect 4th above with the 4th finger. The resulting pitch is 2 octaves above the stopped note.</p>
+        <h3>Artificial Harmonic Formula</h3>
+        <ul>
+          <li>Stopped note: 1st finger (firm)</li>
+          <li>Touch note: 4th finger, P4 above (light)</li>
+          <li>Result: Pitch = 2 octaves above stopped note</li>
+          <li>Example: 1st finger on E, 4th finger on A → sounds E two octaves above</li>
+        </ul>
+        <div class="callout callout-gold" style="margin-top:1rem;">
+          <strong>Famous use:</strong> Ravel's Tzigane, Saint-Saëns' Introduction & Rondo Capriccioso, Rimsky-Korsakov's Scheherazade
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">3.3</div>
+      <h2>Double Stops — <em>Thirds, Sixths, Octaves</em></h2>
+    </div>
+
+    <div class="content-block full">
+      <div class="block-title"><span class="icon">🎵</span> Double Stop System (Galamian Scale System)</div>
+      <div class="fb-wrap" id="fb-dbl">
+        <div class="fb-label">Double Stops in Thirds — On the Strings</div>
+        <div class="fb-svg"></div>
+        <div class="fb-hint">Hover a note dot — crimson = lower note, green = upper note (3rd above)</div>
+      </div>
+      <p>Double stops are two notes played simultaneously on adjacent strings. They are the foundation of polyphonic violin playing and require perfect intonation on both notes simultaneously.</p>
+      <div class="content-grid" style="margin-top:1rem;">
+        <div>
+          <h3>Thirds</h3>
+          <p>The most common double stop. Fingers on adjacent strings, a third apart. In D major on D and A strings: D+F#, E+G, F#+A, G+B, A+C#, B+D, C#+E, D+F#.</p>
+          <div class="exercise-box">
+            <span class="ex-label">Drill — Thirds</span>
+            <h4>D Major Scale in Thirds</h4>
+            <p>Play the D major scale in thirds slowly (♩=50). Listen carefully — both notes must be equally in tune. Record yourself. Increase tempo weekly by 4 BPM. Reference: Flesch Scale System, Carl Flesch.</p>
+          </div>
+        </div>
+        <div>
+          <h3>Octaves & Sixths</h3>
+          <p><strong>Octaves:</strong> 1st and 4th finger on adjacent strings, one octave apart. Requires a wide hand frame. Strong bow weight with a firm left-hand grip.</p>
+          <p><strong>Sixths:</strong> Slightly easier than thirds in some keys. 1st and 3rd finger on adjacent strings. Used extensively in Romantic-era violin writing.</p>
+          <div class="exercise-box">
+            <span class="ex-label">Reference</span>
+            <h4>Sevcik Op.9 — Double Stops</h4>
+            <p>The definitive double stop studies. Begin with Part 1 (thirds), then sixths (Part 2), then octaves. One exercise from each section per practice session, mastered slowly before speeding up.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">3.4</div>
+      <h2>Advanced Theory — <em>Counterpoint & Voice Leading</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">📐</span> Voice Leading Rules</div>
+        <h3>The Four Rules of SATB Voice Leading</h3>
+        <ol>
+          <li><strong>No parallel 5ths or octaves</strong> — two voices moving in the same direction to a 5th or octave sounds hollow</li>
+          <li><strong>No voice crossing</strong> — keep soprano above alto, alto above tenor, tenor above bass</li>
+          <li><strong>Resolve leading tones</strong> — the 7th scale degree always resolves up by step to the tonic</li>
+          <li><strong>Contrary motion preferred</strong> — when the bass goes up, try to move the melody down</li>
+        </ol>
+        <h3>Cadence Types</h3>
+        <ul>
+          <li><strong>Authentic (PAC/IAC):</strong> V → I (strongest possible ending)</li>
+          <li><strong>Half:</strong> any chord → V (feels like a question)</li>
+          <li><strong>Plagal:</strong> IV → I ("Amen" cadence)</li>
+          <li><strong>Deceptive:</strong> V → vi (surprise — sounds unfinished)</li>
+        </ul>
+      </div>
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🎼</span> Modal Scales</div>
+        <p>Modes are scales derived from the major scale by starting on different degrees:</p>
+        <div class="scale-diagram">
+          <span class="scale-label">C Major Modes</span>
+          <div class="scale-row"><span class="scale-name">Ionian (Major)</span><div class="scale-notes"><div class="note-box root">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box">F</div><div class="note-box">G</div><div class="note-box">A</div><div class="note-box">B</div></div></div>
+          <div class="scale-row"><span class="scale-name">Dorian (ii)</span><div class="scale-notes"><div class="note-box root">D</div><div class="note-box">E</div><div class="note-box semitone">F</div><div class="note-box">G</div><div class="note-box">A</div><div class="note-box">B</div><div class="note-box semitone">C</div></div></div>
+          <div class="scale-row"><span class="scale-name">Phrygian (iii)</span><div class="scale-notes"><div class="note-box root">E</div><div class="note-box semitone">F</div><div class="note-box">G</div><div class="note-box">A</div><div class="note-box">B</div><div class="note-box semitone">C</div><div class="note-box">D</div></div></div>
+          <div class="scale-row"><span class="scale-name">Lydian (IV)</span><div class="scale-notes"><div class="note-box root">F</div><div class="note-box">G</div><div class="note-box">A</div><div class="note-box semitone">B</div><div class="note-box">C</div><div class="note-box">D</div><div class="note-box">E</div></div></div>
+          <div class="scale-row"><span class="scale-name">Mixolydian (V)</span><div class="scale-notes"><div class="note-box root">G</div><div class="note-box">A</div><div class="note-box">B</div><div class="note-box">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box semitone">F</div></div></div>
+          <div class="scale-row"><span class="scale-name">Aeolian (Natural Minor)</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box">B</div><div class="note-box semitone">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box semitone">F</div><div class="note-box">G</div></div></div>
+          <div class="scale-row"><span class="scale-name">Locrian (vii°)</span><div class="scale-notes"><div class="note-box root">B</div><div class="note-box semitone">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box semitone">F</div><div class="note-box">G</div><div class="note-box">A</div></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">3.5</div>
+      <h2>Repertoire Path — <em>Level III</em></h2>
+    </div>
+
+    <table class="repertoire-table">
+      <thead><tr><th>Piece</th><th>Composer</th><th>Type</th><th>Key Techniques</th><th>Diff.</th></tr></thead>
+      <tbody>
+        <tr><td>Etudes Op.35 (Selection)</td><td>Dont</td><td>Études</td><td>All positions, string crossings</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Kreutzer Nos. 13–30</td><td>Kreutzer</td><td>Études</td><td>Advanced bowing, double stops</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Concerto No.3 in B minor</td><td>Saint-Saëns</td><td>Concerto</td><td>Full orchestra, lyrical depth</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Concerto in A minor, Op.3</td><td>Vivaldi</td><td>Concerto</td><td>Baroque technique, ornamentation</td><td><span class="diff-badge diff-2">2</span></td></tr>
+        <tr><td>Meditation (from Thaïs)</td><td>Massenet</td><td>Piece</td><td>Tone colour, vibrato depth</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Violin Concerto in D</td><td>Mozart K.218</td><td>Concerto</td><td>Classical style, purity of tone</td><td><span class="diff-badge diff-3">3</span></td></tr>
+        <tr><td>Tzigane</td><td>Ravel</td><td>Show piece</td><td>Harmonics, col legno, pyrotechnics</td><td><span class="diff-badge diff-4">4</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== LEVEL 4 ===== -->
+  <div id="level4" class="section">
+    <div class="panel-header" data-level="IV" style="background:linear-gradient(135deg, #0A0A0A 0%, #1C1C1C 100%);">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title">Level IV — <span>Elite / Virtuoso</span></div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Concert Level · Paganini Caprices · Advanced Orchestration · Improvisation</p>
+    </div>
+
+    <div class="callout callout-gold" style="margin:2rem 0;">
+      <strong>Prerequisites:</strong> Before beginning Level IV, the student must reliably perform: three-octave scales in all keys (with all Galamian bowing variations), controlled spiccato and sautillé, artificial harmonics in all positions, and have completed at least two major concertos at Level III standard.
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">4.1</div>
+      <h2>Virtuoso Bow Techniques</h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">⚡</span> Flying Staccato</div>
+        <p>A series of staccato notes in ONE bow direction (usually up-bow), with the bow barely leaving the string between each note. The wrist and fingers create each staccato impulse while the arm moves slowly in one direction.</p>
+        <h3>Development Method</h3>
+        <ol>
+          <li>Begin: 4 notes per bow at ♩=60 (up-bow)</li>
+          <li>Increase to 8 notes, 12 notes, 16 notes</li>
+          <li>Goal: 16+ rapid notes in one smooth bow</li>
+          <li>Reference: Paganini Caprice No.1, Wieniawski Etude-Caprices</li>
+        </ol>
+      </div>
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🔥</span> Ricochet / Jeté</div>
+        <p>The bow is thrown onto the string at the balance point and bounces multiple times automatically. Unlike spiccato (consciously bounced), ricochet is uncontrolled bouncing used for specific effects (e.g., 4, 6, or 8 notes from one drop).</p>
+        <h3>How to Practice</h3>
+        <ol>
+          <li>Drop the bow onto the A string from about 2cm height at the balance point</li>
+          <li>It will bounce 4–6 times naturally — listen to the rhythm</li>
+          <li>Control by adjusting the angle of the stick and the initial force</li>
+          <li>Famous use: Paganini Caprice No.1, opening; Saint-Saëns Rondo Capriccioso</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="content-block full forest-accent" style="margin-top:1rem;">
+      <div class="block-title"><span class="icon">🎻</span> Left Hand Virtuoso Techniques</div>
+      <div class="content-grid">
+        <div>
+          <h3>Left-Hand Pizzicato</h3>
+          <p>Plucking the string with the left hand while bowing continues. Used in Paganini Caprices and many show pieces. Ring finger or 4th finger hooks under the string and plucks upward while other fingers hold bowed notes.</p>
+          <h3>Col Legno</h3>
+          <p>Striking the string with the wood of the bow stick rather than the hair. Produces a dry, percussive, ghost-like tone. Famous: Berlioz "Symphonie Fantastique" — the witches' dance.</p>
+        </div>
+        <div>
+          <h3>Sul Ponticello / Sul Tasto</h3>
+          <ul>
+            <li><strong>Sul ponticello:</strong> Bow very close to the bridge — produces a glassy, metallic, nasal sound (used for mysterious/eerie effects)</li>
+            <li><strong>Sul tasto:</strong> Bow over the fingerboard — produces a warm, hollow, flute-like tone</li>
+            <li>Both are colour tools — used selectively for expressive contrast</li>
+          </ul>
+          <h3>Scordatura</h3>
+          <p>Deliberate alternate tuning of one or more strings. E.g., Mahler Symphony No.4 (E string tuned up a tone), or Biber Mystery Sonatas. Creates unique colour and enables passages impossible in standard tuning.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">4.2</div>
+      <h2>Advanced Theory — <em>Orchestration & Composition</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">🎼</span> Orchestration Principles</div>
+        <h3>String Orchestra Ranges</h3>
+        <table class="interval-table">
+          <tr><th>Instrument</th><th>Open strings</th><th>Practical range</th></tr>
+          <tr><td>Violin I</td><td>G3–E5</td><td>G3–A7</td></tr>
+          <tr><td>Violin II</td><td>G3–E5</td><td>G3–E7</td></tr>
+          <tr><td>Viola</td><td>C3–A4</td><td>C3–D6</td></tr>
+          <tr><td>Cello</td><td>C2–A3</td><td>C2–A5</td></tr>
+          <tr><td>Bass</td><td>E1–A2</td><td>E1–G4</td></tr>
+        </table>
+        <h3>Key Rules</h3>
+        <ul>
+          <li>Strings project best in their middle-upper range</li>
+          <li>Avoid the lowest positions for fast passages</li>
+          <li>Tremolo creates intensity; sul ponticello + tremolo = maximum tension</li>
+          <li>Divisi allows chords within one section</li>
+        </ul>
+      </div>
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">✍️</span> Improvisation Foundations</div>
+        <h3>Improvising over Chord Changes</h3>
+        <ol>
+          <li><strong>Learn the scale for each chord:</strong> Major chord = major scale/Ionian; Minor chord = Dorian or Aeolian; Dominant 7th = Mixolydian</li>
+          <li><strong>Target chord tones:</strong> Land on the root, 3rd, or 5th of each chord on strong beats</li>
+          <li><strong>Use passing tones:</strong> Connect chord tones with stepwise motion</li>
+          <li><strong>Call and response:</strong> Play a 2-bar phrase, leave 2 bars of silence, answer it</li>
+          <li><strong>Rhythm first:</strong> A rhythmically interesting simple melody beats a technically brilliant but rhythmically dull one</li>
+        </ol>
+        <div class="callout callout-gold" style="margin-top:1rem;">
+          <strong>Start here:</strong> Improvise over a I–V–vi–IV loop (C–G–Am–F) using only the C major pentatonic scale (C D E G A). Add one note per week.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">4.3</div>
+      <h2>Elite Practice Routine — <em>6 Hours/Day</em></h2>
+    </div>
+
+    <div class="routine-block">
+      <span class="routine-time">6-HOUR PROFESSIONAL DAILY ROUTINE</span>
+      <div class="routine-title">Conservatory-Level Practice Plan (Split into Two Sessions)</div>
+      <ul class="routine-items">
+        <li><span class="dur">SESSION 1 — MORNING (3 hrs)</span><strong>Technique & Fundamentals</strong></li>
+        <li><span class="dur">20 min</span> Slow bow exercises — full bow, tone quality on open strings</li>
+        <li><span class="dur">30 min</span> Galamian scale system — 3-octave scales, all 24 keys, all rhythmic variations</li>
+        <li><span class="dur">20 min</span> Arpeggio systems (all keys, multiple positions)</li>
+        <li><span class="dur">20 min</span> Double stops (thirds + sixths + octaves on same scale)</li>
+        <li><span class="dur">30 min</span> Paganini Caprices — one per week, note by note</li>
+        <li><span class="dur">20 min</span> Shifting exercises — high positions (5th–12th)</li>
+        <li><span class="dur">SESSION 2 — AFTERNOON (3 hrs)</span><strong>Repertoire & Musicianship</strong></li>
+        <li><span class="dur">60 min</span> Major concerto or sonata — phrase by phrase, musical details</li>
+        <li><span class="dur">30 min</span> Sight-reading — orchestral excerpts</li>
+        <li><span class="dur">30 min</span> Chamber music / sonata work</li>
+        <li><span class="dur">30 min</span> Music theory / composition / analysis</li>
+        <li><span class="dur">30 min</span> Ear training — interval dictation, transcription</li>
+      </ul>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">4.4</div>
+      <h2>Virtuoso <em>Repertoire</em></h2>
+    </div>
+
+    <table class="repertoire-table">
+      <thead><tr><th>Piece</th><th>Composer</th><th>Level</th><th>Why It's Essential</th></tr></thead>
+      <tbody>
+        <tr><td>24 Caprices for Solo Violin</td><td>Paganini</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>The apex of violin technique — every technical device</td></tr>
+        <tr><td>Violin Concerto in D, Op.77</td><td>Brahms</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>Musical depth, orchestral balance, endurance</td></tr>
+        <tr><td>Violin Concerto in D, Op.35</td><td>Tchaikovsky</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>Russian school showpiece — tone, passion, technique</td></tr>
+        <tr><td>Violin Concerto in D, Op.61</td><td>Beethoven</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>Classical perfection — intonation, phrasing, structure</td></tr>
+        <tr><td>Violin Concerto in D minor, Op.47</td><td>Sibelius</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>Nordic character, extreme technical demands</td></tr>
+        <tr><td>Sonata No.1–3 for Solo Violin</td><td>Bach BWV 1001–6</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>Polyphony, chords, the Bible of solo violin</td></tr>
+        <tr><td>Etude-Caprices Op.10 & 18</td><td>Wieniawski</td><td><span class="diff-badge diff-4">Virtuoso</span></td><td>Pre-Paganini, double stops, left-hand pizz</td></tr>
+        <tr><td>Introduction & Rondo Capriccioso</td><td>Saint-Saëns</td><td><span class="diff-badge diff-3">3</span></td><td>Spanish character, ricochet, spiccato</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== MUSIC THEORY (Deep Dive) ===== -->
+  <div id="theory" class="section">
+    <div class="panel-header" data-level="𝄞">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title"><span>Complete</span> Music Theory</div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">From Notation Basics to Advanced Counterpoint, Jazz Harmony & Composition</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">T.1</div>
+      <h2>Scales — <em>All Types</em></h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">🎵</span> The Major & Minor Scale Family</div>
+      <div class="scale-diagram">
+        <span class="scale-label">Minor Scale Types (using A as root)</span>
+        <div class="scale-row"><span class="scale-name">Natural Minor</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box">B</div><div class="note-box semitone">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box semitone">F</div><div class="note-box">G</div><div class="note-box root">A</div></div></div>
+        <div class="scale-row"><span class="scale-name">Harmonic Minor</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box">B</div><div class="note-box semitone">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box semitone">F</div><div class="note-box semitone">G#</div><div class="note-box root">A</div></div></div>
+        <div class="scale-row"><span class="scale-name">Melodic Minor (asc.)</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box">B</div><div class="note-box semitone">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box">F#</div><div class="note-box">G#</div><div class="note-box root">A</div></div></div>
+        <div class="scale-row"><span class="scale-name">Melodic Minor (desc.)</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box">G</div><div class="note-box semitone">F</div><div class="note-box">E</div><div class="note-box">D</div><div class="note-box semitone">C</div><div class="note-box">B</div><div class="note-box root">A</div></div></div>
+        <div class="scale-row"><span class="scale-name">Pentatonic Major</span><div class="scale-notes"><div class="note-box root">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box">G</div><div class="note-box">A</div></div></div>
+        <div class="scale-row"><span class="scale-name">Pentatonic Minor</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box semitone">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box semitone">G</div></div></div>
+        <div class="scale-row"><span class="scale-name">Whole Tone</span><div class="scale-notes"><div class="note-box root">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box">F#</div><div class="note-box">G#</div><div class="note-box">A#</div></div></div>
+        <div class="scale-row"><span class="scale-name">Diminished (H-W)</span><div class="scale-notes"><div class="note-box root">C</div><div class="note-box semitone">D♭</div><div class="note-box">E♭</div><div class="note-box semitone">F♭</div><div class="note-box">G♭</div><div class="note-box semitone">A♭♭</div><div class="note-box">B♭</div><div class="note-box semitone">C♭</div></div></div>
+      </div>
+      <div class="fb-wrap" id="fb-dmaj" style="margin-top:1rem">
+        <div class="fb-label">D Major Scale — Path Across the Strings</div>
+        <div class="fb-svg"></div>
+        <div class="fb-hint">Hover a note dot to see scale degree and string position</div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">T.2</div>
+      <h2>Harmony — <em>Functional & Extended</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🎸</span> Roman Numeral Analysis</div>
+        <p>Each chord in a key is labelled by its scale degree. Upper case = major/dominant, lower case = minor/diminished.</p>
+        <div class="scale-diagram">
+          <span class="scale-label">C Major — Diatonic Chords</span>
+          <div class="scale-row"><span class="scale-name">I — C major</span><div class="scale-notes"><div class="note-box root">C</div><div class="note-box">E</div><div class="note-box">G</div></div></div>
+          <div class="scale-row"><span class="scale-name">ii — D minor</span><div class="scale-notes"><div class="note-box root">D</div><div class="note-box semitone">F</div><div class="note-box">A</div></div></div>
+          <div class="scale-row"><span class="scale-name">iii — E minor</span><div class="scale-notes"><div class="note-box root">E</div><div class="note-box semitone">G</div><div class="note-box">B</div></div></div>
+          <div class="scale-row"><span class="scale-name">IV — F major</span><div class="scale-notes"><div class="note-box root">F</div><div class="note-box">A</div><div class="note-box">C</div></div></div>
+          <div class="scale-row"><span class="scale-name">V — G major</span><div class="scale-notes"><div class="note-box root">G</div><div class="note-box">B</div><div class="note-box">D</div></div></div>
+          <div class="scale-row"><span class="scale-name">vi — A minor</span><div class="scale-notes"><div class="note-box root">A</div><div class="note-box semitone">C</div><div class="note-box">E</div></div></div>
+          <div class="scale-row"><span class="scale-name">vii° — B dim</span><div class="scale-notes"><div class="note-box root">B</div><div class="note-box semitone">D</div><div class="note-box semitone">F</div></div></div>
+        </div>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🎷</span> Jazz & Extended Harmony</div>
+        <h3>Extended Chords</h3>
+        <table class="interval-table">
+          <tr><th>Chord</th><th>Symbol</th><th>Formula</th></tr>
+          <tr><td>Major 9th</td><td>Cmaj9</td><td>C E G B D</td></tr>
+          <tr><td>Dominant 9th</td><td>C9</td><td>C E G B♭ D</td></tr>
+          <tr><td>Minor 9th</td><td>Cm9</td><td>C E♭ G B♭ D</td></tr>
+          <tr><td>Dominant 11th</td><td>C11</td><td>C E G B♭ D F</td></tr>
+          <tr><td>Dominant 13th</td><td>C13</td><td>C E G B♭ D F A</td></tr>
+        </table>
+        <h3>Secondary Dominants</h3>
+        <p>Any chord can be preceded by its own V7 chord. In C major: V7/ii = A7 → Dm; V7/IV = C7 → F; V7/V = D7 → G. This creates brief tonicisations and harmonic colour.</p>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">T.3</div>
+      <h2>Counterpoint — <em>Species System</em></h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">📜</span> The Five Species of Counterpoint (Fux / Juilliard)</div>
+      <div class="content-grid">
+        <div>
+          <h3>1st Species — Note against Note</h3>
+          <p>One counterpoint note per cantus firmus note. Allowed intervals: unison, 3rd, 5th, 6th, octave. Forbidden: parallel 5ths, parallel octaves, dissonances.</p>
+          <h3>2nd Species — 2:1 (Half notes)</h3>
+          <p>Two notes against each cantus note. Dissonances allowed on weak beats as passing tones only. Strong beats must be consonant.</p>
+          <h3>3rd Species — 4:1 (Quarter notes)</h3>
+          <p>Four notes against each cantus note. Dissonances allowed as passing tones and neighbour tones on weak beats. Introduces anticipations and cambiatas.</p>
+        </div>
+        <div>
+          <h3>4th Species — Syncopated (Suspensions)</h3>
+          <p>The most important species. Notes are tied over the barline, creating dissonances on strong beats that resolve down by step. The 4-3, 7-6, and 9-8 suspensions are the foundation of all tonal voice leading.</p>
+          <h3>5th Species — Florid (Free)</h3>
+          <p>Combines all previous species freely. This is the synthesis — all note values, suspensions, and dissonance treatments combined into expressive, flowing counterpoint.</p>
+          <div class="callout callout-gold" style="margin-top:1rem;">
+            <strong>Study text:</strong> Johann Joseph Fux — "Gradus ad Parnassum" (1725) is the original counterpoint treatise, used by Haydn, Mozart, and Beethoven in their own studies.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== PRACTICE SYSTEM ===== -->
+  <div id="practice" class="section">
+    <div class="panel-header" data-level="♩">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title"><span>Deliberate Practice</span> System</div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Daily routines, weekly plans, skill tracking, and the science of deliberate practice</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">P.1</div>
+      <h2>The <em>Deliberate Practice</em> Framework</h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">🧠</span> Ericsson's Deliberate Practice Principles (Applied to Violin)</div>
+      <div class="content-grid">
+        <div>
+          <ol>
+            <li><strong>Work at the edge of your ability</strong> — always practice what is just beyond comfortable. Never coast.</li>
+            <li><strong>Immediate feedback loop</strong> — record every session, or use a mirror. Errors unheard are errors uncorrected.</li>
+            <li><strong>Isolate and drill</strong> — extract the difficult 4 measures. Practice ONLY those measures for 30 minutes. Do not run through the whole piece repeatedly.</li>
+            <li><strong>Slow → Fast</strong> — all new material begins at 50% of target tempo. Increase 4 BPM per day maximum when secure.</li>
+          </ol>
+        </div>
+        <div>
+          <ol start="5">
+            <li><strong>Mental practice</strong> — 15 minutes of silent score study/visualisation per day activates the same neural pathways as physical practice.</li>
+            <li><strong>Rest is practice</strong> — the brain consolidates motor memories during sleep. 8 hours of sleep is non-negotiable for musicians.</li>
+            <li><strong>Galamian Rhythmic Variations</strong> — practice all passages in dotted rhythms (long-short, short-long) before playing evenly. This strengthens weak fingers.</li>
+            <li><strong>Practice the transitions</strong> — the bar before and after a difficulty is as important as the difficulty itself.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">P.2</div>
+      <h2>Weekly <em>Progression Plan</em></h2>
+    </div>
+
+    <div class="week-plan">
+      <div class="week-day">
+        <div class="day-label">Monday</div>
+        <div class="day-content"><strong>Technique Heavy.</strong> Full scale system (all keys), Sevcik/Galamian variations, double stops. New étude introduction — learn notes only, no expression.</div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Tuesday</div>
+        <div class="day-content"><strong>Repertoire Focus.</strong> Slow practice of current concerto — one movement, phrase by phrase. Mental score study. Bowing details.</div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Wednesday</div>
+        <div class="day-content"><strong>Mixed + Theory.</strong> Scale system (shorter), étude refinement (add musical expression), music theory study (45 min), ear training (30 min).</div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Thursday</div>
+        <div class="day-content"><strong>Technique + New Material.</strong> Full bowing exercises. Introduce next section of concerto. Sight-reading (30 min — COLD, never previewed).</div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Friday</div>
+        <div class="day-content"><strong>Performance Simulation.</strong> Play through all repertoire from start to finish without stopping. Treat as a concert. Record the session.</div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Saturday</div>
+        <div class="day-content"><strong>Analysis + Fix.</strong> Listen to Friday's recording critically. Identify 3 specific problems. Practice only those problems. Chamber music if available.</div>
+      </div>
+      <div class="week-day">
+        <div class="day-label">Sunday</div>
+        <div class="day-content"><strong>Rest or Light Play.</strong> Optional: 30 min gentle scales, listen to recordings of your repertoire performed by masters (Heifetz, Oistrakh, Hilary Hahn, Maxim Vengerov).</div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">P.3</div>
+      <h2>Skill <em>Progress Tracker</em></h2>
+    </div>
+
+    <div class="tracker-grid">
+      <div class="tracker-item">
+        <span class="tracker-label">Violin Technique</span>
+        <div class="tracker-skill">Bow Hold</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t1"></div></div>
+        <div class="tracker-pct" id="t1p">0%</div>
+        <button onclick="advanceTracker('t1','t1p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Violin Technique</span>
+        <div class="tracker-skill">First Position</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t2"></div></div>
+        <div class="tracker-pct" id="t2p">0%</div>
+        <button onclick="advanceTracker('t2','t2p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Violin Technique</span>
+        <div class="tracker-skill">Vibrato</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t3"></div></div>
+        <div class="tracker-pct" id="t3p">0%</div>
+        <button onclick="advanceTracker('t3','t3p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Violin Technique</span>
+        <div class="tracker-skill">Shifting</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t4"></div></div>
+        <div class="tracker-pct" id="t4p">0%</div>
+        <button onclick="advanceTracker('t4','t4p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Music Theory</span>
+        <div class="tracker-skill">Note Reading</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t5"></div></div>
+        <div class="tracker-pct" id="t5p">0%</div>
+        <button onclick="advanceTracker('t5','t5p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Music Theory</span>
+        <div class="tracker-skill">Harmony</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t6"></div></div>
+        <div class="tracker-pct" id="t6p">0%</div>
+        <button onclick="advanceTracker('t6','t6p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Music Theory</span>
+        <div class="tracker-skill">Ear Training</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t7"></div></div>
+        <div class="tracker-pct" id="t7p">0%</div>
+        <button onclick="advanceTracker('t7','t7p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+      <div class="tracker-item">
+        <span class="tracker-label">Performance</span>
+        <div class="tracker-skill">Sight-Reading</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:0%" id="t8"></div></div>
+        <div class="tracker-pct" id="t8p">0%</div>
+        <button onclick="advanceTracker('t8','t8p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EAR TRAINING ===== -->
+  <div id="eartraining" class="section">
+    <div class="panel-header" data-level="👂">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title"><span>Ear Training</span> Complete System</div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Interval Recognition · Melodic Dictation · Harmonic Dictation · Sight Singing</p>
+    </div>
+
+    <div class="callout callout-gold" style="margin:2rem 0;">
+      <strong>The Golden Rule:</strong> Your ears must always be ahead of your fingers. If you cannot hear it, you cannot play it in tune. Dedicate minimum 15 minutes per day to ear training at every level — this is non-negotiable at Juilliard and all major conservatoires.
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">E.1</div>
+      <h2>Interval <em>Recognition</em></h2>
+    </div>
+
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">👂</span> Reference Songs for Interval Memory</div>
+      <table class="interval-table">
+        <thead><tr><th>Interval</th><th>Ascending Reference</th><th>Descending Reference</th></tr></thead>
+        <tbody>
+          <tr><td>Minor 2nd</td><td>Jaws Theme (da-DUM)</td><td>Joy to the World</td></tr>
+          <tr><td>Major 2nd</td><td>Happy Birthday</td><td>Mary Had a Little Lamb</td></tr>
+          <tr><td>Minor 3rd</td><td>Smoke on the Water (riff)</td><td>Hey Jude (intro)</td></tr>
+          <tr><td>Major 3rd</td><td>When the Saints Go Marching</td><td>Summertime (Gershwin)</td></tr>
+          <tr><td>Perfect 4th</td><td>Here Comes the Bride</td><td>O Come All Ye Faithful</td></tr>
+          <tr><td>Tritone</td><td>The Simpsons Theme</td><td>Maria (West Side Story)</td></tr>
+          <tr><td>Perfect 5th</td><td>Star Wars Theme</td><td>Feelings</td></tr>
+          <tr><td>Minor 6th</td><td>The Entertainer</td><td>Nobody Knows</td></tr>
+          <tr><td>Major 6th</td><td>My Bonnie Lies Over the Ocean</td><td>Nobody Knows the Trouble</td></tr>
+          <tr><td>Minor 7th</td><td>Somewhere (West Side Story)</td><td>Watermelon Man</td></tr>
+          <tr><td>Major 7th</td><td>Take On Me (A-ha)</td><td>I Love You (Porter)</td></tr>
+          <tr><td>Octave</td><td>Somewhere Over the Rainbow</td><td>Willow Weep for Me</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">E.2</div>
+      <h2>Solfège & <em>Sight Singing</em></h2>
+    </div>
+
+    <div class="content-grid">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🎤</span> Fixed Do vs Movable Do</div>
+        <h3>Movable Do System (Recommended)</h3>
+        <p>The tonic of any major scale = Do. This system trains relative pitch — the relationship between notes regardless of key.</p>
+        <div class="scale-diagram">
+          <span class="scale-label">C Major — Movable Do</span>
+          <div class="scale-row"><div class="scale-notes">
+            <div class="note-box root">Do</div><div class="note-box">Re</div><div class="note-box">Mi</div><div class="note-box">Fa</div><div class="note-box">Sol</div><div class="note-box">La</div><div class="note-box">Ti</div><div class="note-box root">Do</div>
+          </div></div>
+          <div class="scale-row"><div class="scale-notes">
+            <div class="note-box root">C</div><div class="note-box">D</div><div class="note-box">E</div><div class="note-box">F</div><div class="note-box">G</div><div class="note-box">A</div><div class="note-box">B</div><div class="note-box root">C</div>
+          </div></div>
+        </div>
+        <h3>Chromatic Solfège</h3>
+        <p>Sharps: Di, Ri, Fi, Si, Li. Flats: Ra, Me, Se, Le, Te. Learn these for chromatic passages and modulations.</p>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">✍️</span> Melodic Dictation Method</div>
+        <h3>Step-by-Step Dictation Process</h3>
+        <ol>
+          <li><strong>Listen once:</strong> Identify the key, time signature, and tempo only</li>
+          <li><strong>Listen twice:</strong> Identify the first and last note. Hear the overall shape (up, down, arching)</li>
+          <li><strong>Listen three times:</strong> Fill in the contour — what general direction is each phrase?</li>
+          <li><strong>Listen four times:</strong> Fill in specific pitches. Work from strong beats backward</li>
+          <li><strong>Listen five times:</strong> Rhythmic details, any ornaments</li>
+          <li><strong>Check:</strong> Sing your transcription back against the recording</li>
+        </ol>
+        <div class="callout callout-gold" style="margin-top:1rem;">
+          <strong>Free resource:</strong> musictheory.net — free interactive ear training at all levels
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">E.3</div>
+      <h2>Interactive — <em>Note Name Identifier</em></h2>
+    </div>
+
+    <div class="note-checker">
+      <h3>Violin String & Position Explorer</h3>
+      <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">Select a string and finger position to see the note name and its theory context.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <div>
+          <div style="font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--muted); margin-bottom:0.5rem; letter-spacing:0.06em;">STRING</div>
+          <div class="note-buttons" id="string-btns">
+            <button class="note-btn" onclick="selectString('G', this)">G</button>
+            <button class="note-btn" onclick="selectString('D', this)">D</button>
+            <button class="note-btn selected" onclick="selectString('A', this)">A</button>
+            <button class="note-btn" onclick="selectString('E', this)">E</button>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--muted); margin-bottom:0.5rem; letter-spacing:0.06em;">FINGER</div>
+          <div class="note-buttons" id="finger-btns">
+            <button class="note-btn" onclick="selectFinger(0, this)">0</button>
+            <button class="note-btn selected" onclick="selectFinger(1, this)">1</button>
+            <button class="note-btn" onclick="selectFinger(2, this)">2</button>
+            <button class="note-btn" onclick="selectFinger(3, this)">3</button>
+            <button class="note-btn" onclick="selectFinger(4, this)">4</button>
+          </div>
+        </div>
+      </div>
+      <div class="note-display" id="note-display">
+        A string · 1st finger (1st position) → <strong style="margin-left:0.75rem; font-size:1.1rem; color:var(--gold-light);">B</strong>
+        <span style="margin-left:1.5rem; font-size:0.8rem; color:rgba(245,240,232,0.5);">Major 2nd above A · Treble clef: 3rd line</span>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">E.4</div>
+      <h2>Ear Training <em>Drills by Level</em></h2>
+    </div>
+
+    <div class="ear-grid">
+      <div class="ear-card">
+        <div class="ear-card-title">Level I — Interval Recognition</div>
+        <p>Listen to two notes played consecutively. Identify: is the second note higher or lower? By how much? Start with perfect intervals only (4ths, 5ths, octaves).</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level I — Rhythm Reading</div>
+        <p>Clap back rhythms of increasing complexity. Start with quarter and half notes. Progress to eighth notes. Use a metronome and clap along before playing.</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level II — Scale Identification</div>
+        <p>Listen to a scale played ascending. Identify: major or minor? Which type of minor (natural/harmonic/melodic)? Pentatonic or modal?</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level II — Chord Quality</div>
+        <p>Listen to a chord (blocked or arpeggiated). Identify: major, minor, diminished, or augmented? Then: triad or seventh chord? What type of seventh?</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level III — Harmonic Dictation</div>
+        <p>Listen to a chord progression (4–8 bars). Write the Roman numeral analysis. Identify all cadences, secondary dominants, and borrowed chords.</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level III — Melodic Dictation</div>
+        <p>8-bar melody in major or minor keys. Write out the complete melody using the 5-listen method. Include all rhythmic values and accidentals.</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level IV — Transcription</div>
+        <p>Transcribe violin solos by ear (start with Suzuki pieces, advance to Kreutzer, then concerto excerpts). This is the ultimate ear training tool.</p>
+      </div>
+      <div class="ear-card">
+        <div class="ear-card-title">Level IV — Sight Singing</div>
+        <p>Sing back any melody immediately upon seeing the score. Use solfège. Practice with Bach chorales, then violin etudes, then orchestral excerpts.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== RESOURCES ===== -->
+  <div id="resources" class="section">
+    <div class="panel-header" data-level="📚">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title"><span>Essential</span> Resources</div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Free PDFs, Reference Books, Online Tools & Classical Method Texts</p>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">R.1</div>
+      <h2>Essential <em>Method Books</em></h2>
+    </div>
+
+    <div class="content-block full">
+      <div class="resource-link">
+        <span class="res-icon">📘</span>
+        <div>
+          <div class="res-title">Principles of Violin Playing and Teaching — Ivan Galamian</div>
+          <div class="res-desc">The definitive text of the Russian-American violin school. Every serious violinist must own this. Covers bow arm, left hand, shifting, vibrato, tone production, and pedagogy.</div>
+          <span class="res-url">Simon & Schuster · ISBN 978-0874871289</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">📗</span>
+        <div>
+          <div class="res-title">The Art of Violin Playing (2 vols.) — Carl Flesch</div>
+          <div class="res-desc">The other pillar of modern violin pedagogy. More analytical than Galamian, with extensive discussion of interpretation and sound production. Includes the famous Flesch Scale System.</div>
+          <span class="res-url">Carl Fischer · Standard violin reference</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">📙</span>
+        <div>
+          <div class="res-title">School of Violin Technique, Op.1 (4 parts) — Otakar Ševčík</div>
+          <div class="res-desc">The systematic foundation of left-hand finger training. Op.1 (finger exercises), Op.2 (bowing variations), Op.6 (shifting), Op.9 (double stops). Used by virtually every professional violinist.</div>
+          <span class="res-url">IMSLP.org — Available free (public domain)</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">📕</span>
+        <div>
+          <div class="res-title">42 Études or Caprices — Rodolphe Kreutzer</div>
+          <div class="res-desc">The violinist's Bible. Every advanced student must work through all 42 études. Each targets a specific technical challenge. Beethoven dedicated his Kreutzer Sonata to the composer.</div>
+          <span class="res-url">IMSLP.org — Available free (public domain)</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">📓</span>
+        <div>
+          <div class="res-title">24 Caprices, Op.1 — Niccolò Paganini</div>
+          <div class="res-desc">The summit of violin technique. No.24 has inspired variations by Brahms, Rachmaninoff, and Lutosławski. Each caprice isolates a different virtuoso technique.</div>
+          <span class="res-url">IMSLP.org — Available free (public domain)</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">📒</span>
+        <div>
+          <div class="res-title">Maia Bang Violin Method (3 vols.)</div>
+          <div class="res-desc">Excellent early-intermediate method used widely in European conservatoires. Progressive repertoire with bowing exercises integrated throughout.</div>
+          <span class="res-url">Archive.org — Several volumes freely accessible</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">R.2</div>
+      <h2>Free Online <em>Resources</em></h2>
+    </div>
+
+    <div class="content-block full crimson-accent">
+      <div class="resource-link">
+        <span class="res-icon">🌐</span>
+        <div>
+          <div class="res-title">IMSLP — International Music Score Library Project</div>
+          <div class="res-desc">Free legal downloads of virtually all public domain scores — Sevcik, Kreutzer, Dont, Paganini, and thousands more. The violinist's most essential free resource.</div>
+          <span class="res-url">imslp.org</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">🌐</span>
+        <div>
+          <div class="res-title">musictheory.net</div>
+          <div class="res-desc">Free, comprehensive music theory lessons from absolute beginner to advanced. Interactive exercises, ear training tools, and quizzes. Ideal supplement to this curriculum.</div>
+          <span class="res-url">musictheory.net</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">🌐</span>
+        <div>
+          <div class="res-title">Juilliard Music Guides — LibGuides</div>
+          <div class="res-desc">Curated research guides from the Juilliard School library. Includes violin technique resources, theory texts, and historical performance practice guides.</div>
+          <span class="res-url">juilliard.libguides.com</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">🌐</span>
+        <div>
+          <div class="res-title">Plucky Violin Teacher — Free Worksheets</div>
+          <div class="res-desc">Printable music theory worksheets specifically designed for violin students. Note-naming, rhythm, scale identification — all free to download and print.</div>
+          <span class="res-url">pluckyviolinteacher.com</span>
+        </div>
+      </div>
+      <div class="resource-link">
+        <span class="res-icon">🌐</span>
+        <div>
+          <div class="res-title">Violin Masterclass — Free Video Resources</div>
+          <div class="res-desc">Master classes, technique demonstrations, and repertoire coaching videos from world-class pedagogues. Invaluable for visual learners.</div>
+          <span class="res-url">violinmasterclass.com</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <div class="section-num">R.3</div>
+      <h2>Recordings to <em>Study & Emulate</em></h2>
+    </div>
+
+    <div class="content-block full forest-accent">
+      <div class="block-title"><span class="icon">🎙</span> Master Performers — Study These Recordings</div>
+      <ul class="milestone-list">
+        <li><span class="check">♪</span><div><strong>Jascha Heifetz</strong> — The supreme technical model. Study his recordings of the Tchaikovsky and Sibelius concertos. Notice the bow control, intonation, and speed.</div></li>
+        <li><span class="check">♪</span><div><strong>David Oistrakh</strong> — The Russian school at its warmest. His Brahms Concerto and Beethoven Sonatas are essential listening for phrasing and tone.</div></li>
+        <li><span class="check">♪</span><div><strong>Hilary Hahn</strong> — The modern ideal of clean technique and intellectual musicianship. Her Bach Sonatas and Partitas are benchmark recordings.</div></li>
+        <li><span class="check">♪</span><div><strong>Maxim Vengerov</strong> — Extraordinary bow arm and emotional depth. Study his Elgar and Sibelius concertos for the full spectrum of bowing technique.</div></li>
+        <li><span class="check">♪</span><div><strong>Nathan Milstein</strong> — Effortless technique and aristocratic musical sense. His Paganini Caprices demonstrate what mastery truly looks like.</div></li>
+        <li><span class="check">♪</span><div><strong>Itzhak Perlman</strong> — Warmth, singing tone, and absolute command of the bow. Study his Brahms and Beethoven concertos for musical intelligence.</div></li>
+        <li><span class="check">♪</span><div><strong>Arthur Grumiaux</strong> — The Franco-Belgian school in its purest form. His Mozart concertos are the gold standard for Classical-era style.</div></li>
+      </ul>
+    </div>
+  </div>
+
+</div><!-- end main-wrapper -->
+
+<footer class="footer">
+  <p><strong>The Complete Violin & Music Theory Academy</strong></p>
+  <p style="margin-top:0.5rem;">Curriculum drawn from the traditions of the Juilliard School · Trinity College London · The Russian School (Ivan Galamian)</p>
+  <p style="margin-top:0.5rem;">Sevcik · Kreutzer · Dont · Flesch · Galamian · Suzuki · Courvoisier · Paganini · IMSLP</p>
+  <div style="width:80px; height:1px; background:rgba(200,150,62,0.3); margin:1.5rem auto;"></div>
+  <p style="font-size:0.78rem; color:rgba(245,240,232,0.3); font-style:italic;">"The road to Parnassus is long, but every step taken with patience and diligence is a step upward." — J.J. Fux, Gradus ad Parnassum, 1725</p>
+</footer>
+
+<script>
+  // NAV
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(id)?.classList.add('active');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function setNavActive(idx) {
+    const tabs = document.querySelectorAll('.nav-tab');
+    tabs.forEach((t, i) => t.classList.toggle('active', i === idx));
+  }
+
+  document.querySelectorAll('.nav-tab').forEach((tab, idx) => {
+    tab.addEventListener('click', () => setNavActive(idx));
+  });
+
+  // QUIZ
+  function checkAnswer(btn, isCorrect, qid) {
+    const q = btn.closest('.quiz-question');
+    q.querySelectorAll('.quiz-option').forEach(b => b.style.pointerEvents = 'none');
+    btn.classList.add(isCorrect ? 'correct' : 'wrong');
+    if (!isCorrect) {
+      q.querySelectorAll('.quiz-option').forEach(b => {
+        if (b.onclick.toString().includes('true')) b.classList.add('correct');
+      });
+    }
+    const fb = document.getElementById('fb-' + qid);
+    fb.classList.add('show', isCorrect ? 'correct-fb' : 'wrong-fb');
+    fb.innerHTML = isCorrect
+      ? '✓ Correct! Well done.'
+      : '✗ Not quite. Review the lesson content above and try again on paper.';
+  }
+
+  // PROGRESS TRACKER
+  function advanceTracker(barId, pctId) {
+    const bar = document.getElementById(barId);
+    const pct = document.getElementById(pctId);
+    const current = parseInt(bar.style.width) || 0;
+    const next = Math.min(current + 10, 100);
+    bar.style.width = next + '%';
+    pct.textContent = next + '%';
+  }
+
+  // NOTE EXPLORER
+  const noteMap = {
+    'G': ['G3','A3','B3','C4','D4'],
+    'D': ['D4','E4','F#4','G4','A4'],
+    'A': ['A4','B4','C#5','D5','E5'],
+    'E': ['E5','F#5','G#5','A5','B5']
+  };
+
+  const noteInfo = {
+    'G3': 'G string · Open (0) → G3 · Bass-range warmth · Bottom of violin range',
+    'A3': 'G string · 1st finger → A3 · Major 2nd above open G',
+    'B3': 'G string · 2nd finger → B3 · Major 3rd above open G',
+    'C4': 'G string · 3rd finger → C4 (Middle C octave) · Perfect 4th above G',
+    'D4': 'G string · 4th finger → D4 · Same pitch as open D string',
+    'D4_D': 'D string · Open (0) → D4 · Core of violin range · Resonant and warm',
+    'E4': 'D string · 1st finger → E4 · Major 2nd above open D',
+    'F#4': 'D string · 2nd finger → F#4 · Major 3rd above open D · 2nd degree in E major',
+    'G4': 'D string · 3rd finger → G4 · Same pitch as open G string (octave above)',
+    'A4': 'D string · 4th finger → A4 · Concert A (440 Hz) — tuning reference · Same as open A string',
+    'A4_A': 'A string · Open (0) → A4 · Concert A (440 Hz) · Standard tuning reference',
+    'B4': 'A string · 1st finger → B4 · Major 2nd above open A · Leading tone of C major',
+    'C#5': 'A string · 2nd finger → C#5 · Major 3rd above A · 3rd degree of A major',
+    'D5': 'A string · 3rd finger → D5 · Perfect 4th above A · Same as D string 2 octaves up',
+    'E5': 'A string · 4th finger → E5 · Same pitch as open E string',
+    'E5_E': 'E string · Open (0) → E5 · Highest open string · Brilliant, penetrating tone',
+    'F#5': 'E string · 1st finger → F#5 · Major 2nd above open E · 2nd degree of E major',
+    'G#5': 'E string · 2nd finger → G#5 · Major 3rd above E · Used in A major & E major',
+    'A5': 'E string · 3rd finger → A5 · Perfect 4th above E · High, projecting A',
+    'B5': 'E string · 4th finger → B5 · Perfect 5th above E · Upper register, requires care'
+  };
+
+  let selectedString = 'A';
+  let selectedFinger = 1;
+
+  function selectString(s, btn) {
+    selectedString = s;
+    document.querySelectorAll('#string-btns .note-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    updateNoteDisplay();
+  }
+
+  function selectFinger(f, btn) {
+    selectedFinger = f;
+    document.querySelectorAll('#finger-btns .note-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    updateNoteDisplay();
+  }
+
+  function updateNoteDisplay() {
+    const notes = noteMap[selectedString];
+    const note = notes[selectedFinger];
+    const key = selectedString === 'D' && note === 'D4' ? 'D4_D' :
+                 selectedString === 'A' && note === 'A4' ? 'A4_A' :
+                 selectedString === 'E' && note === 'E5' ? 'E5_E' : note;
+    const info = noteInfo[key] || noteInfo[note] || note;
+    const noteName = note.replace(/\d/, '');
+    document.getElementById('note-display').innerHTML =
+      `<strong style="font-size:1.4rem; color:var(--gold-light); margin-right:1rem;">${noteName}</strong>` +
+      `<span style="font-size:0.85rem; color:rgba(245,240,232,0.75);">${info}</span>`;
+  }
+  // FINGERBOARD SVG RENDERER
+  function renderFB(id, notes) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    var strs = ['E','A','D','G'];
+    var sC = {E:'#e0e0e0',A:'#d4b483',D:'#c8963e',G:'#8b6a3e'};
+    var sW = {E:1.5,A:2,D:2.5,G:3};
+    var W=540, H=195, L=32, T=28, S=38;
+    var px = [L+30, L+130, L+230, L+330, L+430];
+    var h = '<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="max-width:'+W+'px">';
+    h += '<line x1="'+(px[0]-12)+'" y1="'+(T-8)+'" x2="'+(px[0]-12)+'" y2="'+(T+3*S+8)+'" stroke="rgba(200,150,62,0.4)" stroke-width="3"/>';
+    for (var i=0;i<4;i++){
+      var y=T+i*S;
+      h += '<line x1="'+(px[0]-15)+'" y1="'+y+'" x2="'+(px[4]+30)+'" y2="'+y+'" stroke="'+sC[strs[i]]+'" stroke-width="'+sW[strs[i]]+'" opacity="0.6"/>';
+      h += '<text x="14" y="'+(y+5)+'" text-anchor="middle" font-family="Playfair Display,serif" font-size="14" font-weight="700" fill="'+sC[strs[i]]+'">'+strs[i]+'</text>';
+    }
+    var fl=['Open','1st','2nd','3rd','4th'];
+    for(var j=0;j<5;j++){
+      h += '<text x="'+px[j]+'" y="'+(T+4*S)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9.5" fill="rgba(245,240,232,0.35)">'+fl[j]+'</text>';
+    }
+    for(var k=0;k<notes.length;k++){
+      var n=notes[k], si=strs.indexOf(n.s);
+      if(si<0) continue;
+      var cx=px[n.f], cy=T+si*S;
+      var fill=n.t==='r'?'#8B1A1A':n.t==='g'?'#2A5535':n.t==='h'?'#E8B85A':'rgba(200,150,62,0.85)';
+      var tc=(n.t==='r'||n.t==='g')?'#F5F0E8':'#1C1C1C';
+      var info=(n.l||'')+' -- '+n.s+' string'+(n.f===0?', open':', finger '+n.f)+(n.d?' | '+n.d:'');
+      h += '<circle cx="'+cx+'" cy="'+cy+'" r="13" fill="'+fill+'" style="cursor:pointer" data-info="'+info+'"/>';
+      h += '<text x="'+cx+'" y="'+(cy+4)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="'+tc+'" style="pointer-events:none">'+(n.l||'')+'</text>';
+    }
+    h += '</svg>';
+    var d=el.querySelector('.fb-svg'); if(d) d.innerHTML=h;
+  }
+
+  // Hover delegation for fingerboard note dots
+  document.addEventListener('mouseover', function(e){
+    if(e.target.tagName==='circle'&&e.target.getAttribute('data-info')){
+      var w=e.target.parentElement;
+      while(w&&!(w.classList&&w.classList.contains('fb-wrap')))w=w.parentElement;
+      if(w){var h=w.querySelector('.fb-hint');if(h)h.textContent=e.target.getAttribute('data-info');}
+    }
+  });
+  document.addEventListener('mouseout', function(e){
+    if(e.target.tagName==='circle'&&e.target.getAttribute('data-info')){
+      var w=e.target.parentElement;
+      while(w&&!(w.classList&&w.classList.contains('fb-wrap')))w=w.parentElement;
+      if(w){var h=w.querySelector('.fb-hint');if(h)h.textContent='Hover a note dot to see details';}
+    }
+  });
+
+  // Initialize all fingerboard diagrams
+  renderFB('fb-open',[
+    {s:'G',f:0,l:'G3',t:'r',d:'Lowest string, rich warm tone'},
+    {s:'D',f:0,l:'D4',t:'r',d:'2nd string, core of the range'},
+    {s:'A',f:0,l:'A4',t:'r',d:'Concert A 440Hz, tuning reference'},
+    {s:'E',f:0,l:'E5',t:'r',d:'Highest string, brilliant tone'}
+  ]);
+  renderFB('fb-1pos',[
+    {s:'G',f:0,l:'G',t:'r'},{s:'G',f:1,l:'A'},{s:'G',f:2,l:'B'},{s:'G',f:3,l:'C'},{s:'G',f:4,l:'D',d:'Same as open D'},
+    {s:'D',f:0,l:'D',t:'r'},{s:'D',f:1,l:'E'},{s:'D',f:2,l:'F#'},{s:'D',f:3,l:'G'},{s:'D',f:4,l:'A',d:'Same as open A'},
+    {s:'A',f:0,l:'A',t:'r'},{s:'A',f:1,l:'B'},{s:'A',f:2,l:'C#'},{s:'A',f:3,l:'D'},{s:'A',f:4,l:'E',d:'Same as open E'},
+    {s:'E',f:0,l:'E',t:'r'},{s:'E',f:1,l:'F#'},{s:'E',f:2,l:'G#'},{s:'E',f:3,l:'A'},{s:'E',f:4,l:'B'}
+  ]);
+  renderFB('fb-int',[
+    {s:'A',f:0,l:'A',t:'r',d:'Root note, open A string'},
+    {s:'A',f:4,l:'E',t:'g',d:'Perfect 5th above A'},
+    {s:'D',f:0,l:'D',t:'r',d:'Root note, open D string'},
+    {s:'D',f:4,l:'A',t:'g',d:'Perfect 5th above D'}
+  ]);
+  renderFB('fb-dbl',[
+    {s:'D',f:0,l:'D',t:'r',d:'D string open'},{s:'A',f:2,l:'F#',t:'g',d:'A string 2nd finger, Major 3rd'},
+    {s:'D',f:1,l:'E',t:'r',d:'D string 1st finger'},{s:'A',f:3,l:'G',t:'g',d:'A string 3rd finger, Minor 3rd'},
+    {s:'D',f:2,l:'F#',t:'r',d:'D string 2nd finger'},{s:'A',f:4,l:'A',t:'g',d:'A string 4th finger, Minor 3rd'},
+    {s:'A',f:0,l:'A',t:'r',d:'A string open'},{s:'E',f:2,l:'C#',t:'g',d:'E string 2nd finger, Major 3rd'}
+  ]);
+  renderFB('fb-dmaj',[
+    {s:'D',f:0,l:'D',t:'r',d:'Tonic, scale degree 1'},
+    {s:'D',f:1,l:'E',d:'Scale degree 2'},
+    {s:'D',f:2,l:'F#',d:'Scale degree 3'},
+    {s:'D',f:3,l:'G',d:'Scale degree 4'},
+    {s:'A',f:0,l:'A',t:'h',d:'Scale degree 5, cross to A string'},
+    {s:'A',f:1,l:'B',d:'Scale degree 6'},
+    {s:'A',f:2,l:'C#',d:'Scale degree 7, leading tone'},
+    {s:'A',f:3,l:'D',t:'r',d:'Octave, scale degree 8'}
+  ]);
+</script>
+</body>
+</html>
