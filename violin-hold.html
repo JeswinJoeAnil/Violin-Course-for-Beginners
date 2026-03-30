@@ -611,6 +611,21 @@
     <p>The Galamian method is a gold standard for a reason — it focuses on <strong>natural movement</strong> and <strong>"elasticity."</strong> Your foundation in holding the violin covers the physical setup, but to truly excel, you need to understand the <em>functional mechanics</em> of the hold. Below are the essential additions that will elevate your technique from simply "holding the instrument" to being <em>ready to play</em>.</p>
   </div>
 
+
+<a href="#bow-arm-prep" style="
+  display: inline-block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--gold-dark);
+  border-bottom: 1px solid var(--gold);
+  text-decoration: none;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--gold-dark)'">
+  Go to the Right Hand Hold →
+</a>
+</a>
   <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- PART 2: LEFT HAND — THE SUPPORT HAND -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
@@ -846,7 +861,7 @@
   <!-- PART 4: RIGHT ARM — BOW ARM PREP -->
   <!-- ═══════════════════════════════════════════════════════════════════ -->
 
-  <div class="section-header fade-in">
+  <div class="section-header fade-in" id="bow-arm-prep">
     <span class="section-icon">🏹</span>
     <h2>Right Arm — <em>Bow Arm Prep</em></h2>
   </div>
@@ -1087,6 +1102,14 @@
   <p>Part of <strong>The Complete Violin & Music Theory Academy</strong> · Level I: Beginner Foundation</p>
   <p style="margin-top: 0.5rem;"><a href="index.html">← Return to Main Course</a></p>
 </footer>
-
+<script>
+  document.querySelector('a[href="#bow-arm-prep"]').addEventListener('click', function(e) {
+    e.preventDefault();
+    document.getElementById('bow-arm-prep').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  });
+</script>
 </body>
 </html>
