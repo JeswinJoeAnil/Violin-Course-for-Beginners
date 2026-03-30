@@ -963,6 +963,27 @@
     text-transform: uppercase;
     margin-bottom: 0.5rem;
   }
+
+  /* LEARN MORE LINK */
+  .learn-more-link {
+    display: block;
+    margin-top: 1.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed var(--border);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    color: var(--gold-dark);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .learn-more-link:hover {
+    color: var(--gold-light);
+  }
+  .learn-more-link::after {
+    content: ' →';
+  }
+  
 </style>
 </head>
 <body>
@@ -1152,6 +1173,7 @@
         <div class="callout callout-gold" style="margin-top:1rem;">
           <strong>Critical check:</strong> If you feel tension in your neck, jaw, or left shoulder — stop immediately and reset. All tension is the enemy of technique and will cause injury.
         </div>
+        <a href="#" class="learn-more-link">Click to learn more</a>
       </div>
       <div class="content-block crimson-accent">
         <div class="block-title"><span class="icon">🏹</span> The Bow Hold (Franco-Belgian)</div>
@@ -1170,6 +1192,7 @@
           <li>Collapsing pinky (lose control at the tip)</li>
           <li>Wrist too high or too stiff</li>
         </ul>
+        <a href="#" class="learn-more-link">Click to learn more</a>
       </div>
     </div>
 
@@ -1189,6 +1212,7 @@
         <li>The knuckles must remain visibly arched throughout</li>
         <li>Repeat on D, G, and E strings — 10 min per practice session</li>
       </ul>
+      <a href="#" class="learn-more-link">Click to learn more</a>   
     </div>
 
     <div class="section-header">
@@ -1234,6 +1258,7 @@
         </div>
         <h3>Contact Point (Sounding Point)</h3>
         <p>Draw the bow <strong>between the bridge and the fingerboard</strong> — approximately 2–4 cm from the bridge. Closer to the bridge = brighter, more projection. Closer to the fingerboard = softer, more hollow. This is called the <em>sounding point</em> or <em>contact point</em>.</p>
+        <a href="#" class="learn-more-link">Click to learn more</a>
       </div>
       <div class="content-block">
         <div class="block-title"><span class="icon">🎼</span> Tone Production Trinity</div>
@@ -1248,6 +1273,7 @@
         <div class="callout callout-crimson">
           <strong>Galamian's Law:</strong> Pressure and speed must always increase together. Slow bow + heavy pressure = crushed, scratchy tone. Fast bow + no pressure = thin, airy tone.
         </div>
+        <a href="#" class="learn-more-link">Click to learn more</a>
       </div>
     </div>
 
@@ -1273,31 +1299,39 @@
       <div class="block-title"><span class="icon">🎹</span> First Position Note Map</div>
       <div class="click-hint">🔊 Click any note to hear it played on the violin</div>
       <div class="scale-diagram">
-        <span class="scale-label">All Notes — First Position (Fingers 0–4)</span>
+        <span class="scale-label">All Notes — First Position (Low & High Finger Options)</span>
         <div class="scale-row"><span class="scale-name">G string</span><div class="scale-notes">
           <div class="note-box root" data-note="G3">G (0)</div>
+          <div class="note-box semitone" data-note="Ab3">A♭ (L1)</div>
           <div class="note-box" data-note="A3">A (1)</div>
+          <div class="note-box semitone" data-note="Bb3">B♭ (L2)</div>
           <div class="note-box" data-note="B3">B (2)</div>
           <div class="note-box" data-note="C4">C (3)</div>
           <div class="note-box" data-note="D4">D (4)</div>
         </div></div>
         <div class="scale-row"><span class="scale-name">D string</span><div class="scale-notes">
           <div class="note-box root" data-note="D4">D (0)</div>
+          <div class="note-box semitone" data-note="Eb4">E♭ (L1)</div>
           <div class="note-box" data-note="E4">E (1)</div>
+          <div class="note-box semitone" data-note="F4">F (L2)</div>
           <div class="note-box" data-note="F#4">F# (2)</div>
           <div class="note-box" data-note="G4">G (3)</div>
           <div class="note-box" data-note="A4">A (4)</div>
         </div></div>
         <div class="scale-row"><span class="scale-name">A string</span><div class="scale-notes">
           <div class="note-box root" data-note="A4">A (0)</div>
+          <div class="note-box semitone" data-note="Bb4">B♭ (L1)</div>
           <div class="note-box" data-note="B4">B (1)</div>
+          <div class="note-box semitone" data-note="C5">C (L2)</div>
           <div class="note-box" data-note="C#5">C# (2)</div>
           <div class="note-box" data-note="D5">D (3)</div>
           <div class="note-box" data-note="E5">E (4)</div>
         </div></div>
         <div class="scale-row"><span class="scale-name">E string</span><div class="scale-notes">
           <div class="note-box root" data-note="E5">E (0)</div>
+          <div class="note-box semitone" data-note="F5">F (L1)</div>
           <div class="note-box" data-note="F#5">F# (1)</div>
+          <div class="note-box semitone" data-note="G5">G (L2)</div>
           <div class="note-box" data-note="G#5">G# (2)</div>
           <div class="note-box" data-note="A5">A (3)</div>
           <div class="note-box" data-note="B5">B (4)</div>
@@ -1308,6 +1342,7 @@
         <div class="fb-svg"></div>
         <div class="fb-hint">Click a note dot to hear the sound · Hover to see details</div>
       </div>
+      <a href="#" class="learn-more-link">Click to learn more</a>
     </div>
 
     <div class="exercise-box">
@@ -1365,6 +1400,7 @@
           <tr><td>♪</td><td>Eighth note (quaver)</td><td>½</td></tr>
           <tr><td>𝅘𝅥𝅯</td><td>Sixteenth note (semiquaver)</td><td>¼</td></tr>
         </table>
+        <a href="#" class="learn-more-link">Click to learn more</a>
       </div>
       <div class="content-block forest-accent">
         <div class="block-title"><span class="icon">🎼</span> Time Signatures</div>
@@ -1411,6 +1447,7 @@
             </div>
           </div>
         </div>
+        <a href="#" class="learn-more-link">Click to learn more</a>
       </div>
     </div>
 
@@ -1469,6 +1506,7 @@
         <li><span class="dur">10 min</span> Current Suzuki piece — slow practice, one phrase at a time</li>
         <li><span class="dur">5 min</span> Music theory worksheet (staff reading, note naming)</li>
       </ul>
+      <a href="#" class="learn-more-link">Click to learn more</a>
     </div>
 
     <div class="section-header">
@@ -1486,6 +1524,7 @@
         <tr><td>Musette</td><td>Bach</td><td>Suzuki Vol.2</td><td>D Major, 4th finger</td><td><span class="diff-badge diff-2">2</span></td></tr>
       </tbody>
     </table>
+    <a href="#" class="learn-more-link">Click to learn more</a>
   </div>
 
   <!-- ===== LEVEL 2 ===== -->
@@ -2266,15 +2305,19 @@ const noteMap = {
   'E': ['E5','F#5','G#5','A5','B5']
 };
 const noteInfo = {
-  'G3': 'G string · Open (0) → G3',   'A3': 'G string · 1st finger → A3',
-  'B3': 'G string · 2nd finger → B3', 'C4': 'G string · 3rd finger → C4',
-  'D4': 'D string · Open (0) → D4',   'E4': 'D string · 1st finger → E4',
-  'F#4':'D string · 2nd finger → F#4','G4': 'D string · 3rd finger → G4',
-  'A4': 'A string · Open (0) → A4',   'B4': 'A string · 1st finger → B4',
-  'C#5':'A string · 2nd finger → C#5','D5': 'A string · 3rd finger → D5',
-  'E5': 'E string · Open (0) → E5',   'F#5':'E string · 1st finger → F#5',
-  'G#5':'E string · 2nd finger → G#5','A5': 'E string · 3rd finger → A5',
-  'B5': 'E string · 4th finger → B5'
+  'G3': 'G string · Open (0) → G3',
+  'Ab3':'G string · Low 1st finger → A♭3', 'A3': 'G string · 1st finger → A3',
+  'Bb3':'G string · Low 2nd finger → B♭3', 'B3': 'G string · 2nd finger → B3',
+  'C4': 'G string · 3rd finger → C4',       'D4': 'G string · 4th finger / D string Open → D4',
+  'Eb4':'D string · Low 1st finger → E♭4',  'E4': 'D string · 1st finger → E4',
+  'F4': 'D string · Low 2nd finger → F4',   'F#4':'D string · 2nd finger → F#4',
+  'G4': 'D string · 3rd finger → G4',       'A4': 'A string · Open (0) → A4',
+  'Bb4':'A string · Low 1st finger → B♭4',  'B4': 'A string · 1st finger → B4',
+  'C5': 'A string · Low 2nd finger → C5',   'C#5':'A string · 2nd finger → C#5',
+  'D5': 'A string · 3rd finger → D5',       'E5': 'E string · Open (0) → E5',
+  'F5': 'E string · Low 1st finger → F5',   'F#5':'E string · 1st finger → F#5',
+  'G5': 'E string · Low 2nd finger → G5',   'G#5':'E string · 2nd finger → G#5',
+  'A5': 'E string · 3rd finger → A5',       'B5': 'E string · 4th finger → B5'
 };
 let selectedString = 'A', selectedFinger = 1;
 
@@ -2323,12 +2366,17 @@ function renderFB(id, notes) {
   for(var k=0;k<notes.length;k++){
     var n=notes[k], si=strs.indexOf(n.s);
     if(si<0) continue;
-    var cx=px[n.f], cy=T+si*S;
-    var fill=n.t==='r'?'#8B1A1A':n.t==='g'?'#2A5535':n.t==='h'?'#E8B85A':'rgba(200,150,62,0.85)';
-    var tc=(n.t==='r'||n.t==='g')?'#F5F0E8':'#1C1C1C';
+    // Support fractional finger positions (e.g. 0.5 = low 1st, 1.5 = low 2nd)
+    var cx, fi=Math.floor(n.f), frac=n.f-fi;
+    if(frac>0 && fi+1<px.length){ cx=px[fi]+frac*(px[fi+1]-px[fi]); } else { cx=px[fi]; }
+    var cy=T+si*S;
+    var rad = frac>0 ? 11 : 13; // slightly smaller dots for low-finger positions
+    var fill=n.t==='r'?'#8B1A1A':n.t==='g'?'#2A5535':n.t==='h'?'#E8B85A':n.t==='l'?'rgba(139,26,26,0.55)':'rgba(200,150,62,0.85)';
+    var tc=(n.t==='r'||n.t==='g')?'#F5F0E8':n.t==='l'?'#F5F0E8':'#1C1C1C';
     var noteVal = n.note || (n.l ? n.l.replace(/\s*\(\d\)/,'') : '');
-    h += '<circle cx="'+cx+'" cy="'+cy+'" r="13" fill="'+fill+'" data-note="'+noteVal+'" data-label="'+(n.l||'')+'" data-info="'+(n.l||'')+(n.d?' — '+n.d:'')+'" style="cursor:pointer"/>';
-    h += '<text x="'+cx+'" y="'+(cy+4)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" font-weight="700" fill="'+tc+'" style="pointer-events:none">'+(n.l||'')+'</text>';
+    h += '<circle cx="'+cx+'" cy="'+cy+'" r="'+rad+'" fill="'+fill+'" data-note="'+noteVal+'" data-label="'+(n.l||'')+'" data-info="'+(n.l||'')+(n.d?' — '+n.d:'')+'" style="cursor:pointer"/>';
+    var fs = frac>0 ? '7.5' : '9';
+    h += '<text x="'+cx+'" y="'+(cy+4)+'" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="'+fs+'" font-weight="700" fill="'+tc+'" style="pointer-events:none">'+(n.l||'')+'</text>';
   }
   h += '</svg>';
   var d=el.querySelector('.fb-svg');
@@ -2357,10 +2405,26 @@ renderFB('fb-open',[
   {s:'E',f:0,l:'E5',note:'E5',t:'r',d:'Highest string, brilliant tone'}
 ]);
 renderFB('fb-1pos',[
-  {s:'G',f:0,l:'G',note:'G3',t:'r'},{s:'G',f:1,l:'A',note:'A3'},{s:'G',f:2,l:'B',note:'B3'},{s:'G',f:3,l:'C',note:'C4'},{s:'G',f:4,l:'D',note:'D4',d:'= open D'},
-  {s:'D',f:0,l:'D',note:'D4',t:'r'},{s:'D',f:1,l:'E',note:'E4'},{s:'D',f:2,l:'F#',note:'F#4'},{s:'D',f:3,l:'G',note:'G4'},{s:'D',f:4,l:'A',note:'A4',d:'= open A'},
-  {s:'A',f:0,l:'A',note:'A4',t:'r'},{s:'A',f:1,l:'B',note:'B4'},{s:'A',f:2,l:'C#',note:'C#5'},{s:'A',f:3,l:'D',note:'D5'},{s:'A',f:4,l:'E',note:'E5',d:'= open E'},
-  {s:'E',f:0,l:'E',note:'E5',t:'r'},{s:'E',f:1,l:'F#',note:'F#5'},{s:'E',f:2,l:'G#',note:'G#5'},{s:'E',f:3,l:'A',note:'A5'},{s:'E',f:4,l:'B',note:'B5'}
+  // G string — open, low 1st, high 1st, low 2nd, high 2nd, 3rd, 4th
+  {s:'G',f:0,l:'G',note:'G3',t:'r'},
+  {s:'G',f:0.5,l:'A♭',note:'Ab3',t:'l',d:'Low 1st finger'},{s:'G',f:1,l:'A',note:'A3',d:'High 1st finger'},
+  {s:'G',f:1.5,l:'B♭',note:'Bb3',t:'l',d:'Low 2nd finger'},{s:'G',f:2,l:'B',note:'B3',d:'High 2nd finger'},
+  {s:'G',f:3,l:'C',note:'C4'},{s:'G',f:4,l:'D',note:'D4',d:'= open D'},
+  // D string
+  {s:'D',f:0,l:'D',note:'D4',t:'r'},
+  {s:'D',f:0.5,l:'E♭',note:'Eb4',t:'l',d:'Low 1st finger'},{s:'D',f:1,l:'E',note:'E4',d:'High 1st finger'},
+  {s:'D',f:1.5,l:'F',note:'F4',t:'l',d:'Low 2nd finger'},{s:'D',f:2,l:'F#',note:'F#4',d:'High 2nd finger'},
+  {s:'D',f:3,l:'G',note:'G4'},{s:'D',f:4,l:'A',note:'A4',d:'= open A'},
+  // A string
+  {s:'A',f:0,l:'A',note:'A4',t:'r'},
+  {s:'A',f:0.5,l:'B♭',note:'Bb4',t:'l',d:'Low 1st finger'},{s:'A',f:1,l:'B',note:'B4',d:'High 1st finger'},
+  {s:'A',f:1.5,l:'C',note:'C5',t:'l',d:'Low 2nd finger'},{s:'A',f:2,l:'C#',note:'C#5',d:'High 2nd finger'},
+  {s:'A',f:3,l:'D',note:'D5'},{s:'A',f:4,l:'E',note:'E5',d:'= open E'},
+  // E string
+  {s:'E',f:0,l:'E',note:'E5',t:'r'},
+  {s:'E',f:0.5,l:'F',note:'F5',t:'l',d:'Low 1st finger'},{s:'E',f:1,l:'F#',note:'F#5',d:'High 1st finger'},
+  {s:'E',f:1.5,l:'G',note:'G5',t:'l',d:'Low 2nd finger'},{s:'E',f:2,l:'G#',note:'G#5',d:'High 2nd finger'},
+  {s:'E',f:3,l:'A',note:'A5'},{s:'E',f:4,l:'B',note:'B5'}
 ]);
 renderFB('fb-int',[
   {s:'A',f:0,l:'A',note:'A4',t:'r',d:'Root — open A'},
