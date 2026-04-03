@@ -209,11 +209,11 @@ const violin = new Tone.Sampler({
   baseUrl: "https://gleitz.github.io/midi-js-soundfonts/MusyngKite/violin-mp3/",
   onload: () => {
     violinReady = true;
-    statusEl.classList.add('ready');
-    statusTxt.textContent = 'VIOLIN READY · CLICK ANY NOTE';
+    if (statusEl) statusEl.classList.add('ready');
+    if (statusTxt) statusTxt.textContent = 'VIOLIN READY · CLICK ANY NOTE';
   },
   onerror: (err) => {
-    statusTxt.textContent = 'SOUND ERROR — check console';
+    if (statusTxt) statusTxt.textContent = 'SOUND ERROR — check console';
     console.error('Sampler error:', err);
   }
 }).toDestination();
@@ -231,8 +231,9 @@ function parseToneNote(raw) {
 }
 
 function showToast(note, label) {
-  toastNote.textContent = note;
-  toastInfo.textContent = label ? '· ' + label : '';
+  if (!toast) return;
+  if (toastNote) toastNote.textContent = note;
+  if (toastInfo) toastInfo.textContent = label ? '· ' + label : '';
   toast.classList.add('show');
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
@@ -245,13 +246,24 @@ async function playNote(rawNote, label) {
     if (!note) { console.warn('Could not parse note:', rawNote); return; }
     violin.triggerAttackRelease(note, "1.2");
     // UI feedback
-    statusEl.classList.add('playing');
-    setTimeout(() => statusEl.classList.remove('playing'), 500);
+    if (statusEl) {
+      statusEl.classList.add('playing');
+      setTimeout(() => statusEl.classList.remove('playing'), 500);
+    }
     showToast(note, label);
   } catch(err) {
     console.error('Playback error:', err);
   }
 }
+
+// Render Finger Placement Drill for A string
+renderFB('fb-finger-drill',[
+  {s:'A',f:0,l:'A',note:'A4',t:'r',d:'Open A String (No finger)'},
+  {s:'A',f:1,l:'B',note:'B4',d:'1st Finger (Close to nut)'},
+  {s:'A',f:2,l:'C#',note:'C#5',d:'2nd Finger (Next to 1st)'},
+  {s:'A',f:3,l:'D',note:'D5',d:'3rd Finger (Slight gap)'},
+  {s:'A',f:4,l:'E',note:'E5',t:'h',d:'4th Finger (Next to 3rd)'}
+]);
 
 // ─── CLICK HANDLER: .note-box elements ──────────────────────────────────────
 document.addEventListener('click', function(e) {
