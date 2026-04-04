@@ -295,3 +295,45 @@ document.addEventListener('click', function(e) {
 
   playNote(raw, label);
 });
+
+// ─── UX & NAVIGATION ENHANCEMENTS ───────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+  // 1. Handle Back-button routing via Hash
+  const hash = window.location.hash.substring(1);
+  if (hash && document.getElementById(hash)) {
+    // Hide all first
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(hash).classList.add('active');
+    
+    // Sync the tabs
+    const tabMap = { 'overview': 0, 'level1': 1, 'level2': 2, 'level3': 3, 'level4': 4, 'theory': 5, 'practice': 6, 'eartraining': 7, 'resources': 8 };
+    if (tabMap[hash] !== undefined) {
+      const tabs = document.querySelectorAll('.nav-tab');
+      tabs.forEach((t, i) => t.classList.toggle('active', i === tabMap[hash]));
+    }
+    
+    // Smooth scroll to top implicitly done by CSS or we can force it
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  // 2. Setup scroll reveal animations
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        // Once revealed, stop observing to keep it visible
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+
+  // Add the reveal class to aesthetic components
+  const componentsToAnimate = document.querySelectorAll('.content-block, .img-card, .video-card, .tip-item, .level-card, .section-header, .panel-header, .routine-block, .exercise-box, .notation-box, .quiz-question, .note-checker, .tracker-item');
+  
+  componentsToAnimate.forEach((el, index) => {
+    el.classList.add('reveal');
+    // Slight staggered delay based on DOM order for cascading effect
+    el.style.transitionDelay = `${(index % 3) * 0.1}s`;
+    revealObserver.observe(el);
+  });
+});
