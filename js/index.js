@@ -256,13 +256,66 @@ async function playNote(rawNote, label) {
   }
 }
 
-// Render Finger Placement Drill for A string
-renderFB('fb-finger-drill',[
+// ─── Render individual string fingerboards (Finger Placement Drill) ─────────
+// G String
+renderFB('fb-drill-g',[
+  {s:'G',f:0,l:'G',note:'G3',t:'r',d:'Open G String (No finger)'},
+  {s:'G',f:1,l:'A',note:'A3',d:'1st Finger (Close to nut)'},
+  {s:'G',f:2,l:'B',note:'B3',d:'2nd Finger (Close to 1st)'},
+  {s:'G',f:3,l:'C',note:'C4',d:'3rd Finger (Slight gap)'},
+  {s:'G',f:4,l:'D',note:'D4',t:'h',d:'4th Finger (Next to 3rd)'}
+]);
+// D String
+renderFB('fb-drill-d',[
+  {s:'D',f:0,l:'D',note:'D4',t:'r',d:'Open D String (No finger)'},
+  {s:'D',f:1,l:'E',note:'E4',d:'1st Finger (Close to nut)'},
+  {s:'D',f:2,l:'F#',note:'F#4',d:'2nd Finger (Close to 1st)'},
+  {s:'D',f:3,l:'G',note:'G4',d:'3rd Finger (Slight gap)'},
+  {s:'D',f:4,l:'A',note:'A4',t:'h',d:'4th Finger (Next to 3rd)'}
+]);
+// A String
+renderFB('fb-drill-a',[
   {s:'A',f:0,l:'A',note:'A4',t:'r',d:'Open A String (No finger)'},
   {s:'A',f:1,l:'B',note:'B4',d:'1st Finger (Close to nut)'},
-  {s:'A',f:2,l:'C#',note:'C#5',d:'2nd Finger (Next to 1st)'},
+  {s:'A',f:2,l:'C#',note:'C#5',d:'2nd Finger (Close to 1st)'},
   {s:'A',f:3,l:'D',note:'D5',d:'3rd Finger (Slight gap)'},
   {s:'A',f:4,l:'E',note:'E5',t:'h',d:'4th Finger (Next to 3rd)'}
+]);
+// E String
+renderFB('fb-drill-e',[
+  {s:'E',f:0,l:'E',note:'E5',t:'r',d:'Open E String (No finger)'},
+  {s:'E',f:1,l:'F#',note:'F#5',d:'1st Finger (Close to nut)'},
+  {s:'E',f:2,l:'G#',note:'G#5',d:'2nd Finger (Close to 1st)'},
+  {s:'E',f:3,l:'A',note:'A5',d:'3rd Finger (Slight gap)'},
+  {s:'E',f:4,l:'B',note:'B5',t:'h',d:'4th Finger (Next to 3rd)'}
+]);
+
+// All Strings Combined — Complete First Position Map
+renderFB('fb-finger-drill',[
+  // G string
+  {s:'G',f:0,l:'G',note:'G3',t:'r',d:'Open G String'},
+  {s:'G',f:1,l:'A',note:'A3',d:'G string · 1st Finger'},
+  {s:'G',f:2,l:'B',note:'B3',d:'G string · 2nd Finger'},
+  {s:'G',f:3,l:'C',note:'C4',d:'G string · 3rd Finger'},
+  {s:'G',f:4,l:'D',note:'D4',t:'h',d:'G string · 4th Finger'},
+  // D string
+  {s:'D',f:0,l:'D',note:'D4',t:'r',d:'Open D String'},
+  {s:'D',f:1,l:'E',note:'E4',d:'D string · 1st Finger'},
+  {s:'D',f:2,l:'F#',note:'F#4',d:'D string · 2nd Finger'},
+  {s:'D',f:3,l:'G',note:'G4',d:'D string · 3rd Finger'},
+  {s:'D',f:4,l:'A',note:'A4',t:'h',d:'D string · 4th Finger'},
+  // A string
+  {s:'A',f:0,l:'A',note:'A4',t:'r',d:'Open A String'},
+  {s:'A',f:1,l:'B',note:'B4',d:'A string · 1st Finger'},
+  {s:'A',f:2,l:'C#',note:'C#5',d:'A string · 2nd Finger'},
+  {s:'A',f:3,l:'D',note:'D5',d:'A string · 3rd Finger'},
+  {s:'A',f:4,l:'E',note:'E5',t:'h',d:'A string · 4th Finger'},
+  // E string
+  {s:'E',f:0,l:'E',note:'E5',t:'r',d:'Open E String'},
+  {s:'E',f:1,l:'F#',note:'F#5',d:'E string · 1st Finger'},
+  {s:'E',f:2,l:'G#',note:'G#5',d:'E string · 2nd Finger'},
+  {s:'E',f:3,l:'A',note:'A5',d:'E string · 3rd Finger'},
+  {s:'E',f:4,l:'B',note:'B5',t:'h',d:'E string · 4th Finger'}
 ]);
 
 // ─── CLICK HANDLER: .note-box elements ──────────────────────────────────────
