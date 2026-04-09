@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Understanding Positions — Intermediate Deep Dive</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../../css/bow-hold.css">
+  <style>
+    .svg-container {
+      width: 100%;
+      background: #111;
+      border: 1px solid var(--gold-dark);
+      border-radius: 8px;
+      padding: 2rem 1rem;
+      margin-top: 1rem;
+    }
+
+    .media-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #2a2a2a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #444;
+      border-radius: 8px;
+      color: #888;
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 1.5rem;
+    }
+
+    text {
+      font-family: 'JetBrains Mono', monospace;
+      fill: var(--gold-light);
+    }
+
+    .string-line {
+      stroke: rgba(255, 255, 255, 0.4);
+      stroke-width: 4;
+      stroke-linecap: round;
+    }
+
+    .finger-dot {
+      fill: var(--crimson);
+    }
+
+    .finger-text {
+      fill: white;
+      font-weight: bold;
+      font-size: 16px;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="back-bar fade-in">
+    <a href="../../index.html#level2" class="back-link">← Return to Curriculum</a>
+    <div class="back-bar-title">Level II · Section 2.2</div>
+  </div>
+
+  <header class="page-hero fade-in-d1">
+    <div class="breadcrumb">Level II: Intermediate Skills → 2.2 Understanding Positions</div>
+    <h1>Understanding <span>Positions</span></h1>
+    <p class="subtitle">A visual guide to the geography of the violin fingerboard across all four strings.</p>
+    <div class="hero-divider"></div>
+  </header>
+
+  <main class="main-content fade-in-d2">
+    <section class="deep-dive-section">
+      <h2>The Logic of the <span>Fingerboard</span></h2>
+      <div class="content-block gold-accent">
+        <p>A "position" is simply the location of the left hand on the neck of the violin, defined by where the 1st
+          finger is placed. In 1st position, the hand rests at the nut. As you move up the string towards the bridge,
+          you enter higher positions.</p>
+      </div>
+      <div class="media-placeholder">[IMAGE PLACEHOLDER: Hand in 1st vs 3rd Position]</div>
+    </section>
+
+    <section class="deep-dive-section">
+      <h2>G String <span>Positions</span></h2>
+      <div class="svg-container">
+        <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="50" width="700" height="100" fill="#1e1e1e" rx="5" />
+          <line x1="50" y1="100" x2="750" y2="100" class="string-line" stroke-width="6" />
+          <circle cx="150" cy="100" r="18" class="finger-dot" /><text x="150" y="100" class="finger-text">A</text><text
+            x="150" y="140" text-anchor="middle" fill="#aaa">1st</text>
+          <circle cx="270" cy="100" r="18" class="finger-dot" fill="#a0522d" /><text x="270" y="100"
+            class="finger-text">B</text><text x="270" y="140" text-anchor="middle" fill="#aaa">2nd</text>
+          <circle cx="390" cy="100" r="18" class="finger-dot" fill="#2e8b57" /><text x="390" y="100"
+            class="finger-text">C</text><text x="390" y="140" text-anchor="middle" fill="#aaa">3rd</text>
+          <circle cx="510" cy="100" r="18" class="finger-dot" fill="#4682b4" /><text x="510" y="100"
+            class="finger-text">D</text><text x="510" y="140" text-anchor="middle" fill="#aaa">4th</text>
+          <circle cx="630" cy="100" r="18" class="finger-dot" fill="#800080" /><text x="630" y="100"
+            class="finger-text">E</text><text x="630" y="140" text-anchor="middle" fill="#aaa">5th</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="deep-dive-section">
+      <h2>D String <span>Positions</span></h2>
+      <div class="svg-container">
+        <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="50" width="700" height="100" fill="#1e1e1e" rx="5" />
+          <line x1="50" y1="100" x2="750" y2="100" class="string-line" />
+          <circle cx="150" cy="100" r="18" class="finger-dot" /><text x="150" y="100" class="finger-text">E</text><text
+            x="150" y="140" text-anchor="middle" fill="#aaa">1st</text>
+          <circle cx="270" cy="100" r="18" class="finger-dot" fill="#a0522d" /><text x="270" y="100"
+            class="finger-text">F#</text><text x="270" y="140" text-anchor="middle" fill="#aaa">2nd</text>
+          <circle cx="390" cy="100" r="18" class="finger-dot" fill="#2e8b57" /><text x="390" y="100"
+            class="finger-text">G</text><text x="390" y="140" text-anchor="middle" fill="#aaa">3rd</text>
+          <circle cx="510" cy="100" r="18" class="finger-dot" fill="#4682b4" /><text x="510" y="100"
+            class="finger-text">A</text><text x="510" y="140" text-anchor="middle" fill="#aaa">4th</text>
+          <circle cx="630" cy="100" r="18" class="finger-dot" fill="#800080" /><text x="630" y="100"
+            class="finger-text">B</text><text x="630" y="140" text-anchor="middle" fill="#aaa">5th</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="deep-dive-section">
+      <h2>A String <span>Positions</span></h2>
+      <div class="svg-container">
+        <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="50" width="700" height="100" fill="#1e1e1e" rx="5" />
+          <line x1="50" y1="100" x2="750" y2="100" class="string-line" />
+          <circle cx="150" cy="100" r="18" class="finger-dot" /><text x="150" y="100" class="finger-text">B</text><text
+            x="150" y="140" text-anchor="middle" fill="#aaa">1st</text>
+          <circle cx="270" cy="100" r="18" class="finger-dot" fill="#a0522d" /><text x="270" y="100"
+            class="finger-text">C#</text><text x="270" y="140" text-anchor="middle" fill="#aaa">2nd</text>
+          <circle cx="390" cy="100" r="18" class="finger-dot" fill="#2e8b57" /><text x="390" y="100"
+            class="finger-text">D</text><text x="390" y="140" text-anchor="middle" fill="#aaa">3rd</text>
+          <circle cx="510" cy="100" r="18" class="finger-dot" fill="#4682b4" /><text x="510" y="100"
+            class="finger-text">E</text><text x="510" y="140" text-anchor="middle" fill="#aaa">4th</text>
+          <circle cx="630" cy="100" r="18" class="finger-dot" fill="#800080" /><text x="630" y="100"
+            class="finger-text">F#</text><text x="630" y="140" text-anchor="middle" fill="#aaa">5th</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="deep-dive-section">
+      <h2>E String <span>Positions</span></h2>
+      <div class="svg-container">
+        <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
+          <rect x="50" y="50" width="700" height="100" fill="#1e1e1e" rx="5" />
+          <line x1="50" y1="100" x2="750" y2="100" class="string-line" stroke-width="2" />
+          <circle cx="150" cy="100" r="18" class="finger-dot" /><text x="150" y="100" class="finger-text">F#</text><text
+            x="150" y="140" text-anchor="middle" fill="#aaa">1st</text>
+          <circle cx="270" cy="100" r="18" class="finger-dot" fill="#a0522d" /><text x="270" y="100"
+            class="finger-text">G#</text><text x="270" y="140" text-anchor="middle" fill="#aaa">2nd</text>
+          <circle cx="390" cy="100" r="18" class="finger-dot" fill="#2e8b57" /><text x="390" y="100"
+            class="finger-text">A</text><text x="390" y="140" text-anchor="middle" fill="#aaa">3rd</text>
+          <circle cx="510" cy="100" r="18" class="finger-dot" fill="#4682b4" /><text x="510" y="100"
+            class="finger-text">B</text><text x="510" y="140" text-anchor="middle" fill="#aaa">4th</text>
+          <circle cx="630" cy="100" r="18" class="finger-dot" fill="#800080" /><text x="630" y="100"
+            class="finger-text">C#</text><text x="630" y="140" text-anchor="middle" fill="#aaa">5th</text>
+        </svg>
+      </div>
+    </section>
+
+    <section class="deep-dive-section">
+      <h2>🎥 Visualizing <span>Positions</span></h2>
+      <div class="media-placeholder" style="max-width: 800px; margin: 2rem auto;">[YOUTUBE VIDEO PLACEHOLDER: Position
+        Mapping]</div>
+    </section>
+  </main>
+
+  <script src="../../js/bow-hold.js"></script>
+</body>
+
+</html>
