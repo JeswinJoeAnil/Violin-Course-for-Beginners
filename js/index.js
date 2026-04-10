@@ -1,7 +1,25 @@
 // ─── NAV ────────────────────────────────────────────────────────────────────
-function showSection(id) {
+async function showSection(id) {
+  const section = document.getElementById(id);
+  if (!section) return;
+
+  if (section.dataset.src && !section.dataset.loaded) {
+    try {
+      const response = await fetch(section.dataset.src);
+      if (response.ok) {
+        const html = await response.text();
+        section.innerHTML = html;
+        section.dataset.loaded = 'true';
+        if (typeof window.initFingerboards === 'function') window.initFingerboards();
+        if (typeof window.initReveals === 'function') window.initReveals(section);
+      }
+    } catch (err) {
+      console.error('Fetch error:', err);
+    }
+  }
+
   document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.getElementById(id)?.classList.add('active');
+  section.classList.add('active');
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 function setNavActive(idx) {
@@ -137,6 +155,7 @@ document.addEventListener('mouseout', function(e){
   }
 });
 
+window.initFingerboards = function() {
 // Render all fingerboards
 renderFB('fb-open',[
   {s:'G',f:0,l:'G3',note:'G3',t:'r',d:'Lowest string, rich warm tone'},
@@ -188,6 +207,18 @@ renderFB('fb-dmaj',[
   {s:'A',f:2,l:'C#',note:'C#5',d:'Scale degree 7, leading tone'},
   {s:'A',f:3,l:'D',note:'D5',t:'r',d:'Octave, scale degree 8'}
 ]);
+
+// ─── Render individual string fingerboards (Finger Placement Drill) ─────────
+// G String
+renderFB('fb-drill-g',[
+  {s:'G',f:0,l:'G',note:'G3',t:'r',d:'Open G String (No finger)'},
+  {s:'G',f:1,l:'A',note:'A3',d:'1st Finger (Close to nut)'},
+  {s:'G',f:2,l:'B',note:'B3',d:'2nd Finger (Close to 1st)'},
+  {s:'G',f:3,l:'C',note:'C4',d:'3rd Finger (Slight gap)'},
+  {s:'G',f:4,l:'D',note:'D4',t:'h',d:'4th Finger (Next to 3rd)'}
+]);
+}; // end initFingerboards
+window.initFingerboards();
 
 // ─── VIOLIN SOUND ENGINE (Tone.js) ──────────────────────────────────────────
 const statusEl  = document.getElementById('audio-status');
@@ -256,15 +287,7 @@ async function playNote(rawNote, label) {
   }
 }
 
-// ─── Render individual string fingerboards (Finger Placement Drill) ─────────
-// G String
-renderFB('fb-drill-g',[
-  {s:'G',f:0,l:'G',note:'G3',t:'r',d:'Open G String (No finger)'},
-  {s:'G',f:1,l:'A',note:'A3',d:'1st Finger (Close to nut)'},
-  {s:'G',f:2,l:'B',note:'B3',d:'2nd Finger (Close to 1st)'},
-  {s:'G',f:3,l:'C',note:'C4',d:'3rd Finger (Slight gap)'},
-  {s:'G',f:4,l:'D',note:'D4',t:'h',d:'4th Finger (Next to 3rd)'}
-]);
+
 // D String
 renderFB('fb-drill-d',[
   {s:'D',f:0,l:'D',note:'D4',t:'r',d:'Open D String (No finger)'},
@@ -381,7 +404,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
   // Add the reveal class to aesthetic components
-  const componentsToAnimate = document.querySelectorAll('.content-block, .img-card, .video-card, .tip-item, .level-card, .section-header, .panel-header, .routine-block, .exercise-box, .notation-box, .quiz-question, .note-checker, .tracker-item');
+  const componentsToAnimate = root.querySelectorAll('.content-block, .img-card, .video-card, .tip-item, .level-card, .section-header, .panel-header, .routine-block, .exercise-box, .notation-box, .quiz-question, .note-checker, .tracker-item');
   
   componentsToAnimate.forEach((el, index) => {
     el.classList.add('reveal');

@@ -1,0 +1,52 @@
+<div class="panel-header" data-level="♩">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title"><span>Deliberate Practice</span> System</div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Daily routines, weekly plans, skill tracking, and the science of deliberate practice</p>
+    </div>
+
+    <div class="section-header"><div class="section-num">P.1</div><h2>The <em>Deliberate Practice</em> Framework</h2></div>
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">🧠</span> Ericsson's Deliberate Practice Principles</div>
+      <div class="content-grid">
+        <div>
+          <ol>
+            <li><strong>Work at the edge of your ability</strong> — always practice what is just beyond comfortable.</li>
+            <li><strong>Immediate feedback loop</strong> — record every session, or use a mirror.</li>
+            <li><strong>Isolate and drill</strong> — extract the difficult 4 measures. Practice only those for 30 minutes.</li>
+            <li><strong>Slow → Fast</strong> — all new material begins at 50% of target tempo.</li>
+          </ol>
+        </div>
+        <div>
+          <ol start="5">
+            <li><strong>Mental practice</strong> — 15 minutes of silent score study per day activates the same neural pathways as physical practice.</li>
+            <li><strong>Rest is practice</strong> — the brain consolidates motor memories during sleep.</li>
+            <li><strong>Galamian Rhythmic Variations</strong> — practice in dotted rhythms before playing evenly.</li>
+            <li><strong>Practice the transitions</strong> — the bar before and after a difficulty is as important as the difficulty itself.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-num">P.2</div><h2>Weekly <em>Progression Plan</em></h2></div>
+    <div class="week-plan">
+      <div class="week-day"><div class="day-label">Monday</div><div class="day-content"><strong>Technique Heavy.</strong> Full scale system, Sevcik/Galamian variations, double stops. New étude — learn notes only.</div></div>
+      <div class="week-day"><div class="day-label">Tuesday</div><div class="day-content"><strong>Repertoire Focus.</strong> Slow practice of current concerto — one movement, phrase by phrase.</div></div>
+      <div class="week-day"><div class="day-label">Wednesday</div><div class="day-content"><strong>Mixed + Theory.</strong> Scale system (shorter), étude refinement, music theory study (45 min), ear training (30 min).</div></div>
+      <div class="week-day"><div class="day-label">Thursday</div><div class="day-content"><strong>Technique + New Material.</strong> Full bowing exercises. Introduce next section of concerto. Sight-reading (30 min).</div></div>
+      <div class="week-day"><div class="day-label">Friday</div><div class="day-content"><strong>Performance Simulation.</strong> Play through all repertoire without stopping. Treat as a concert. Record the session.</div></div>
+      <div class="week-day"><div class="day-label">Saturday</div><div class="day-content"><strong>Analysis + Fix.</strong> Listen to Friday's recording. Identify 3 specific problems. Practice only those problems.</div></div>
+      <div class="week-day"><div class="day-label">Sunday</div><div class="day-content"><strong>Rest or Light Play.</strong> Optional: 30 min gentle scales, listen to recordings by Heifetz, Oistrakh, Hilary Hahn, Maxim Vengerov.</div></div>
+    </div>
+
+    <div class="section-header"><div class="section-num">P.3</div><h2>Skill <em>Progress Tracker</em></h2></div>
+    <div class="tracker-grid">
+      <div class="tracker-item"><span class="tracker-label">Violin Technique</span><div class="tracker-skill">Bow Hold</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t1"></div></div><div class="tracker-pct" id="t1p">0%</div><button onclick="advanceTracker('t1','t1p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Violin Technique</span><div class="tracker-skill">First Position</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t2"></div></div><div class="tracker-pct" id="t2p">0%</div><button onclick="advanceTracker('t2','t2p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Violin Technique</span><div class="tracker-skill">Vibrato</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t3"></div></div><div class="tracker-pct" id="t3p">0%</div><button onclick="advanceTracker('t3','t3p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Violin Technique</span><div class="tracker-skill">Shifting</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t4"></div></div><div class="tracker-pct" id="t4p">0%</div><button onclick="advanceTracker('t4','t4p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Music Theory</span><div class="tracker-skill">Note Reading</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t5"></div></div><div class="tracker-pct" id="t5p">0%</div><button onclick="advanceTracker('t5','t5p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Music Theory</span><div class="tracker-skill">Harmony</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t6"></div></div><div class="tracker-pct" id="t6p">0%</div><button onclick="advanceTracker('t6','t6p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Music Theory</span><div class="tracker-skill">Ear Training</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t7"></div></div><div class="tracker-pct" id="t7p">0%</div><button onclick="advanceTracker('t7','t7p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+      <div class="tracker-item"><span class="tracker-label">Performance</span><div class="tracker-skill">Sight-Reading</div><div class="progress-bar"><div class="progress-fill" style="width:0%" id="t8"></div></div><div class="tracker-pct" id="t8p">0%</div><button onclick="advanceTracker('t8','t8p')" style="margin-top:0.5rem; background:var(--gold); border:none; color:white; padding:0.3rem 0.75rem; cursor:pointer; font-size:0.8rem; font-family:'Cormorant Garamond',serif;">Mark Progress +10%</button></div>
+    </div>
+

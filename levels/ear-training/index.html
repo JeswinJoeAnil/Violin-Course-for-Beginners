@@ -1,0 +1,107 @@
+<div class="panel-header" data-level="👂">
+      <button class="panel-back" onclick="showSection('overview'); setNavActive(0);">← Back to Overview</button>
+      <div class="panel-title"><span>Ear Training</span> Complete System</div>
+      <p style="color:rgba(245,240,232,0.6); margin-top:0.5rem; font-size:0.9rem;">Interval Recognition · Melodic Dictation · Harmonic Dictation · Sight Singing</p>
+    </div>
+
+    <div class="callout callout-gold" style="margin:2rem 0;">
+      <strong>The Golden Rule:</strong> Your ears must always be ahead of your fingers. Dedicate minimum 15 minutes per day to ear training at every level.
+    </div>
+
+    <div class="section-header"><div class="section-num">E.1</div><h2>Interval <em>Recognition</em></h2></div>
+    <div class="content-block full gold-accent">
+      <div class="block-title"><span class="icon">👂</span> Reference Songs for Interval Memory</div>
+      <table class="interval-table">
+        <thead><tr><th>Interval</th><th>Ascending Reference</th><th>Descending Reference</th></tr></thead>
+        <tbody>
+          <tr><td>Minor 2nd</td><td>Jaws Theme</td><td>Joy to the World</td></tr>
+          <tr><td>Major 2nd</td><td>Happy Birthday</td><td>Mary Had a Little Lamb</td></tr>
+          <tr><td>Minor 3rd</td><td>Smoke on the Water</td><td>Hey Jude (intro)</td></tr>
+          <tr><td>Major 3rd</td><td>When the Saints Go Marching</td><td>Summertime (Gershwin)</td></tr>
+          <tr><td>Perfect 4th</td><td>Here Comes the Bride</td><td>O Come All Ye Faithful</td></tr>
+          <tr><td>Tritone</td><td>The Simpsons Theme</td><td>Maria (West Side Story)</td></tr>
+          <tr><td>Perfect 5th</td><td>Star Wars Theme</td><td>Feelings</td></tr>
+          <tr><td>Minor 6th</td><td>The Entertainer</td><td>Nobody Knows</td></tr>
+          <tr><td>Major 6th</td><td>My Bonnie Lies Over the Ocean</td><td>Nobody Knows the Trouble</td></tr>
+          <tr><td>Minor 7th</td><td>Somewhere (West Side Story)</td><td>Watermelon Man</td></tr>
+          <tr><td>Major 7th</td><td>Take On Me (A-ha)</td><td>I Love You (Porter)</td></tr>
+          <tr><td>Octave</td><td>Somewhere Over the Rainbow</td><td>Willow Weep for Me</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-header"><div class="section-num">E.2</div><h2>Solfège & <em>Sight Singing</em></h2></div>
+    <div class="content-grid">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">🎤</span> Movable Do System</div>
+        <div class="click-hint">🔊 Click each syllable to hear the note</div>
+        <div class="scale-diagram">
+          <span class="scale-label">C Major — Movable Do (click to hear)</span>
+          <div class="scale-row"><div class="scale-notes">
+            <div class="note-box root" data-note="C4">Do</div>
+            <div class="note-box" data-note="D4">Re</div>
+            <div class="note-box" data-note="E4">Mi</div>
+            <div class="note-box" data-note="F4">Fa</div>
+            <div class="note-box" data-note="G4">Sol</div>
+            <div class="note-box" data-note="A4">La</div>
+            <div class="note-box" data-note="B4">Ti</div>
+            <div class="note-box root" data-note="C5">Do</div>
+          </div></div>
+        </div>
+      </div>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">✍️</span> Melodic Dictation Method</div>
+        <ol>
+          <li><strong>Listen once:</strong> Identify key, time signature, tempo</li>
+          <li><strong>Listen twice:</strong> Identify first and last note, overall shape</li>
+          <li><strong>Listen three times:</strong> Fill in the contour</li>
+          <li><strong>Listen four times:</strong> Fill in specific pitches</li>
+          <li><strong>Listen five times:</strong> Rhythmic details</li>
+          <li><strong>Check:</strong> Sing your transcription back</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-num">E.3</div><h2>Interactive — <em>Note Name Identifier</em></h2></div>
+    <div class="note-checker">
+      <h3>Violin String & Position Explorer</h3>
+      <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">Select a string and finger position to see and <strong>hear</strong> the note.</p>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem;">
+        <div>
+          <div style="font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--muted); margin-bottom:0.5rem; letter-spacing:0.06em;">STRING</div>
+          <div class="note-buttons" id="string-btns">
+            <button class="note-btn" onclick="selectString('G', this)">G</button>
+            <button class="note-btn" onclick="selectString('D', this)">D</button>
+            <button class="note-btn selected" onclick="selectString('A', this)">A</button>
+            <button class="note-btn" onclick="selectString('E', this)">E</button>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:0.78rem; font-family:'JetBrains Mono',monospace; color:var(--muted); margin-bottom:0.5rem; letter-spacing:0.06em;">FINGER</div>
+          <div class="note-buttons" id="finger-btns">
+            <button class="note-btn" onclick="selectFinger(0, this)">0</button>
+            <button class="note-btn selected" onclick="selectFinger(1, this)">1</button>
+            <button class="note-btn" onclick="selectFinger(2, this)">2</button>
+            <button class="note-btn" onclick="selectFinger(3, this)">3</button>
+            <button class="note-btn" onclick="selectFinger(4, this)">4</button>
+          </div>
+        </div>
+      </div>
+      <div class="note-display" id="note-display">
+        A string · 1st finger (1st position) → <strong style="margin-left:0.75rem; font-size:1.1rem; color:var(--gold-light);">B4</strong>
+        <span style="margin-left:1.5rem; font-size:0.8rem; color:rgba(245,240,232,0.5);">Click a string or finger to hear the note</span>
+      </div>
+    </div>
+
+    <div class="section-header"><div class="section-num">E.4</div><h2>Ear Training <em>Drills by Level</em></h2></div>
+    <div class="ear-grid">
+      <div class="ear-card"><div class="ear-card-title">Level I — Interval Recognition</div><p>Listen to two notes consecutively. Identify: higher or lower? Start with perfect intervals only (4ths, 5ths, octaves).</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level I — Rhythm Reading</div><p>Clap back rhythms of increasing complexity. Start with quarter and half notes. Use a metronome.</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level II — Scale Identification</div><p>Listen to a scale ascending. Identify: major or minor? Which type of minor? Pentatonic or modal?</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level II — Chord Quality</div><p>Listen to a chord. Identify: major, minor, diminished, or augmented? Triad or seventh chord?</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level III — Harmonic Dictation</div><p>Listen to a chord progression (4–8 bars). Write the Roman numeral analysis.</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level III — Melodic Dictation</div><p>8-bar melody in major or minor keys. Write out the complete melody using the 5-listen method.</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level IV — Transcription</div><p>Transcribe violin solos by ear. Start with Suzuki pieces, advance to Kreutzer, then concerto excerpts.</p></div>
+      <div class="ear-card"><div class="ear-card-title">Level IV — Sight Singing</div><p>Sing back any melody immediately upon seeing the score. Use solfège. Practice with Bach chorales.</p></div>
+    </div>
+
