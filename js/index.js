@@ -240,9 +240,26 @@ const violin = new Tone.Sampler({
   baseUrl: "https://gleitz.github.io/midi-js-soundfonts/MusyngKite/violin-mp3/",
   onload: () => {
     violinReady = true;
-    if (statusEl) statusEl.classList.add('ready');
     if (statusTxt) statusTxt.textContent = 'VIOLIN READY · CLICK ANY NOTE';
+    
+    if (statusEl) {
+      statusEl.classList.add('ready');
+      
+      // ----------- ADD THIS NEW PART -----------
+      // Wait 1 second (1000ms), then fade the badge out
+      setTimeout(() => {
+        statusEl.style.transition = 'opacity 0.8s ease';
+        statusEl.style.opacity = '0';
+        
+        // Remove it from the layout after it finishes fading
+        setTimeout(() => {
+           statusEl.style.display = 'none';
+        }, 800); 
+      }, 1000); 
+      // -----------------------------------------
+    }
   },
+
   onerror: (err) => {
     if (statusTxt) statusTxt.textContent = 'SOUND ERROR — check console';
     console.error('Sampler error:', err);

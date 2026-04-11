@@ -503,3 +503,19 @@ document.querySelectorAll('.feature-card').forEach(card => {
     card.style.setProperty('--my', y + '%');
   });
 });
+
+/* ============================================================
+   SPLINE LOGO REMOVAL
+   ============================================================ */
+(function removeSplineLogo() {
+  const interval = setInterval(() => {
+    const viewer = document.querySelector('spline-viewer');
+    if (viewer && viewer.shadowRoot) {
+      const logo = viewer.shadowRoot.querySelector('#logo');
+      if (logo) {
+        logo.remove(); // Removes the logo element
+        clearInterval(interval);
+      }
+    }
+  }, 500);
+})();

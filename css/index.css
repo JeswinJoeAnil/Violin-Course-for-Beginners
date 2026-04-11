@@ -142,7 +142,7 @@
   /* NOTE PLAYING TOAST */
   #note-toast {
     position: fixed;
-    bottom: 4.5rem; right: 1.5rem;
+    bottom: 2.5rem; left: 2.5rem;  /* Moved to the bottom left */
     background: var(--charcoal);
     border: 1px solid var(--gold);
     border-left: 4px solid var(--gold);
@@ -154,8 +154,9 @@
     z-index: 9999;
     opacity: 0;
     transform: translateY(8px);
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); /* Smoother transition */
     pointer-events: none;
+    box-shadow: 0 8px 32px rgba(28,20,10,0.4); /* Nice shadow */
   }
   #note-toast.show {
     opacity: 1;
