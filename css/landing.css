@@ -806,6 +806,7 @@ html.lenis { height: auto; }
   position: absolute; inset: 0;
   background: radial-gradient(ellipse at 30% 0%, rgba(201,168,76,0.06) 0%, transparent 60%);
   opacity: 0; transition: opacity 0.4s;
+  pointer-events: none;
 }
 .feature-card:hover { border-color: rgba(201,168,76,0.4); }
 .feature-card:hover::before { opacity: 1; }

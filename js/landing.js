@@ -7,10 +7,8 @@
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 // ---- Lenis smooth scroll ----
-const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time) => lenis.raf(time * 1000));
-gsap.ticker.lagSmoothing(0);
+// Access lenis from global smooth-scroll.js
+const lenis = window.lenis;
 
 /* ============================================================
    PRELOADER
@@ -28,10 +26,10 @@ gsap.ticker.lagSmoothing(0);
     if (prog >= 100) {
       setTimeout(() => {
         gsap.to(loader, {
-          opacity: 0, duration: 0.6, ease: 'power2.inOut',
+          opacity: 0, duration: 0.3, ease: 'power2.inOut',
           onComplete: () => { loader.style.display = 'none'; startIntro(); }
         });
-      }, 200);
+      }, 100);
     }
   }, 80);
 })();
@@ -50,11 +48,11 @@ function startIntro() {
   initIntroCanvas();
 
   const tl = gsap.timeline({ onComplete: transitionToHero });
-  tl.to(clef, { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.2)', delay: 0.2 })
+  tl.to(clef, { opacity: 1, scale: 1, duration: 0.2, ease: 'back.out(1.2)', delay: 0.2 })
     .to(tag,  { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.3')
     .to(sub,  { opacity: 1, duration: 0.5, ease: 'power2.out' }, '-=0.2')
     .to(skip, { opacity: 1, duration: 0.4 }, '-=0.2')
-    .to({}, { duration: 2.2 }); // hold
+    .to({}, { duration: 0.2 }); // hold
 
   skip.addEventListener('click', () => { tl.progress(1); });
 }
