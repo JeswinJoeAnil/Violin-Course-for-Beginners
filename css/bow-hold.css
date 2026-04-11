@@ -411,10 +411,32 @@ em {
   gap: 1rem;
 }
 
+.img-grid-split .img-wrapper {
+  height: 280px;
+}
+
+.img-grid-split .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .img-grid-triple {
   grid-template-columns: repeat(3, 1fr);
   display: grid;
   gap: 1rem;
+}
+
+.img-grid-triple .img-wrapper {
+  height: 240px;
+}
+
+.img-grid-triple .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .img-grid-single {
@@ -424,7 +446,10 @@ em {
 .img-card {
   background: var(--ivory);
   border: 1px solid var(--border);
+  border-radius: 8px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: all 0.3s ease;
 }
 
@@ -442,8 +467,7 @@ em {
 
 .img-wrapper img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
   transition: transform 0.4s ease;
 }

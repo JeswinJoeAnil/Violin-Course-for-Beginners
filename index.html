@@ -1,837 +1,895 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Violin & Music Theory Academy — Conservatory-Grade Online Learning</title>
-<meta name="description" content="Master violin and music theory from beginner to virtuoso. Conservatory-grade curriculum inspired by Juilliard, Galamian Method, and Trinity College London.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Violin & Music Theory Academy — Conservatory-Grade Online Learning</title>
+  <meta name="description"
+    content="Master violin and music theory from beginner to virtuoso. Conservatory-grade curriculum inspired by Juilliard, Galamian Method, and Trinity College London.">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+    rel="stylesheet">
 
-<!-- Styles -->
-<link rel="stylesheet" href="css/landing.css">
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/landing.css">
 </head>
+
 <body>
 
-<!-- ============================================================
+  <!-- ============================================================
      PRELOADER
      ============================================================ -->
-<div id="preloader">
-  <div class="preloader-staff">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="preloader-note">𝄞</div>
+  <div id="preloader">
+    <div class="preloader-staff">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="preloader-note">𝄞</div>
+    </div>
+    <div class="preloader-text">Loading Academy</div>
+    <div class="preloader-progress">
+      <div class="preloader-progress-bar"></div>
+    </div>
   </div>
-  <div class="preloader-text">Loading Academy</div>
-  <div class="preloader-progress">
-    <div class="preloader-progress-bar"></div>
-  </div>
-</div>
 
-<!-- ============================================================
+  <!-- ============================================================
      INTRO SCREEN — Music → Landing morph
      ============================================================ -->
-<div id="intro-screen">
-  <div class="intro-canvas-wrap">
-    <canvas id="intro-canvas"></canvas>
+  <div id="intro-screen">
+    <div class="intro-canvas-wrap">
+      <canvas id="intro-canvas"></canvas>
+    </div>
+    <div class="intro-center">
+      <span class="intro-clef">𝄞</span>
+      <p class="intro-tagline">Where Music Becomes Mastery</p>
+      <span class="intro-sub">The Complete Violin &amp; Theory Academy</span>
+    </div>
+    <button class="intro-skip">Skip Intro</button>
   </div>
-  <div class="intro-center">
-    <span class="intro-clef">𝄞</span>
-    <p class="intro-tagline">Where Music Becomes Mastery</p>
-    <span class="intro-sub">The Complete Violin &amp; Theory Academy</span>
-  </div>
-  <button class="intro-skip">Skip Intro</button>
-</div>
 
-<!-- ============================================================
+  <!-- ============================================================
      NAVBAR
      ============================================================ -->
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-icon">𝄞</span>
-    <span class="nav-logo-text">
-      Violin Academy
-      <span>Conservatory Grade</span>
-    </span>
-  </a>
+  <nav id="navbar">
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-icon">𝄞</span>
+      <span class="nav-logo-text">
+        Violin Academy
+        <span>Conservatory Grade</span>
+      </span>
+    </a>
 
-  <ul class="nav-links">
-    <li class="nav-dropdown">
-      <a href="#" tabindex="0">Learn</a>
-      <div class="nav-dropdown-panel">
-        <span class="dropdown-label">Learning Paths</span>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <a href="#" tabindex="0">Learn</a>
+        <div class="nav-dropdown-panel">
+          <span class="dropdown-label">Learning Paths</span>
 
-        <a href="curriculum.html#level1" class="dropdown-item">
-          <div class="dropdown-item-icon">🎻</div>
-          <div class="dropdown-item-text">
-            <strong>Level 1 — Foundations</strong>
-            <span>Posture, bow hold, open strings</span>
-          </div>
-        </a>
-        <a href="curriculum.html#level2" class="dropdown-item">
-          <div class="dropdown-item-icon">🎵</div>
-          <div class="dropdown-item-text">
-            <strong>Level 2 — Intermediate</strong>
-            <span>Shifting, vibrato, dynamics</span>
-          </div>
-        </a>
-        <a href="curriculum.html#level3" class="dropdown-item">
-          <div class="dropdown-item-icon">🎼</div>
-          <div class="dropdown-item-text">
-            <strong>Level 3 — Advanced</strong>
-            <span>Double stops, spiccato, etudes</span>
-          </div>
-        </a>
-        <a href="curriculum.html#level4" class="dropdown-item">
-          <div class="dropdown-item-icon">🏆</div>
-          <div class="dropdown-item-text">
-            <strong>Level 4 — Mastery</strong>
-            <span>Concertos, recital preparation</span>
-          </div>
-        </a>
-        <a href="curriculum.html#theory" class="dropdown-item">
-          <div class="dropdown-item-icon">📖</div>
-          <div class="dropdown-item-text">
-            <strong>Music Theory</strong>
-            <span>Harmony, counterpoint, form</span>
-          </div>
-        </a>
-        <a href="curriculum.html#practice" class="dropdown-item">
-          <div class="dropdown-item-icon">⏱️</div>
-          <div class="dropdown-item-text">
-            <strong>Practice System</strong>
-            <span>Daily plans, goal setting</span>
-          </div>
-        </a>
-        <a href="curriculum.html#ear" class="dropdown-item">
-          <div class="dropdown-item-icon">👂</div>
-          <div class="dropdown-item-text">
-            <strong>Ear Training</strong>
-            <span>Intervals, dictation, solfège</span>
-          </div>
-        </a>
-        <a href="curriculum.html#resources" class="dropdown-item">
-          <div class="dropdown-item-icon">📚</div>
-          <div class="dropdown-item-text">
-            <strong>Resources</strong>
-            <span>Scores, recordings, exercises</span>
-          </div>
-        </a>
-      </div>
-    </li>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#social-proof">About</a></li>
-    <li><a href="#cta">Pricing</a></li>
-  </ul>
+          <a href="curriculum.html#level1" class="dropdown-item">
+            <div class="dropdown-item-icon">🎻</div>
+            <div class="dropdown-item-text">
+              <strong>Level 1 — Foundations</strong>
+              <span>Posture, bow hold, open strings</span>
+            </div>
+          </a>
+          <a href="curriculum.html#level2" class="dropdown-item">
+            <div class="dropdown-item-icon">🎵</div>
+            <div class="dropdown-item-text">
+              <strong>Level 2 — Intermediate</strong>
+              <span>Shifting, vibrato, dynamics</span>
+            </div>
+          </a>
+          <a href="curriculum.html#level3" class="dropdown-item">
+            <div class="dropdown-item-icon">🎼</div>
+            <div class="dropdown-item-text">
+              <strong>Level 3 — Advanced</strong>
+              <span>Double stops, spiccato, etudes</span>
+            </div>
+          </a>
+          <a href="curriculum.html#level4" class="dropdown-item">
+            <div class="dropdown-item-icon">🏆</div>
+            <div class="dropdown-item-text">
+              <strong>Level 4 — Mastery</strong>
+              <span>Concertos, recital preparation</span>
+            </div>
+          </a>
+          <a href="curriculum.html#theory" class="dropdown-item">
+            <div class="dropdown-item-icon">📖</div>
+            <div class="dropdown-item-text">
+              <strong>Music Theory</strong>
+              <span>Harmony, counterpoint, form</span>
+            </div>
+          </a>
+          <a href="curriculum.html#practice" class="dropdown-item">
+            <div class="dropdown-item-icon">⏱️</div>
+            <div class="dropdown-item-text">
+              <strong>Practice System</strong>
+              <span>Daily plans, goal setting</span>
+            </div>
+          </a>
+          <a href="curriculum.html#ear" class="dropdown-item">
+            <div class="dropdown-item-icon">👂</div>
+            <div class="dropdown-item-text">
+              <strong>Ear Training</strong>
+              <span>Intervals, dictation, solfège</span>
+            </div>
+          </a>
+          <a href="curriculum.html#resources" class="dropdown-item">
+            <div class="dropdown-item-icon">📚</div>
+            <div class="dropdown-item-text">
+              <strong>Resources</strong>
+              <span>Scores, recordings, exercises</span>
+            </div>
+          </a>
+        </div>
+      </li>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#social-proof">About</a></li>
+      <li><a href="#cta">Pricing</a></li>
+    </ul>
 
-  <div class="nav-actions">
-    <button class="btn-ghost" data-auth="login">Log In</button>
-    <button class="btn-accent" data-auth="signup">Start Free</button>
-  </div>
+    <div class="nav-actions">
+      <button class="btn-ghost" data-auth="login">Log In</button>
+      <button class="btn-accent" data-auth="signup">Start Free</button>
+    </div>
 
-  <button class="nav-hamburger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
+    <button class="nav-hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 
-<!-- ============================================================
+  <!-- ============================================================
      HERO
      ============================================================ -->
-<section id="hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-noise"></div>
-  <div class="hero-glow-1"></div>
-  <div class="hero-glow-2"></div>
+  <section id="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-noise"></div>
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
 
-  <div class="hero-content">
-    <div class="hero-eyebrow">
-      <span class="hero-eyebrow-dot"></span>
-      Conservatory-Grade Online Learning
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        Conservatory-Grade Online Learning
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line"><span>From First</span></span>
+        <span class="line"><span><em>Bow Stroke</em></span></span>
+        <span class="line"><span>to Concert</span></span>
+        <span class="line"><span>Virtuoso</span></span>
+      </h1>
+
+      <p class="hero-subtitle">
+        A complete violin &amp; music theory curriculum drawing from the traditions of Juilliard, Trinity College London
+        &amp; the Galamian Method.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#overview" class="btn-hero-primary"
+          onclick="event.preventDefault(); document.getElementById('overview').scrollIntoView({behavior:'smooth'})">
+          Begin Your Journey
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <button class="btn-hero-secondary" data-auth="signup">
+          <span class="btn-play-icon">▶</span>
+          Watch Demo
+        </button>
+      </div>
     </div>
 
-    <h1 class="hero-title">
-      <span class="line"><span>From First</span></span>
-      <span class="line"><span><em>Bow Stroke</em></span></span>
-      <span class="line"><span>to Concert</span></span>
-      <span class="line"><span>Virtuoso</span></span>
-    </h1>
+    <div class="hero-scroll-indicator">
 
-    <p class="hero-subtitle">
-      A complete violin &amp; music theory curriculum drawing from the traditions of Juilliard, Trinity College London &amp; the Galamian Method.
-    </p>
-
-    <div class="hero-ctas">
-      <a href="#overview" class="btn-hero-primary" onclick="event.preventDefault(); document.getElementById('overview').scrollIntoView({behavior:'smooth'})">
-        Begin Your Journey
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <button class="btn-hero-secondary" data-auth="signup">
-        <span class="btn-play-icon">▶</span>
-        Watch Demo
-      </button>
     </div>
-  </div>
+  </section>
 
-  <div class="hero-scroll-indicator">
-    
-  </div>
-</section>
-
-<!-- ============================================================
+  <!-- ============================================================
      MORPH TRANSITION SECTION
      ============================================================ -->
-<section id="morph-section">
-  <canvas id="morph-canvas"></canvas>
-  <div class="morph-text">
-    <p>
-      <span>Every great musician</span>
-    </p>
-    <p>
-      <span>started with a single note.</span>
-    </p>
-    <p class="sub">Yours is waiting.</p>
-  </div>
-</section>
+  <section id="morph-section">
+    <canvas id="morph-canvas"></canvas>
+    <div class="morph-text">
+      <p>
+        <span>Every great musician</span>
+      </p>
+      <p>
+        <span>started with a single note.</span>
+      </p>
+      <p class="sub">Yours is waiting.</p>
+    </div>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      OVERVIEW
      ============================================================ -->
-<section id="overview">
-  <div class="overview-grid">
-    <div class="overview-left">
-      <span class="overview-label reveal-up">Platform Overview</span>
-      <h2 class="overview-title reveal-up delay-1">
-        A curriculum built on<br>
-        <em>centuries of tradition.</em>
-      </h2>
-      <p class="overview-body reveal-up delay-2">
-        The Violin Academy is a comprehensive, structured learning platform that takes you from absolute beginner to concert-ready performer. Our curriculum is built on the methods of Ivan Galamian, Carl Flesch, and the Juilliard School — now fully interactive and available anywhere.
-      </p>
-      <p class="overview-body reveal-up delay-3" style="margin-top:-1rem">
-        Explore four mastery levels, deep music theory, guided ear training, and a smart daily practice system — all designed to develop not just technique, but genuine musicianship.
-      </p>
+  <section id="overview">
+    <div class="overview-grid">
+      <div class="overview-left">
+        <span class="overview-label reveal-up">Platform Overview</span>
+        <h2 class="overview-title reveal-up delay-1">
+          A curriculum built on<br>
+          <em>centuries of tradition.</em>
+        </h2>
+        <p class="overview-body reveal-up delay-2">
+          The Violin Academy is a comprehensive, structured learning platform that takes you from absolute beginner to
+          concert-ready performer. Our curriculum is built on the methods of Ivan Galamian, Carl Flesch, and the
+          Juilliard School — now fully interactive and available anywhere.
+        </p>
+        <p class="overview-body reveal-up delay-3" style="margin-top:-1rem">
+          Explore four mastery levels, deep music theory, guided ear training, and a smart daily practice system — all
+          designed to develop not just technique, but genuine musicianship.
+        </p>
 
-      <div class="overview-stats reveal-up delay-4">
-        <div class="stat-item">
-          <div class="stat-num" data-target="4" data-suffix="+">0+</div>
-          <div class="stat-label">Mastery Levels</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="120" data-suffix="+">0+</div>
-          <div class="stat-label">Lessons</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num" data-target="8" data-suffix=" Paths">0</div>
-          <div class="stat-label">Learning Paths</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="overview-right reveal-right delay-2">
-      <div class="overview-visual">
-        <div class="overview-visual-inner">
-          <div class="visual-note-display">𝄞</div>
-          <div class="visual-bars">
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
-            <div class="visual-bar"></div>
+        <div class="overview-stats reveal-up delay-4">
+          <div class="stat-item">
+            <div class="stat-num" data-target="4" data-suffix="+">0+</div>
+            <div class="stat-label">Mastery Levels</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="120" data-suffix="+">0+</div>
+            <div class="stat-label">Lessons</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num" data-target="8" data-suffix=" Paths">0</div>
+            <div class="stat-label">Learning Paths</div>
           </div>
         </div>
       </div>
-      <div class="overview-badge badge-top-right">
-        <span class="overview-badge-icon">🏆</span>
-        <div class="overview-badge-text">
-          <strong>Galamian Method</strong>
-          <span>Proven pedagogy</span>
+
+      <div class="overview-right reveal-right delay-2">
+        <div class="overview-visual">
+          <div class="overview-visual-inner">
+            <div class="visual-note-display">𝄞</div>
+            <div class="visual-bars">
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+              <div class="visual-bar"></div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="overview-badge badge-bottom-left">
-        <span class="overview-badge-icon">🔊</span>
-        <div class="overview-badge-text">
-          <strong>Interactive Audio</strong>
-          <span>Real-time feedback</span>
+        <div class="overview-badge badge-top-right">
+          <span class="overview-badge-icon">🏆</span>
+          <div class="overview-badge-text">
+            <strong>Galamian Method</strong>
+            <span>Proven pedagogy</span>
+          </div>
+        </div>
+        <div class="overview-badge badge-bottom-left">
+          <span class="overview-badge-icon">🔊</span>
+          <div class="overview-badge-text">
+            <strong>Interactive Audio</strong>
+            <span>Real-time feedback</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      FEATURES — HORIZONTAL SCROLL
      ============================================================ -->
-<section id="features">
-  <div class="features-sticky">
-    <div class="features-header">
-      <div class="features-header-label">Learning Paths</div>
-      <h2 class="features-header-title">Eight paths. One destination.</h2>
-    </div>
-
-    <div class="features-track-wrap">
-      <div class="features-track">
-
-        <!-- Padding start -->
-        <div style="flex-shrink:0; width:1rem;"></div>
-
-        <!-- Card 1 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">01</div>
-            <span class="feature-card-icon">🎻</span>
-            <h3 class="feature-card-title">Level 1<br>Foundations</h3>
-            <p class="feature-card-desc">Begin with proper posture, violin and bow hold, open strings, and basic tone production. The Galamian Method from the first note.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Posture</span>
-              <span class="pill">Bow Hold</span>
-              <span class="pill">Open Strings</span>
-              <span class="pill">Tone</span>
-            </div>
-            <a href="curriculum.html#level1" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">02</div>
-            <span class="feature-card-icon">🎵</span>
-            <h3 class="feature-card-title">Level 2<br>Intermediate</h3>
-            <p class="feature-card-desc">Master shifting positions, develop vibrato, control dynamics, and study the first repertoire pieces with musical expression.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Shifting</span>
-              <span class="pill">Vibrato</span>
-              <span class="pill">Dynamics</span>
-              <span class="pill">Scales</span>
-            </div>
-            <a href="curriculum.html#level2" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">03</div>
-            <span class="feature-card-icon">🎼</span>
-            <h3 class="feature-card-title">Level 3<br>Advanced</h3>
-            <p class="feature-card-desc">Double stops, spiccato bowing, advanced Kreutzer etudes, and the technical vocabulary of the concert violinist.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Double Stops</span>
-              <span class="pill">Spiccato</span>
-              <span class="pill">Etudes</span>
-            </div><br>
-            <a href="curriculum.html#level3" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">04</div>
-            <span class="feature-card-icon">🏆</span>
-            <h3 class="feature-card-title">Level 4<br>Mastery</h3>
-            <p class="feature-card-desc">Concerto preparation, recital programming, stage presence, and the interpretation philosophy of the great violin traditions.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Concertos</span>
-              <span class="pill">Recital Prep</span>
-              <span class="pill">Interpretation</span>
-            </div>
-            <a href="curriculum.html#level4" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">05</div>
-            <span class="feature-card-icon">📖</span>
-            <h3 class="feature-card-title">Music Theory</h3>
-            <p class="feature-card-desc">Harmony, counterpoint, form analysis, intervals, chords, scales — a complete theory education from staff notation to advanced analysis.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Harmony</span>
-              <span class="pill">Counterpoint</span>
-              <span class="pill">Notation</span>
-            </div><br><br>
-            <a href="curriculum.html#theory" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">06</div>
-            <span class="feature-card-icon">⏱️</span>
-            <h3 class="feature-card-title">Practice System</h3>
-            <p class="feature-card-desc">Smart daily practice plans, goal tracking, deliberate practice methodology, and the mental approach of elite performers.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Daily Plans</span>
-              <span class="pill">Goal Setting</span>
-              <span class="pill">Tracking</span>
-            </div><br>
-            <a href="curriculum.html#practice" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 7 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">07</div>
-            <span class="feature-card-icon">👂</span>
-            <h3 class="feature-card-title">Ear Training</h3>
-            <p class="feature-card-desc">Interval recognition, melodic and rhythmic dictation, solfège, chord identification — train the inner ear of a professional musician.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Intervals</span>
-              <span class="pill">Solfège</span>
-              <span class="pill">Dictation</span>
-            </div><br><br>
-            <a href="curriculum.html#ear" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Card 8 -->
-        <article class="feature-card">
-          <div class="feature-card-top">
-            <div class="feature-card-num">08</div>
-            <span class="feature-card-icon">📚</span>
-            <h3 class="feature-card-title">Resources</h3>
-            <p class="feature-card-desc">Public domain scores, curated recordings, technical exercises, reference charts, and a full library of supplementary materials.</p>
-          </div>
-          <div class="feature-card-bottom">
-            <div class="feature-card-pills">
-              <span class="pill">Scores</span>
-              <span class="pill">Recordings</span>
-              <span class="pill">Exercises</span>
-            </div><br><br>
-            <a href="curriculum.html#resources" class="feature-card-link">Explore →</a>
-          </div>
-        </article>
-
-        <!-- Padding end -->
-        <div style="flex-shrink:0; width:3rem;"></div>
+  <section id="features">
+    <div class="features-sticky">
+      <div class="features-header">
+        <div class="features-header-label">Learning Paths</div>
+        <h2 class="features-header-title">Eight paths. One destination.</h2>
       </div>
 
-      <div class="features-progress">
-        <div class="features-progress-fill"></div>
+      <div class="features-track-wrap">
+        <div class="features-track">
+
+          <!-- Padding start -->
+          <div style="flex-shrink:0; width:1rem;"></div>
+
+          <!-- Card 1 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">01</div>
+              <span class="feature-card-icon">🎻</span>
+              <h3 class="feature-card-title">Level 1<br>Foundations</h3>
+              <p class="feature-card-desc">Begin with proper posture, violin and bow hold, open strings, and basic tone
+                production. The Galamian Method from the first note.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Posture</span>
+                <span class="pill">Bow Hold</span>
+                <span class="pill">Open Strings</span>
+                <span class="pill">Tone</span>
+              </div>
+              <a href="curriculum.html#level1" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">02</div>
+              <span class="feature-card-icon">🎵</span>
+              <h3 class="feature-card-title">Level 2<br>Intermediate</h3>
+              <p class="feature-card-desc">Master shifting positions, develop vibrato, control dynamics, and study the
+                first repertoire pieces with musical expression.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Shifting</span>
+                <span class="pill">Vibrato</span>
+                <span class="pill">Dynamics</span>
+                <span class="pill">Scales</span>
+              </div>
+              <a href="curriculum.html#level2" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">03</div>
+              <span class="feature-card-icon">🎼</span>
+              <h3 class="feature-card-title">Level 3<br>Advanced</h3>
+              <p class="feature-card-desc">Double stops, spiccato bowing, advanced Kreutzer etudes, and the technical
+                vocabulary of the concert violinist.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Double Stops</span>
+                <span class="pill">Spiccato</span>
+                <span class="pill">Etudes</span>
+              </div><br>
+              <a href="curriculum.html#level3" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">04</div>
+              <span class="feature-card-icon">🏆</span>
+              <h3 class="feature-card-title">Level 4<br>Mastery</h3>
+              <p class="feature-card-desc">Concerto preparation, recital programming, stage presence, and the
+                interpretation philosophy of the great violin traditions.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Concertos</span>
+                <span class="pill">Recital Prep</span>
+                <span class="pill">Interpretation</span>
+              </div>
+              <a href="curriculum.html#level4" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">05</div>
+              <span class="feature-card-icon">📖</span>
+              <h3 class="feature-card-title">Music Theory</h3>
+              <p class="feature-card-desc">Harmony, counterpoint, form analysis, intervals, chords, scales — a complete
+                theory education from staff notation to advanced analysis.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Harmony</span>
+                <span class="pill">Counterpoint</span>
+                <span class="pill">Notation</span>
+              </div><br><br>
+              <a href="curriculum.html#theory" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">06</div>
+              <span class="feature-card-icon">⏱️</span>
+              <h3 class="feature-card-title">Practice System</h3>
+              <p class="feature-card-desc">Smart daily practice plans, goal tracking, deliberate practice methodology,
+                and the mental approach of elite performers.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Daily Plans</span>
+                <span class="pill">Goal Setting</span>
+                <span class="pill">Tracking</span>
+              </div><br>
+              <a href="curriculum.html#practice" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 7 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">07</div>
+              <span class="feature-card-icon">👂</span>
+              <h3 class="feature-card-title">Ear Training</h3>
+              <p class="feature-card-desc">Interval recognition, melodic and rhythmic dictation, solfège, chord
+                identification — train the inner ear of a professional musician.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Intervals</span>
+                <span class="pill">Solfège</span>
+                <span class="pill">Dictation</span>
+              </div><br><br>
+              <a href="curriculum.html#ear" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Card 8 -->
+          <article class="feature-card">
+            <div class="feature-card-top">
+              <div class="feature-card-num">08</div>
+              <span class="feature-card-icon">📚</span>
+              <h3 class="feature-card-title">Resources</h3>
+              <p class="feature-card-desc">Public domain scores, curated recordings, technical exercises, reference
+                charts, and a full library of supplementary materials.</p>
+            </div>
+            <div class="feature-card-bottom">
+              <div class="feature-card-pills">
+                <span class="pill">Scores</span>
+                <span class="pill">Recordings</span>
+                <span class="pill">Exercises</span>
+              </div><br><br>
+              <a href="curriculum.html#resources" class="feature-card-link">Explore →</a>
+            </div>
+          </article>
+
+          <!-- Padding end -->
+          <div style="flex-shrink:0; width:3rem;"></div>
+        </div>
+
+        <div class="features-progress">
+          <div class="features-progress-fill"></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      SOCIAL PROOF
      ============================================================ -->
-<section id="social-proof">
-  <div class="sp-header">
-    <div class="sp-label reveal-up">By the Numbers</div>
-    <h2 class="sp-title reveal-up delay-1">Trusted by musicians worldwide.</h2>
-  </div>
-
-  <div class="stats-row reveal-up delay-2">
-    <div class="stat-card">
-      <div class="stat-card-num" data-target="0000" data-suffix="+">0</div>
-      <div class="stat-card-label">Active Students</div>
+  <section id="social-proof">
+    <div class="sp-header">
+      <div class="sp-label reveal-up">By the Numbers</div>
+      <h2 class="sp-title reveal-up delay-1">Trusted by musicians worldwide.</h2>
     </div>
-    <div class="stat-card">
-      <div class="stat-card-num" data-target="0000" data-suffix="+">0</div>
-      <div class="stat-card-label">Lessons</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card-num" data-target="000" data-suffix="%">0</div>
-      <div class="stat-card-label">Satisfaction Rate</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-card-num" data-target="000" data-suffix=" Methods">0</div>
-      <div class="stat-card-label">Pedagogy Sources</div>
-    </div>
-  </div>
 
-
-  
-  <!--Testimonials marquee-->
-  <div class="testimonials-marquee reveal-up delay-3">
-    <div class="marquee-track">
-      
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The most thorough online violin resource I've ever encountered. The Galamian method integration is exceptional — it transformed my bow arm within weeks."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SM</div>
-          <div>
-            <div class="testimonial-name">Sarah Mitchell</div>
-            <div class="testimonial-role">Advanced Student, Boston</div>
-          </div>
-        </div>
-        
+    <div class="stats-row reveal-up delay-2">
+      <div class="stat-card">
+        <div class="stat-card-num" data-target="0000" data-suffix="+">0</div>
+        <div class="stat-card-label">Active Students</div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"I've studied at two conservatories and this platform captures the essence of formal training while being remarkably accessible. The ear training alone is worth it."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JK</div>
-          <div>
-            <div class="testimonial-name">James Kim</div>
-            <div class="testimonial-role">Professional Violinist, Seoul</div>
-          </div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-card-num" data-target="0000" data-suffix="+">0</div>
+        <div class="stat-card-label">Lessons</div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"As a self-taught player, I finally found the structured curriculum I was missing. The practice system alone changed how I approach my daily routine completely."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AP</div>
-          <div>
-            <div class="testimonial-name">Amelia Patel</div>
-            <div class="testimonial-role">Intermediate Student, London</div>
-          </div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-card-num" data-target="000" data-suffix="%">0</div>
+        <div class="stat-card-label">Satisfaction Rate</div>
       </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The interactive audio feedback is something I've never seen on any other platform. Clicking on the fingerboard and hearing the exact note — genius for beginners."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">LR</div>
-          <div>
-            <div class="testimonial-name">Lucas Rossi</div>
-            <div class="testimonial-role">Beginner Student, Milan</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"I teach violin myself and recommend this to all my students for supplementary theory and practice plans. The music theory section is conservatory quality."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">EW</div>
-          <div>
-            <div class="testimonial-name">Elena Weiss</div>
-            <div class="testimonial-role">Violin Teacher, Vienna</div>
-          </div>
-        </div>
-      </div>
-
-
-      
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The most thorough online violin resource I've ever encountered. The Galamian method integration is exceptional — it transformed my bow arm within weeks."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">SM</div>
-          <div>
-            <div class="testimonial-name">Sarah Mitchell</div>
-            <div class="testimonial-role">Advanced Student, Boston</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"I've studied at two conservatories and this platform captures the essence of formal training while being remarkably accessible. The ear training alone is worth it."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">JK</div>
-          <div>
-            <div class="testimonial-name">James Kim</div>
-            <div class="testimonial-role">Professional Violinist, Seoul</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"As a self-taught player, I finally found the structured curriculum I was missing. The practice system alone changed how I approach my daily routine completely."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">AP</div>
-          <div>
-            <div class="testimonial-name">Amelia Patel</div>
-            <div class="testimonial-role">Intermediate Student, London</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"The interactive audio feedback is something I've never seen on any other platform. Clicking on the fingerboard and hearing the exact note — genius for beginners."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">LR</div>
-          <div>
-            <div class="testimonial-name">Lucas Rossi</div>
-            <div class="testimonial-role">Beginner Student, Milan</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-quote">"I teach violin myself and recommend this to all my students for supplementary theory and practice plans. The music theory section is conservatory quality."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">EW</div>
-          <div>
-            <div class="testimonial-name">Elena Weiss</div>
-            <div class="testimonial-role">Violin Teacher, Vienna</div>
-          </div>
-        </div>
+      <div class="stat-card">
+        <div class="stat-card-num" data-target="000" data-suffix=" Methods">0</div>
+        <div class="stat-card-label">Pedagogy Sources</div>
       </div>
     </div>
-  </div>
-</section>
 
 
-<!-- ============================================================
+
+    <!--Testimonials marquee-->
+    <div class="testimonials-marquee reveal-up delay-3">
+      <div class="marquee-track">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The most thorough online violin resource I've ever encountered. The Galamian
+            method integration is exceptional — it transformed my bow arm within weeks."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div>
+              <div class="testimonial-name">Sarah Mitchell</div>
+              <div class="testimonial-role">Advanced Student, Boston</div>
+            </div>
+          </div>
+
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"I've studied at two conservatories and this platform captures the essence of
+            formal training while being remarkably accessible. The ear training alone is worth it."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JK</div>
+            <div>
+              <div class="testimonial-name">James Kim</div>
+              <div class="testimonial-role">Professional Violinist, Seoul</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Playing the violin is a workout. Studies have shown that an intense hour of
+            practice can burn about 170 calories—roughly the same as a brisk walk. It’s mostly due to the constant
+            micro-movements in the arms and the focus required by the brain."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AP</div>
+            <div>
+              <div class="testimonial-name">Amelia Patel</div>
+              <div class="testimonial-role">Intermediate Student, London</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The record for the fastest performance of "Flight of the Bumblebee" is a hotly
+            contested title in the violin world. Some players have clocked in at over 13 notes per second. At that
+            speed, the human ear can barely distinguish the individual pitches!"</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LR</div>
+            <div>
+              <div class="testimonial-name">Lucas Rossi</div>
+              <div class="testimonial-role">Beginner Student, Milan</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The violin didn't just appear out of nowhere. It evolved from medieval bowed
+            instruments like the Rebec (pear-shaped) and the Lira da Braccio (a Renaissance instrument with a similar
+            shape to the modern violin).</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">EW</div>
+            <div>
+              <div class="testimonial-name">Elena Weiss</div>
+              <div class="testimonial-role">Violin Teacher, Vienna</div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Cremona, Italy: This small Italian city became the world capital of violin
+            making. For nearly 200 years, three famous families—Amati, Stradivari, and Guarneri—perfected the design we
+            still use today."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">SM</div>
+            <div>
+              <div class="testimonial-name">Sarah Mitchell</div>
+              <div class="testimonial-role">Advanced Student, Boston</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The Tourte Revolution: Around 1780, François Tourte redesigned the bow to curve
+            inward, using heavier Pernambuco wood. This gave players more control and "bite," paving the way for the
+            powerful soloists of the Romantic era."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JK</div>
+            <div>
+              <div class="testimonial-name">James Kim</div>
+              <div class="testimonial-role">Professional Violinist, Seoul</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Horsehair Hooks: A single bow typically uses between 150 to 200 hairs from a
+            horse's tail. If you looked at a single strand under a microscope, you’d see tiny scales. These scales act
+            like "hooks" that grab the string to make it vibrate."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">AP</div>
+            <div>
+              <div class="testimonial-name">Amelia Patel</div>
+              <div class="testimonial-role">Intermediate Student, London</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"The World's Smallest: There are "pocket violins" called Pochettes that were used
+            by dance masters in the 18th and 19th centuries. They were skinny enough to fit inside a coat pocket so the
+            teacher could whip it out and play a tune for a dance lesson anywhere."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">LR</div>
+            <div>
+              <div class="testimonial-name">Lucas Rossi</div>
+              <div class="testimonial-role">Beginner Student, Milan</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-quote">"Sticky Business: Without Rosin, the bow would just slide silently across the
+            strings. Rosin is made from pine resin, often cooked with other ingredients like gold, silver, or copper
+            flakes to change the "grip" on the string.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">EW</div>
+            <div>
+              <div class="testimonial-name">Elena Weiss</div>
+              <div class="testimonial-role">Violin Teacher, Vienna</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
      CTA
      ============================================================ -->
-<section id="cta">
-  <div class="cta-bg"></div>
-  <div class="cta-ring"></div>
-  <div class="cta-ring"></div>
-  <div class="cta-ring"></div>
+  <section id="cta">
+    <div class="cta-bg"></div>
+    <div class="cta-ring"></div>
+    <div class="cta-ring"></div>
+    <div class="cta-ring"></div>
 
-  <div class="cta-content">
-    <div class="cta-label">Start Today — Free</div>
-    <h2 class="cta-title">
-      Your first lesson<br>
-      awaits <em>right now.</em>
-    </h2>
-    <p class="cta-sub">
-      No instrument required to begin. Start with music theory and ear training, then pick up the bow when you're ready.
-    </p>
-    <div class="cta-actions">
-      <button class="btn-cta-main" data-auth="signup">
-        Begin for Free
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </button>
-      <a href="curriculum.html" class="btn-cta-sub">
-        Explore curriculum →
-      </a>
+    <div class="cta-content">
+      <div class="cta-label">Start Today — Free</div>
+      <h2 class="cta-title">
+        Your first lesson<br>
+        awaits <em>right now.</em>
+      </h2>
+      <p class="cta-sub">
+        No instrument required to begin. Start with music theory and ear training, then pick up the bow when you're
+        ready.
+      </p>
+      <div class="cta-actions">
+        <button class="btn-cta-main" data-auth="signup">
+          Begin for Free
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </button>
+        <a href="curriculum.html" class="btn-cta-sub">
+          Explore curriculum →
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============================================================
+  <!-- ============================================================
      FOOTER
      ============================================================ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="footer-logo">
-          <span class="footer-logo-icon">𝄞</span>
-          <span class="footer-logo-name">Violin Academy</span>
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="footer-logo-icon">𝄞</span>
+            <span class="footer-logo-name">Violin Academy</span>
+          </div>
+          <p>A conservatory-grade curriculum for the self-directed musician. Inspired by the traditions of Juilliard,
+            Galamian, and Trinity College London.</p>
+          <div class="footer-socials">
+            <a class="footer-social-btn" href="#" title="Twitter/X">𝕏</a>
+            <a class="footer-social-btn" href="#" title="YouTube">▶</a>
+            <a class="footer-social-btn" href="#" title="Instagram">◈</a>
+            <a class="footer-social-btn" href="#" title="GitHub">⌥</a>
+          </div>
         </div>
-        <p>A conservatory-grade curriculum for the self-directed musician. Inspired by the traditions of Juilliard, Galamian, and Trinity College London.</p>
-        <div class="footer-socials">
-          <a class="footer-social-btn" href="#" title="Twitter/X">𝕏</a>
-          <a class="footer-social-btn" href="#" title="YouTube">▶</a>
-          <a class="footer-social-btn" href="#" title="Instagram">◈</a>
-          <a class="footer-social-btn" href="#" title="GitHub">⌥</a>
+
+        <div class="footer-col">
+          <h4>Learn</h4>
+          <ul>
+            <li><a href="curriculum.html#level1">Level 1 — Foundations</a></li>
+            <li><a href="curriculum.html#level2">Level 2 — Intermediate</a></li>
+            <li><a href="curriculum.html#level3">Level 3 — Advanced</a></li>
+            <li><a href="curriculum.html#level4">Level 4 — Mastery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Curriculum</h4>
+          <ul>
+            <li><a href="curriculum.html#theory">Music Theory</a></li>
+            <li><a href="curriculum.html#eartraining">Ear Training</a></li>
+            <li><a href="curriculum.html#practice">Practice System</a></li>
+            <li><a href="curriculum.html#resources">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">Methodology</a></li>
+            <li><a href="#">Acknowledgements</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="footer-col">
-        <h4>Learn</h4>
-        <ul>
-          <li><a href="curriculum.html#level1">Level 1 — Foundations</a></li>
-          <li><a href="curriculum.html#level2">Level 2 — Intermediate</a></li>
-          <li><a href="curriculum.html#level3">Level 3 — Advanced</a></li>
-          <li><a href="curriculum.html#level4">Level 4 — Mastery</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>Curriculum</h4>
-        <ul>
-          <li><a href="curriculum.html#theory">Music Theory</a></li>
-          <li><a href="curriculum.html#eartraining">Ear Training</a></li>
-          <li><a href="curriculum.html#practice">Practice System</a></li>
-          <li><a href="curriculum.html#resources">Resources</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h4>About</h4>
-        <ul>
-          <li><a href="#">Methodology</a></li>
-          <li><a href="#">Acknowledgements</a></li>
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          &copy; 2026 <span>Violin Academy</span>. Built with dedication to music education.
+        </p>
+        <nav class="footer-legal">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Accessibility</a>
+        </nav>
       </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <p class="footer-copy">
-        &copy; 2026 <span>Violin Academy</span>. Built with dedication to music education.
-      </p>
-      <nav class="footer-legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="#">Accessibility</a>
-      </nav>
-    </div>
-  </div>
-</footer>
-
-<!-- ============================================================
+  <!-- ============================================================
      AUTH MODAL
      ============================================================ -->
-<div id="auth-overlay">
-  <div class="auth-modal">
-    <button class="auth-close" aria-label="Close">✕</button>
+  <div id="auth-overlay">
+    <div class="auth-modal" data-lenis-prevent>
+      <button class="auth-close" aria-label="Close">✕</button>
 
-    <div class="auth-logo">
-      <span class="auth-logo-icon">𝄞</span>
-      <span class="auth-logo-name">Violin Academy</span>
-    </div>
-
-    <div class="auth-tabs">
-      <button class="auth-tab active" data-tab="login">Log In</button>
-      <button class="auth-tab" data-tab="signup">Sign Up</button>
-    </div>
-
-    <!-- Login Panel -->
-    <div class="auth-panel active" id="panel-login">
-      <div class="auth-social">
-        <button class="auth-social-btn">
-          <svg class="auth-social-icon" viewBox="0 0 24 24" fill="none">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-          Continue with Google
-        </button>
-        <button class="auth-social-btn">
-          <svg class="auth-social-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          Continue with GitHub
-        </button>
+      <div class="auth-logo">
+        <span class="auth-logo-icon">𝄞</span>
+        <span class="auth-logo-name">Violin Academy</span>
       </div>
 
-      <div class="auth-divider">
-        <div class="auth-divider-line"></div>
-        <span class="auth-divider-text">or</span>
-        <div class="auth-divider-line"></div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" data-tab="login">Log In</button>
+        <button class="auth-tab" data-tab="signup">Sign Up</button>
       </div>
 
-      <form class="auth-form" onsubmit="return false;">
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="you@example.com" autocomplete="email">
+      <!-- Login Panel -->
+      <div class="auth-panel active" id="panel-login">
+        <div class="auth-social">
+          <button class="auth-social-btn">
+            <svg class="auth-social-icon" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            Continue with Google
+          </button>
+          <button class="auth-social-btn">
+            <svg class="auth-social-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+            Continue with GitHub
+          </button>
         </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-input" placeholder="••••••••" autocomplete="current-password">
+
+        <div class="auth-divider">
+          <div class="auth-divider-line"></div>
+          <span class="auth-divider-text">or</span>
+          <div class="auth-divider-line"></div>
         </div>
-        <div class="form-row">
-          <div class="form-check">
-            <input type="checkbox" id="remember-me">
-            <label for="remember-me">Remember me</label>
+
+        <form class="auth-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="you@example.com" autocomplete="email">
           </div>
-          <a href="#" class="form-link">Forgot password?</a>
-        </div>
-        <button type="submit" class="btn-auth-submit">Log In</button>
-      </form>
-    </div>
-
-    <!-- Signup Panel -->
-    <div class="auth-panel" id="panel-signup">
-      <div class="auth-social">
-        <button class="auth-social-btn">
-          <svg class="auth-social-icon" viewBox="0 0 24 24" fill="none">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-          Continue with Google
-        </button>
-        <button class="auth-social-btn">
-          <svg class="auth-social-icon" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-          </svg>
-          Continue with GitHub
-        </button>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" autocomplete="current-password">
+          </div>
+          <div class="form-row">
+            <div class="form-check">
+              <input type="checkbox" id="remember-me">
+              <label for="remember-me">Remember me</label>
+            </div>
+            <a href="#" class="form-link">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn-auth-submit">Log In</button>
+        </form>
       </div>
 
-      <div class="auth-divider">
-        <div class="auth-divider-line"></div>
-        <span class="auth-divider-text">or</span>
-        <div class="auth-divider-line"></div>
-      </div>
+      <!-- Signup Panel -->
+      <div class="auth-panel" id="panel-signup">
+        <div class="auth-social">
+          <button class="auth-social-btn">
+            <svg class="auth-social-icon" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                fill="#4285F4" />
+              <path
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                fill="#34A853" />
+              <path
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                fill="#FBBC05" />
+              <path
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                fill="#EA4335" />
+            </svg>
+            Continue with Google
+          </button>
+        </div>
 
-      <form class="auth-form" onsubmit="return false;">
-        <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <input type="text" class="form-input" placeholder="Jane Smith" autocomplete="name">
+        <div class="auth-divider">
+          <div class="auth-divider-line"></div>
+          <span class="auth-divider-text">or</span>
+          <div class="auth-divider-line"></div>
         </div>
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-input" placeholder="you@example.com" autocomplete="email">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-input" placeholder="Min. 8 characters" autocomplete="new-password">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Confirm Password</label>
-          <input type="password" class="form-input" placeholder="••••••••" autocomplete="new-password">
-        </div>
-        <div class="form-check" style="margin-top:0.25rem">
-          <input type="checkbox" id="terms-check">
-          <label for="terms-check" style="font-size:0.76rem; color: var(--muted)">I agree to the <a href="#" style="color:var(--gold)">Terms</a> and <a href="#" style="color:var(--gold)">Privacy Policy</a></label>
-        </div>
-        <button type="submit" class="btn-auth-submit">Create Account</button>
-      </form>
-      <p class="auth-terms">Free forever on Level 1. No credit card required.</p>
+
+        <form class="auth-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" class="form-input" placeholder="Jane Smith" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-input" placeholder="you@example.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" placeholder="Min. 8 characters" autocomplete="new-password">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Confirm Password</label>
+            <input type="password" class="form-input" placeholder="••••••••" autocomplete="new-password">
+          </div>
+          <div class="form-check" style="margin-top:0.25rem">
+            <input type="checkbox" id="terms-check">
+            <label for="terms-check" style="font-size:0.76rem; color: var(--muted)">I agree to the <a href="#"
+                style="color:var(--gold)">Terms</a> and <a href="#" style="color:var(--gold)">Privacy Policy</a></label>
+          </div>
+          <button type="submit" class="btn-auth-submit">Create Account</button>
+        </form>
+        <p class="auth-terms">Free forever on Level 1. No credit card required.</p>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- ============================================================
+  <!-- ============================================================
      SCRIPTS
      ============================================================ -->
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-<!-- Lenis -->
-<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <!-- Lenis -->
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
 
-<!-- Global Smooth Scroll -->
-<script src="js/smooth-scroll.js"></script>
-<script src="js/landing.js"></script>
+  <!-- Global Smooth Scroll -->
+  <script src="js/smooth-scroll.js"></script>
+  <script src="js/landing.js"></script>
 
-<!-- ============================================================
+  <!-- ============================================================
      AI PRACTICE COMPANION (Floating)
      ============================================================ -->
-<div id="ai-companion">
-  <div class="ai-companion-viewer">
-    <!-- Spline 3D Interaction -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.81/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/C3hQnlnXyA3bqs1q/scene.splinecode"></spline-viewer>
+  <div id="ai-companion">
+    <div class="ai-companion-viewer">
+      <!-- Spline 3D Interaction -->
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.81/build/spline-viewer.js"></script>
+      <spline-viewer url="https://prod.spline.design/C3hQnlnXyA3bqs1q/scene.splinecode"></spline-viewer>
+    </div>
   </div>
-</div>
 </body>
-</html>
 
+</html>
