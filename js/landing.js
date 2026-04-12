@@ -60,8 +60,10 @@ function startIntro() {
 function transitionToHero() {
   const intro = document.getElementById('intro-screen');
   const clef  = document.querySelector('.intro-clef');
+  // Remove the heavy drop-shadow filter BEFORE scaling to avoid mobile GPU stutter
+  clef.style.filter = 'none';
   const tl = gsap.timeline({ onComplete: () => { intro.style.display = 'none'; startHeroAnimation(); } });
-  tl.to(clef, { scale: 30, opacity: 0, duration: 1.2, ease: 'power3.in' })
+  tl.to(clef, { scale: 30, opacity: 0, duration: 1.2, ease: 'power3.in', force3D: true })
     .to(intro, { opacity: 0, duration: 0.4, ease: 'power2.inOut' }, '-=0.3');
 }
 
@@ -389,6 +391,11 @@ function startHeroAnimation() {
 
   // Overview stat numbers (inline)
   const overviewStats = document.querySelectorAll('.stat-num[data-target]');
+  // Pre-set initial text with suffix to reserve width and prevent layout shift
+  overviewStats.forEach(el => {
+    const suffix = el.dataset.suffix || '';
+    el.textContent = '0' + suffix;
+  });
   const ovObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -397,6 +404,7 @@ function startHeroAnimation() {
         const suffix = el.dataset.suffix || '';
         let current = 0;
         const step = target / 80;
+        el.textContent = '0' + suffix;
         const ticker = setInterval(() => {
           current = Math.min(current + step, target);
           el.textContent = Math.floor(current) + suffix;
@@ -418,20 +426,21 @@ function startHeroAnimation() {
   const fill    = document.querySelector('.features-progress-fill');
   if (!section || !track) return;
 
-  const totalWidth  = track.scrollWidth;
-  const viewWidth   = track.offsetWidth;
-  const scrollDist  = totalWidth - viewWidth + 128; // 128 = padding
+  function getScrollDist() {
+    return track.scrollWidth - track.offsetWidth;
+  }
 
   gsap.to(track, {
-    x: () => -scrollDist,
+    x: () => -getScrollDist(),
     ease: 'none',
     scrollTrigger: {
       trigger: section,
       start: 'top top',
-      end: () => '+=' + (scrollDist + viewWidth),
+      end: () => '+=' + (getScrollDist() * 1.5),
       scrub: 1.2,
       pin: true,
       anticipatePin: 1,
+      invalidateOnRefresh: true,
       onUpdate: self => {
         if (fill) fill.style.width = (self.progress * 100) + '%';
       }

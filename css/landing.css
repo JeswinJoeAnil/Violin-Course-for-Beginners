@@ -345,6 +345,10 @@ html.lenis { height: auto; }
   filter: drop-shadow(0 0 40px rgba(201,168,76,0.6));
   display: block;
   opacity: 0;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .intro-tagline {
   font-family: var(--font-serif);
@@ -643,6 +647,8 @@ html.lenis { height: auto; }
   color: var(--gold);
   line-height: 1;
   margin-bottom: 0.25rem;
+  min-width: 5ch;
+  font-variant-numeric: tabular-nums;
 }
 .stat-label {
   font-size: 0.78rem;
@@ -1401,10 +1407,16 @@ footer {
   #cta { padding: 6rem 1.5rem; }
   .stats-row { grid-template-columns: repeat(2, 1fr); }
   .nav-dropdown-panel { width: 320px; grid-template-columns: 1fr; }
+  .overview-stats { flex-wrap: wrap; gap: 1.5rem 2rem; }
+  .stat-num { font-size: 2.2rem; min-width: auto; }
+  .overview-body { font-size: 0.95rem; }
 }
 @media (max-width: 480px) {
   .hero-ctas { flex-direction: column; align-items: center; }
   .stats-row { grid-template-columns: 1fr; }
+  .overview-stats { gap: 1.25rem 1.5rem; }
+  .stat-num { font-size: 1.8rem; }
+  .overview-title { font-size: clamp(1.8rem, 7vw, 2.4rem); }
 }
 
 /* ============================================================
