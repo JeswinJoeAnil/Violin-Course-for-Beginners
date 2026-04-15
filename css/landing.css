@@ -123,6 +123,16 @@ html.lenis { height: auto; }
 }
 #navbar.hidden { transform: translateY(-100%); }
 
+/*Hover inside the music box*/
+.hov
+{ color: var(--muted); 
+  font-size: 0.72rem; 
+  margin-top:-1.2em;
+  margin-left:-0.6em;
+}
+
+
+/* nav logo */
 .nav-logo {
   display: flex; align-items: center; gap: 0.75rem;
   text-decoration: none;
