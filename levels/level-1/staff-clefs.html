@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Staff & Clefs — Complete Deep Dive | Violin & Music Theory Academy</title>
-  <meta name="description" content="A comprehensive guide to reading the musical staff, understanding clefs, rhythms, accidentals, key signatures, dynamics, and articulation — essential knowledge for every violinist.">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta name="description"
+    content="A comprehensive guide to reading the musical staff, understanding clefs, rhythms, accidentals, key signatures, dynamics, and articulation — essential knowledge for every violinist.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="../../css/bow-hold.css">
   <style>
     /* PAGE-SPECIFIC ENHANCEMENTS */
@@ -22,13 +26,17 @@
       position: relative;
       overflow: hidden;
     }
+
     .symbol-showcase::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: linear-gradient(to right, var(--gold-dark), var(--gold-light), var(--gold-dark));
     }
+
     .symbol-showcase .symbol-glyph {
       font-size: 6rem;
       font-family: serif;
@@ -36,16 +44,19 @@
       line-height: 1;
       text-shadow: 0 0 30px rgba(200, 150, 62, 0.2);
     }
+
     .symbol-showcase .symbol-info {
       text-align: left;
       max-width: 420px;
     }
+
     .symbol-showcase .symbol-info h3 {
       color: var(--cream);
       font-family: 'Playfair Display', serif;
       font-size: 1.3rem;
       margin: 0 0 0.4rem;
     }
+
     .symbol-showcase .symbol-info p {
       color: rgba(245, 240, 232, 0.65);
       font-size: 0.95rem;
@@ -62,6 +73,7 @@
       margin: 1rem 0;
       border-radius: 2px;
     }
+
     .mnemonic-card .mnemonic-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -71,6 +83,7 @@
       margin-bottom: 0.4rem;
       display: block;
     }
+
     .mnemonic-card .mnemonic-text {
       font-family: 'Playfair Display', serif;
       font-size: 1.15rem;
@@ -85,6 +98,7 @@
       border-collapse: collapse;
       margin: 1.25rem 0;
     }
+
     .symbol-table th {
       background: var(--charcoal);
       color: var(--gold);
@@ -96,15 +110,18 @@
       text-transform: uppercase;
       font-weight: 500;
     }
+
     .symbol-table td {
       padding: 0.85rem 1rem;
       border-bottom: 1px solid var(--border);
       color: var(--ink-light);
       vertical-align: middle;
     }
+
     .symbol-table tr:hover td {
       background: var(--parchment);
     }
+
     .symbol-table td:first-child {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -113,6 +130,7 @@
       text-align: center;
       width: 70px;
     }
+
     .symbol-table td:nth-child(2) {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
@@ -141,25 +159,30 @@
       overflow: hidden;
       border-radius: 4px;
     }
+
     .media-placeholder::before {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(200, 150, 62, 0.04) 0%, transparent 60%);
     }
+
     .media-placeholder .ph-icon {
       font-size: 2.5rem;
       opacity: 0.35;
       position: relative;
     }
+
     .media-placeholder .ph-text {
       position: relative;
       text-align: center;
       line-height: 1.5;
     }
+
     .media-placeholder:hover {
       border-color: var(--gold);
     }
+
     .media-placeholder.tall {
       min-height: 300px;
     }
@@ -177,6 +200,7 @@
       margin: 1rem 0;
       border: 1px solid rgba(200, 150, 62, 0.15);
     }
+
     .key-sig-flow .ks-note {
       background: rgba(200, 150, 62, 0.15);
       color: var(--gold-light);
@@ -188,10 +212,12 @@
       border-radius: 4px;
       transition: all 0.2s;
     }
+
     .key-sig-flow .ks-note:hover {
       background: rgba(200, 150, 62, 0.25);
       transform: translateY(-2px);
     }
+
     .key-sig-flow .ks-arrow {
       color: rgba(245, 240, 232, 0.3);
       font-size: 1rem;
@@ -204,10 +230,20 @@
       gap: 1.5rem;
       margin: 1rem 0;
     }
+
     @media(max-width: 768px) {
-      .compare-grid { grid-template-columns: 1fr; }
-      .symbol-showcase { flex-direction: column; text-align: center; }
-      .symbol-showcase .symbol-info { text-align: center; }
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .symbol-showcase {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .symbol-showcase .symbol-info {
+        text-align: center;
+      }
     }
 
     /* OCTAVE INDICATOR BADGES */
@@ -225,6 +261,7 @@
       border: 1px solid rgba(200, 150, 62, 0.2);
       margin: 0.25rem 0.25rem;
     }
+
     .octave-badge .ob-small {
       font-size: 0.7rem;
       color: var(--gold);
@@ -243,6 +280,7 @@
       gap: 1rem;
       align-items: flex-start;
     }
+
     .rule-box .rule-num {
       background: var(--charcoal);
       color: var(--gold-light);
@@ -258,9 +296,11 @@
       flex-shrink: 0;
       margin-top: 2px;
     }
+
     .rule-box .rule-content {
       flex: 1;
     }
+
     .rule-box .rule-content strong {
       color: var(--crimson);
     }
@@ -287,17 +327,22 @@
       position: relative;
       overflow: hidden;
     }
+
     .rhythm-player-module::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: linear-gradient(to right, var(--gold-dark), var(--gold-light), var(--gold-dark));
     }
+
     .rpm-header {
       text-align: center;
       margin-bottom: 1.5rem;
     }
+
     .rpm-badge {
       display: inline-block;
       padding: 0.3rem 0.9rem;
@@ -311,6 +356,7 @@
       border: 1px solid rgba(200, 150, 62, 0.3);
       margin-bottom: 0.75rem;
     }
+
     .rpm-title {
       font-family: 'Playfair Display', serif;
       font-size: 1.5rem;
@@ -318,6 +364,7 @@
       color: var(--cream);
       margin: 0.5rem 0 0.4rem;
     }
+
     .rpm-subtitle {
       font-size: 0.9rem;
       color: rgba(245, 240, 232, 0.55);
@@ -325,6 +372,7 @@
       max-width: 600px;
       margin: 0 auto;
     }
+
     .rpm-subtitle strong {
       color: var(--gold-light);
     }
@@ -338,6 +386,7 @@
       margin-bottom: 1.5rem;
       flex-wrap: wrap;
     }
+
     .rpm-bpm-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.7rem;
@@ -345,6 +394,7 @@
       text-transform: uppercase;
       color: rgba(245, 240, 232, 0.4);
     }
+
     .rpm-bpm-btn {
       background: rgba(200, 150, 62, 0.15);
       border: 1px solid rgba(200, 150, 62, 0.3);
@@ -360,10 +410,12 @@
       justify-content: center;
       font-family: 'JetBrains Mono', monospace;
     }
+
     .rpm-bpm-btn:hover {
       background: rgba(200, 150, 62, 0.3);
       transform: scale(1.05);
     }
+
     .rpm-bpm-value {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.95rem;
@@ -372,6 +424,7 @@
       min-width: 80px;
       text-align: center;
     }
+
     .rpm-bpm-hint {
       font-family: 'Cormorant Garamond', serif;
       font-size: 0.8rem;
@@ -386,6 +439,7 @@
       flex-direction: column;
       gap: 0.75rem;
     }
+
     .rpm-card {
       display: flex;
       align-items: center;
@@ -398,16 +452,19 @@
       transition: all 0.25s ease;
       position: relative;
     }
+
     .rpm-card:hover {
       background: rgba(200, 150, 62, 0.08);
       border-color: rgba(200, 150, 62, 0.3);
       transform: translateX(4px);
     }
+
     .rpm-card.playing {
       background: rgba(200, 150, 62, 0.12);
       border-color: var(--gold);
       box-shadow: 0 0 20px rgba(200, 150, 62, 0.15);
     }
+
     .rpm-card-left {
       display: flex;
       align-items: center;
@@ -415,6 +472,7 @@
       min-width: 140px;
       flex-shrink: 0;
     }
+
     .rpm-symbol {
       font-size: 2.2rem;
       color: var(--gold-light);
@@ -422,6 +480,7 @@
       width: 40px;
       text-align: center;
     }
+
     .rpm-note-name {
       font-family: 'Playfair Display', serif;
       font-size: 1rem;
@@ -429,6 +488,7 @@
       color: var(--cream);
       line-height: 1.2;
     }
+
     .rpm-note-uk {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
@@ -436,10 +496,12 @@
       letter-spacing: 0.05em;
       text-transform: uppercase;
     }
+
     .rpm-card-center {
       flex: 1;
       min-width: 0;
     }
+
     .rpm-beats-label {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
@@ -456,6 +518,7 @@
       align-items: center;
       flex-wrap: wrap;
     }
+
     .rpm-dot {
       width: 30px;
       height: 30px;
@@ -471,6 +534,7 @@
       background: rgba(200, 150, 62, 0.06);
       color: rgba(245, 240, 232, 0.5);
     }
+
     .rpm-dot.sub {
       width: 24px;
       height: 24px;
@@ -479,12 +543,14 @@
       background: rgba(200, 150, 62, 0.03);
       color: rgba(245, 240, 232, 0.35);
     }
+
     .rpm-dot.sustain {
       border-style: dashed;
       border-color: rgba(200, 150, 62, 0.15);
       background: transparent;
       color: rgba(245, 240, 232, 0.25);
     }
+
     .rpm-dot.lit {
       background: var(--gold) !important;
       border-color: var(--gold-light) !important;
@@ -492,6 +558,7 @@
       box-shadow: 0 0 12px rgba(200, 150, 62, 0.5);
       transform: scale(1.15);
     }
+
     .rpm-dot.lit-sustain {
       background: rgba(200, 150, 62, 0.3) !important;
       border-color: var(--gold) !important;
@@ -499,6 +566,7 @@
       color: var(--cream) !important;
       box-shadow: 0 0 8px rgba(200, 150, 62, 0.25);
     }
+
     .rpm-pattern-text {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.6rem;
@@ -506,9 +574,11 @@
       letter-spacing: 0.15em;
       margin-top: 0.35rem;
     }
+
     .rpm-card-right {
       flex-shrink: 0;
     }
+
     .rpm-play-btn {
       width: 42px;
       height: 42px;
@@ -522,11 +592,13 @@
       justify-content: center;
       transition: all 0.2s;
     }
+
     .rpm-play-btn:hover {
       background: rgba(200, 150, 62, 0.3);
       transform: scale(1.1);
       box-shadow: 0 0 15px rgba(200, 150, 62, 0.2);
     }
+
     .rpm-play-icon {
       font-size: 1rem;
       margin-left: 2px;
@@ -543,6 +615,7 @@
       background: rgba(245, 240, 232, 0.03);
       border-radius: 6px;
     }
+
     .rpm-status-dot {
       width: 8px;
       height: 8px;
@@ -550,21 +623,32 @@
       background: rgba(200, 150, 62, 0.4);
       transition: all 0.3s;
     }
+
     .rpm-status.active .rpm-status-dot {
       background: #4CAF50;
       box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
       animation: statusPulse 1s ease infinite;
     }
+
     @keyframes statusPulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
     }
+
     #rpm-status-text {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
       color: rgba(245, 240, 232, 0.45);
       letter-spacing: 0.06em;
     }
+
     .rpm-stop-btn {
       display: block;
       margin: 0.75rem auto 0;
@@ -579,948 +663,1266 @@
       border-radius: 6px;
       transition: all 0.2s;
     }
+
     .rpm-stop-btn:hover {
       background: rgba(139, 26, 26, 0.35);
     }
 
     @media(max-width: 768px) {
-      .rpm-card { flex-direction: column; align-items: flex-start; }
-      .rpm-card-left { min-width: auto; }
-      .rpm-card-right { align-self: flex-end; margin-top: -2.5rem; }
-      .rpm-beat-dots { gap: 3px; }
-      .rpm-dot { width: 24px; height: 24px; font-size: 0.55rem; }
-      .rpm-dot.sub { width: 20px; height: 20px; font-size: 0.5rem; }
+      .rpm-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .rpm-card-left {
+        min-width: auto;
+      }
+
+      .rpm-card-right {
+        align-self: flex-end;
+        margin-top: -2.5rem;
+      }
+
+      .rpm-beat-dots {
+        gap: 3px;
+      }
+
+      .rpm-dot {
+        width: 24px;
+        height: 24px;
+        font-size: 0.55rem;
+      }
+
+      .rpm-dot.sub {
+        width: 20px;
+        height: 20px;
+        font-size: 0.5rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- BACK BAR -->
-<div class="back-bar fade-in">
-  <a href="../../index.html#level1" class="back-link">← Return to Curriculum</a>
-  <div class="back-bar-title">Level I · Section 1.4</div>
-</div>
+  <!-- BACK BAR -->
+  <div class="back-bar fade-in">
+    <a href="../../index.html#level1" class="back-link">← Return to Curriculum</a>
+    <div class="back-bar-title">Level I · Section 1.4</div>
+  </div>
 
-<!-- HERO -->
-<header class="page-hero fade-in-d1">
-  <div class="breadcrumb">Level I: Beginner Foundation → 1.4 Theory Module</div>
-  <h1>The Staff <span>& Clefs</span></h1>
-  <p class="subtitle">The Complete Guide to Reading Music — From First Note to Full Fluency</p>
-  <div class="hero-divider"></div>
-</header>
+  <!-- HERO -->
+  <header class="page-hero fade-in-d1">
+    <div class="breadcrumb">Level I: Beginner Foundation → 1.4 Theory Module</div>
+    <h1>The Staff <span>& Clefs</span></h1>
+    <p class="subtitle">The Complete Guide to Reading Music — From First Note to Full Fluency</p>
+    <div class="hero-divider"></div>
+  </header>
 
-<main class="main-content fade-in-d2">
+  <main class="main-content fade-in-d2">
 
-  <!-- ======================== -->
-  <!-- SECTION 1: WHAT IS THE STAFF -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">The Foundation</div>
-    <h2>What is <span>The Staff?</span></h2>
+    <!-- ======================== -->
+    <!-- SECTION 1: WHAT IS THE STAFF -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">The Foundation</div>
+      <h2>What is <span>The Staff?</span></h2>
 
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">📖</span> The Musical Grid</div>
-      <p>A <strong>staff</strong> (also called a <em>stave</em>) is the fundamental grid onto which all musical notes are written. It consists of <strong>5 horizontal lines</strong> and the <strong>4 spaces</strong> between those lines. The vertical position of a note on this grid determines its <strong>pitch</strong> — the higher the note sits, the higher it sounds.</p>
-      <p>Think of the staff as a musical coordinate system. The horizontal axis represents <strong>time</strong> (left to right), and the vertical axis represents <strong>pitch</strong> (low to high). Every piece of written Western music, from Bach to film scores, uses this same system — it has remained largely unchanged since the 11th century.</p>
-      <p class="source-note">Source: musictheory.net — "The Staff"</p>
-    </div>
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">📖</span> The Musical Grid</div>
+        <p>A <strong>staff</strong> (also called a <em>stave</em>) is the fundamental grid onto which all musical notes
+          are written. It consists of <strong>5 horizontal lines</strong> and the <strong>4 spaces</strong> between
+          those lines. The vertical position of a note on this grid determines its <strong>pitch</strong> — the higher
+          the note sits, the higher it sounds.</p>
+        <p>Think of the staff as a musical coordinate system. The horizontal axis represents <strong>time</strong> (left
+          to right), and the vertical axis represents <strong>pitch</strong> (low to high). Every piece of written
+          Western music, from Bach to film scores, uses this same system — it has remained largely unchanged since the
+          11th century.</p>
+        <p class="source-note">Source: musictheory.net — "The Staff"</p>
+      </div>
 
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: Annotated Staff Diagram<br>showing lines, spaces, and note placement</div>
-    </div>
-
-    <div class="content-grid" style="margin-top:1.5rem;">
-      <div class="content-block crimson-accent">
-        <div class="block-title"><span class="icon">📈</span> The Five Lines</div>
-        <p>Lines are always counted from the <strong>bottom upward</strong>. In the Treble Clef, the five lines represent:</p>
-        <p style="font-size: 1.5rem; text-align: center; margin: 1rem 0; font-family:'Playfair Display',serif;">E – G – B – D – F</p>
-        <div class="mnemonic-card">
-          <span class="mnemonic-label">Mnemonics</span>
-          <span class="mnemonic-text">"Every Good Boy Does Fine"</span><br>
-          <span class="mnemonic-text" style="font-size: 1rem;">"Elephants Got Big Dirty Feet"</span>
+      <!-- IMAGE: STAFF DIAGRAM -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/Staffclef.jpg"
+              alt="Annotated Staff Diagram showing lines, spaces, and note placement">
+          </div>
+          <span class="img-caption">IMAGE: ANNOTATED STAFF DIAGRAM SHOWING LINES, SPACES, AND NOTE PLACEMENT</span>
         </div>
-        <p>Each line represents a <strong>specific pitch at a fixed octave</strong>. The bottom line is <strong>E4</strong>, and the top line is <strong>F5</strong>. Together, the lines span a range of slightly over one octave.</p>
       </div>
 
-      <div class="content-block forest-accent">
-        <div class="block-title"><span class="icon">⬜</span> The Four Spaces</div>
-        <p>The four gaps between the lines are also counted from the <strong>bottom upward</strong>. They represent:</p>
-        <p style="font-size: 1.5rem; text-align: center; margin: 1rem 0; font-family:'Playfair Display',serif;">F – A – C – E</p>
-        <div class="mnemonic-card">
-          <span class="mnemonic-label">Mnemonic</span>
-          <span class="mnemonic-text">It spells the word <strong>FACE</strong>  🎭</span>
+      <div class="content-grid" style="margin-top:1.5rem;">
+        <div class="content-block crimson-accent">
+          <div class="block-title"><span class="icon">📈</span> The Five Lines</div>
+          <p>Lines are always counted from the <strong>bottom upward</strong>. In the Treble Clef, the five lines
+            represent:</p>
+          <p style="font-size: 1.5rem; text-align: center; margin: 1rem 0; font-family:'Playfair Display',serif;">E – G
+            – B – D – F</p>
+          <div class="mnemonic-card">
+            <span class="mnemonic-label">Mnemonics</span>
+            <span class="mnemonic-text">"Every Good Boy Does Fine"</span><br>
+            <span class="mnemonic-text" style="font-size: 1rem;">"Elephants Got Big Dirty Feet"</span>
+          </div>
+          <p>Each line represents a <strong>specific pitch at a fixed octave</strong>. The bottom line is
+            <strong>E4</strong>, and the top line is <strong>F5</strong>. Together, the lines span a range of slightly
+            over one octave.</p>
         </div>
-        <p>Each space sits exactly <strong>one letter name above</strong> the line below it. Together, lines and spaces give you an unbroken sequence of natural notes: <strong>E–F–G–A–B–C–D–E–F</strong> (bottom to top).</p>
+
+        <div class="content-block forest-accent">
+          <div class="block-title"><span class="icon">⬜</span> The Four Spaces</div>
+          <p>The four gaps between the lines are also counted from the <strong>bottom upward</strong>. They represent:
+          </p>
+          <p style="font-size: 1.5rem; text-align: center; margin: 1rem 0; font-family:'Playfair Display',serif;">F – A
+            – C – E</p>
+          <div class="mnemonic-card">
+            <span class="mnemonic-label">Mnemonic</span>
+            <span class="mnemonic-text">It spells the word <strong>FACE</strong> 🎭</span>
+          </div>
+          <p>Each space sits exactly <strong>one letter name above</strong> the line below it. Together, lines and
+            spaces give you an unbroken sequence of natural notes: <strong>E–F–G–A–B–C–D–E–F</strong> (bottom to top).
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ======================== -->
-  <!-- SECTION 2: ANATOMY OF THE CLEF -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">The Clef</div>
-    <h2>The Anatomy of <span>the Clef</span></h2>
+    <!-- ======================== -->
+    <!-- SECTION 2: ANATOMY OF THE CLEF -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">The Clef</div>
+      <h2>The Anatomy of <span>the Clef</span></h2>
 
-    <div class="symbol-showcase">
-      <div class="symbol-glyph">𝄞</div>
-      <div class="symbol-info">
-        <h3>The Treble Clef (G-Clef)</h3>
-        <p>An ornamental letter "G" whose inner curl wraps around the second line from the bottom, designating it as G4.</p>
+      <div class="symbol-showcase">
+        <div class="symbol-glyph">𝄞</div>
+        <div class="symbol-info">
+          <h3>The Treble Clef (G-Clef)</h3>
+          <p>An ornamental letter "G" whose inner curl wraps around the second line from the bottom, designating it as
+            G4.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">🔍</span> The "G-Clef" Origin</div>
-      <p>The treble clef is not just an abstract symbol — it is actually an <strong>ornamental letter "G"</strong> that evolved over centuries of manuscript copying. The inner curl of the symbol specifically targets the <strong>second line from the bottom</strong>, designating it as <strong>G4</strong> (the G above middle C). Every other line and space is defined relative to this anchor point.</p>
-      <p>This is why it's formally called the <em>G-Clef</em>. Move the curl to a different line, and all the pitch assignments change. In historical practice, scribes did exactly this to accommodate different vocal ranges — but for violin, the G-clef always sits on the second line.</p>
-      <p class="source-note">Source: Open Music Theory — "Clefs and Pitch Designation"</p>
-    </div>
-
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: Evolution of the G-Clef<br>from medieval manuscript to modern notation</div>
-    </div>
-
-    <div class="content-block crimson-accent">
-      <div class="block-title"><span class="icon">🔢</span> Octave Indicators (8va / 8vb)</div>
-      <p>Sometimes you will see a small <strong>8</strong> at the top or bottom of the clef symbol. This modifies the pitch by a full octave:</p>
-      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
-        <div class="octave-badge">𝄞 <sup style="font-size:0.6rem;">8</sup> <span class="ob-small">= ONE OCTAVE HIGHER</span></div>
-        <div class="octave-badge">𝄞 <sub style="font-size:0.6rem;">8</sub> <span class="ob-small">= ONE OCTAVE LOWER</span></div>
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">🔍</span> The "G-Clef" Origin</div>
+        <p>The treble clef is not just an abstract symbol — it is actually an <strong>ornamental letter "G"</strong>
+          that evolved over centuries of manuscript copying. The inner curl of the symbol specifically targets the
+          <strong>second line from the bottom</strong>, designating it as <strong>G4</strong> (the G above middle C).
+          Every other line and space is defined relative to this anchor point.</p>
+        <p>This is why it's formally called the <em>G-Clef</em>. Move the curl to a different line, and all the pitch
+          assignments change. In historical practice, scribes did exactly this to accommodate different vocal ranges —
+          but for violin, the G-clef always sits on the second line.</p>
+        <p class="source-note">Source: Open Music Theory — "Clefs and Pitch Designation"</p>
       </div>
-      <ul style="margin-top: 0.75rem;">
-        <li>An <strong>8 at the top</strong> (8va) means play everything one octave higher than written — common for piccolo parts.</li>
-        <li>An <strong>8 at the bottom</strong> (8vb) means play everything one octave lower — common for guitar and tenor voices.</li>
-        <li>For <strong>violin</strong>, you'll rarely see these on the clef itself, but the <em>8va</em> marking above a passage is very common in high-position playing.</li>
-      </ul>
-    </div>
 
-    <div class="content-block forest-accent">
-      <div class="block-title"><span class="icon">🎻</span> Other Clefs You Should Know</div>
-      <p>While violin exclusively uses the treble clef, understanding other clefs helps with <strong>ensemble reading</strong> and music theory:</p>
-      <table class="summary-table">
-        <tr><th>Clef</th><th>Also Called</th><th>Anchor Note</th><th>Used By</th></tr>
-        <tr><td>𝄞 Treble</td><td>G-Clef</td><td>G4 (2nd line)</td><td>Violin, flute, oboe, trumpet</td></tr>
-        <tr><td>𝄢 Bass</td><td>F-Clef</td><td>F3 (4th line)</td><td>Cello, bass, left-hand piano</td></tr>
-        <tr><td>𝄡 Alto</td><td>C-Clef</td><td>C4 (3rd line)</td><td>Viola</td></tr>
-        <tr><td>𝄡 Tenor</td><td>C-Clef</td><td>C4 (4th line)</td><td>Cello (high passages), trombone</td></tr>
-      </table>
-      <p>The <strong>viola</strong> uses the alto clef — if you ever play in a string quartet, being able to glance at the viola part and understand it is a valuable skill.</p>
-      <p class="source-note">Source: musictheory.net — "Clefs"</p>
-    </div>
-
-    <!-- VIDEO PLACEHOLDER -->
-    <div class="video-card">
-      <span class="video-label">📺 Video Resource</span>
-      <div class="video-title">Understanding Clefs — Visual Explanation</div>
-      <div class="video-desc">A clear visual walkthrough of how clefs work and why they exist.</div>
-      <div class="video-embed">
-        <!-- YOUTUBE EMBED: Replace the comment below with an iframe -->
-        <div style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(245,240,232,0.3); font-family:'JetBrains Mono',monospace; font-size:0.8rem; letter-spacing:0.1em;">YOUTUBE EMBED — PASTE IFRAME HERE</div>
+      <!-- IMAGE: EVOLUTION OF THE G-CLEF -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/histreb1.jpg"
+              alt="Evolution of the G-Clef from medieval manuscript to modern notation">
+          </div>
+          <span class="img-caption">IMAGE: EVOLUTION OF THE G-CLEF FROM MEDIEVAL MANUSCRIPT TO MODERN NOTATION</span>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <!-- ======================== -->
-  <!-- SECTION 3: LEDGER LINES -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">Beyond the Staff</div>
-    <h2>Ledger Lines & <span>8va Notation</span></h2>
-
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">📏</span> What Are Ledger Lines?</div>
-      <p>When a note is too high or too low to fit on the 5-line staff, we add short, horizontal <strong>ledger lines</strong>. These are temporary extensions of the staff — small lines drawn through or above/below the notehead.</p>
-      <ul style="margin-top: 0.75rem;">
-        <li><strong>Middle C (C4)</strong> sits on the first ledger line <em>below</em> the treble staff — this is the most important ledger line to memorize.</li>
-        <li>Ledger lines follow the same stepping pattern as the staff: each line or space is the <strong>next letter name</strong>.</li>
-        <li>Reading them requires the same system: count up or down from the nearest staff line.</li>
-      </ul>
-    </div>
-
-    <div class="content-grid">
       <div class="content-block crimson-accent">
-        <div class="block-title"><span class="icon">⚠️</span> The Readability Limit</div>
-        <p>While you can technically add infinite ledger lines, <strong>composers usually stop at 3 or 4</strong>. Beyond that, the notes become very hard to read quickly — too much counting is required.</p>
-        <p>When music goes significantly higher, composers use the <strong>8va</strong> symbol (a dashed line marked "8va" above the staff), which tells you to play everything <strong>one octave higher</strong> than written. This avoids "eye strain" from too many extra lines.</p>
-      </div>
-
-      <div class="content-block forest-accent">
-        <div class="block-title"><span class="icon">🎻</span> Violin-Specific Note</div>
-        <p>As a violinist, you'll encounter ledger lines frequently in <strong>high-position playing</strong> (positions 5–7 and above). Once you reach Level II and begin shifting, recognizing these notes by sight becomes essential.</p>
-        <p>For now in Level I, know these key ledger-line notes:</p>
-        <ul style="margin-top: 0.5rem;">
-          <li><strong>Below the staff:</strong> Middle C (C4) — one ledger line below</li>
-          <li><strong>Above the staff:</strong> G5, A5, B5 — common for E-string 3rd and 4th fingers</li>
+        <div class="block-title"><span class="icon">🔢</span> Octave Indicators (8va / 8vb)</div>
+        <p>Sometimes you will see a small <strong>8</strong> at the top or bottom of the clef symbol. This modifies the
+          pitch by a full octave:</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0;">
+          <div class="octave-badge">𝄞 <sup style="font-size:0.6rem;">8</sup> <span class="ob-small">= ONE OCTAVE
+              HIGHER</span></div>
+          <div class="octave-badge">𝄞 <sub style="font-size:0.6rem;">8</sub> <span class="ob-small">= ONE OCTAVE
+              LOWER</span></div>
+        </div>
+        <ul style="margin-top: 0.75rem;">
+          <li>An <strong>8 at the top</strong> (8va) means play everything one octave higher than written — common for
+            piccolo parts.</li>
+          <li>An <strong>8 at the bottom</strong> (8vb) means play everything one octave lower — common for guitar and
+            tenor voices.</li>
+          <li>For <strong>violin</strong>, you'll rarely see these on the clef itself, but the <em>8va</em> marking
+            above a passage is very common in high-position playing.</li>
         </ul>
       </div>
-    </div>
 
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: Ledger Lines Above & Below the Staff<br>with note names labeled</div>
-    </div>
-  </section>
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🎻</span> Other Clefs You Should Know</div>
+        <p>While violin exclusively uses the treble clef, understanding other clefs helps with <strong>ensemble
+            reading</strong> and music theory:</p>
+        <table class="summary-table">
+          <tr>
+            <th>Clef</th>
+            <th>Also Called</th>
+            <th>Anchor Note</th>
+            <th>Used By</th>
+          </tr>
+          <tr>
+            <td>𝄞 Treble</td>
+            <td>G-Clef</td>
+            <td>G4 (2nd line)</td>
+            <td>Violin, flute, oboe, trumpet</td>
+          </tr>
+          <tr>
+            <td>𝄢 Bass</td>
+            <td>F-Clef</td>
+            <td>F3 (4th line)</td>
+            <td>Cello, bass, left-hand piano</td>
+          </tr>
+          <tr>
+            <td>𝄡 Alto</td>
+            <td>C-Clef</td>
+            <td>C4 (3rd line)</td>
+            <td>Viola</td>
+          </tr>
+          <tr>
+            <td>𝄡 Tenor</td>
+            <td>C-Clef</td>
+            <td>C4 (4th line)</td>
+            <td>Cello (high passages), trombone</td>
+          </tr>
+        </table>
+        <p>The <strong>viola</strong> uses the alto clef — if you ever play in a string quartet, being able to glance at
+          the viola part and understand it is a valuable skill.</p>
+        <p class="source-note">Source: musictheory.net — "Clefs"</p>
+      </div>
 
-  <!-- ======================== -->
-  <!-- SECTION 4: NOTE VALUES & RHYTHMS -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">Rhythm</div>
-    <h2>Note Values & <span>Advanced Rhythms</span></h2>
+      <!-- VIDEO PLACEHOLDER -->
+      <div class="video-card">
+        <span class="video-label">📺 Video Resource</span>
+        <div class="video-title">Understanding Clefs — Visual Explanation</div>
+        <div class="video-desc">A clear visual walkthrough of how clefs work and why they exist.</div>
+        <div class="video-embed">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/DCvmQdHrz6w?si=8mUW8ULIdKa-Y6XO"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div
+            style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(245,240,232,0.3); font-family:'JetBrains Mono',monospace; font-size:0.8rem; letter-spacing:0.1em;">
+            YOUTUBE EMBED — PASTE IFRAME HERE</div>
+        </div>
+      </div>
+    </section>
 
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">⏱️</span> The Rhythmic Hierarchy</div>
-      <p>Every note has a <strong>duration</strong> — how long you hold it. Note values are built on a simple halving system: each value is exactly <strong>half the length</strong> of the one above it.</p>
-      <table class="summary-table" style="margin-top: 0.75rem;">
-        <tr><th>Symbol</th><th>Name</th><th>UK Name</th><th>Beats (in 4/4)</th></tr>
-        <tr><td>𝅝</td><td>Whole note</td><td>Semibreve</td><td>4 beats</td></tr>
-        <tr><td>𝅗𝅥</td><td>Half note</td><td>Minim</td><td>2 beats</td></tr>
-        <tr><td>♩</td><td>Quarter note</td><td>Crotchet</td><td>1 beat</td></tr>
-        <tr><td>♪</td><td>Eighth note</td><td>Quaver</td><td>½ beat</td></tr>
-        <tr><td>𝅘𝅥𝅯</td><td>Sixteenth note</td><td>Semiquaver</td><td>¼ beat</td></tr>
-      </table>
+    <!-- ======================== -->
+    <!-- SECTION 3: LEDGER LINES -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">Beyond the Staff</div>
+      <h2>Ledger Lines & <span>8va Notation</span></h2>
+
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">📏</span> What Are Ledger Lines?</div>
+        <p>When a note is too high or too low to fit on the 5-line staff, we add short, horizontal <strong>ledger
+            lines</strong>. These are temporary extensions of the staff — small lines drawn through or above/below the
+          notehead.</p>
+        <ul style="margin-top: 0.75rem;">
+          <li><strong>Middle C (C4)</strong> sits on the first ledger line <em>below</em> the treble staff — this is the
+            most important ledger line to memorize.</li>
+          <li>Ledger lines follow the same stepping pattern as the staff: each line or space is the <strong>next letter
+              name</strong>.</li>
+          <li>Reading them requires the same system: count up or down from the nearest staff line.</li>
+        </ul>
+      </div>
+
+      <div class="content-grid">
+        <div class="content-block crimson-accent">
+          <div class="block-title"><span class="icon">⚠️</span> The Readability Limit</div>
+          <p>While you can technically add infinite ledger lines, <strong>composers usually stop at 3 or 4</strong>.
+            Beyond that, the notes become very hard to read quickly — too much counting is required.</p>
+          <p>When music goes significantly higher, composers use the <strong>8va</strong> symbol (a dashed line marked
+            "8va" above the staff), which tells you to play everything <strong>one octave higher</strong> than written.
+            This avoids "eye strain" from too many extra lines.</p>
+        </div>
+
+        <div class="content-block forest-accent">
+          <div class="block-title"><span class="icon">🎻</span> Violin-Specific Note</div>
+          <p>As a violinist, you'll encounter ledger lines frequently in <strong>high-position playing</strong>
+            (positions 5–7 and above). Once you reach Level II and begin shifting, recognizing these notes by sight
+            becomes essential.</p>
+          <p>For now in Level I, know these key ledger-line notes:</p>
+          <ul style="margin-top: 0.5rem;">
+            <li><strong>Below the staff:</strong> Middle C (C4) — one ledger line below</li>
+            <li><strong>Above the staff:</strong> G5, A5, B5 — common for E-string 3rd and 4th fingers</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IMAGE: LEDGER LINES -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/linesabove.jpg"
+              alt="Ledger Lines Above & Below the Staff with note names labeled">
+          </div>
+          <span class="img-caption">IMAGE: LEDGER LINES ABOVE & BELOW THE STAFF WITH NOTE NAMES LABELED</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- SECTION 4: NOTE VALUES & RHYTHMS -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">Rhythm</div>
+      <h2>Note Values & <span>Advanced Rhythms</span></h2>
+
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">⏱️</span> The Rhythmic Hierarchy</div>
+        <p>Every note has a <strong>duration</strong> — how long you hold it. Note values are built on a simple halving
+          system: each value is exactly <strong>half the length</strong> of the one above it.</p>
+        <table class="summary-table" style="margin-top: 0.75rem;">
+          <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>UK Name</th>
+            <th>Beats (in 4/4)</th>
+          </tr>
+          <tr>
+            <td>𝅝</td>
+            <td>Whole note</td>
+            <td>Semibreve</td>
+            <td>4 beats</td>
+          </tr>
+          <tr>
+            <td>𝅗𝅥</td>
+            <td>Half note</td>
+            <td>Minim</td>
+            <td>2 beats</td>
+          </tr>
+          <tr>
+            <td>♩</td>
+            <td>Quarter note</td>
+            <td>Crotchet</td>
+            <td>1 beat</td>
+          </tr>
+          <tr>
+            <td>♪</td>
+            <td>Eighth note</td>
+            <td>Quaver</td>
+            <td>½ beat</td>
+          </tr>
+          <tr>
+            <td>𝅘𝅥𝅯</td>
+            <td>Sixteenth note</td>
+            <td>Semiquaver</td>
+            <td>¼ beat</td>
+          </tr>
+        </table>
+        <div class="callout callout-gold" style="margin-top: 1rem;">
+          <strong>The Dot Rule:</strong> A dot after any note increases its value by <strong>half</strong>. A dotted
+          half note = 2 + 1 = <strong>3 beats</strong>. A dotted quarter note = 1 + ½ = <strong>1.5 beats</strong>.
+        </div>
+      </div>
+
+      <!-- =============================== -->
+      <!-- INTERACTIVE RHYTHM PLAYER MODULE -->
+      <!-- =============================== -->
+      <div class="rhythm-player-module" id="rhythm-player">
+        <div class="rpm-header">
+          <span class="rpm-badge">🔊 Interactive</span>
+          <h3 class="rpm-title">Rhythm Player — Hear Each Note Value</h3>
+          <p class="rpm-subtitle">Click any note type below to hear its rhythmic pattern played over <strong>one measure
+              of 4/4 time</strong>. Watch the beat dots light up in real time.</p>
+        </div>
+
+        <!-- BPM CONTROL -->
+        <div class="rpm-bpm-control">
+          <span class="rpm-bpm-label">Tempo</span>
+          <button class="rpm-bpm-btn" onclick="adjustBPM(-10)">−</button>
+          <span class="rpm-bpm-value" id="bpm-display">80 BPM</span>
+          <button class="rpm-bpm-btn" onclick="adjustBPM(10)">+</button>
+          <span class="rpm-bpm-hint">Slower = easier to follow</span>
+        </div>
+
+        <!-- NOTE CARDS -->
+        <div class="rpm-cards">
+
+          <!-- WHOLE NOTE -->
+          <div class="rpm-card" data-rhythm="whole" onclick="playRhythm('whole')">
+            <div class="rpm-card-left">
+              <div class="rpm-symbol">𝅝</div>
+              <div class="rpm-note-info">
+                <div class="rpm-note-name">Whole Note</div>
+                <div class="rpm-note-uk">Semibreve</div>
+              </div>
+            </div>
+            <div class="rpm-card-center">
+              <div class="rpm-beats-label">4 BEATS — 1 note fills the entire measure</div>
+              <div class="rpm-beat-dots" data-dots="whole">
+                <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
+                <div class="rpm-dot sustain" data-beat="2"><span>2</span></div>
+                <div class="rpm-dot sustain" data-beat="3"><span>3</span></div>
+                <div class="rpm-dot sustain" data-beat="4"><span>4</span></div>
+              </div>
+              <div class="rpm-pattern-text">Play ———————————————————</div>
+            </div>
+            <div class="rpm-card-right">
+              <button class="rpm-play-btn" aria-label="Play whole note"><span class="rpm-play-icon">▶</span></button>
+            </div>
+          </div>
+
+          <!-- HALF NOTE -->
+          <div class="rpm-card" data-rhythm="half" onclick="playRhythm('half')">
+            <div class="rpm-card-left">
+              <div class="rpm-symbol">𝅗𝅥</div>
+              <div class="rpm-note-info">
+                <div class="rpm-note-name">Half Note</div>
+                <div class="rpm-note-uk">Minim</div>
+              </div>
+            </div>
+            <div class="rpm-card-center">
+              <div class="rpm-beats-label">2 BEATS — 2 notes per measure</div>
+              <div class="rpm-beat-dots" data-dots="half">
+                <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
+                <div class="rpm-dot sustain" data-beat="2"><span>2</span></div>
+                <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
+                <div class="rpm-dot sustain" data-beat="4"><span>4</span></div>
+              </div>
+              <div class="rpm-pattern-text">Play ————— · Play —————</div>
+            </div>
+            <div class="rpm-card-right">
+              <button class="rpm-play-btn" aria-label="Play half note"><span class="rpm-play-icon">▶</span></button>
+            </div>
+          </div>
+
+          <!-- QUARTER NOTE -->
+          <div class="rpm-card" data-rhythm="quarter" onclick="playRhythm('quarter')">
+            <div class="rpm-card-left">
+              <div class="rpm-symbol">♩</div>
+              <div class="rpm-note-info">
+                <div class="rpm-note-name">Quarter Note</div>
+                <div class="rpm-note-uk">Crotchet</div>
+              </div>
+            </div>
+            <div class="rpm-card-center">
+              <div class="rpm-beats-label">1 BEAT — 4 notes per measure</div>
+              <div class="rpm-beat-dots" data-dots="quarter">
+                <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
+                <div class="rpm-dot active-zone" data-beat="2"><span>2</span></div>
+                <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
+                <div class="rpm-dot active-zone" data-beat="4"><span>4</span></div>
+              </div>
+              <div class="rpm-pattern-text">Play · Play · Play · Play</div>
+            </div>
+            <div class="rpm-card-right">
+              <button class="rpm-play-btn" aria-label="Play quarter note"><span class="rpm-play-icon">▶</span></button>
+            </div>
+          </div>
+
+          <!-- EIGHTH NOTE -->
+          <div class="rpm-card" data-rhythm="eighth" onclick="playRhythm('eighth')">
+            <div class="rpm-card-left">
+              <div class="rpm-symbol">♪</div>
+              <div class="rpm-note-info">
+                <div class="rpm-note-name">Eighth Note</div>
+                <div class="rpm-note-uk">Quaver</div>
+              </div>
+            </div>
+            <div class="rpm-card-center">
+              <div class="rpm-beats-label">½ BEAT — 8 notes per measure</div>
+              <div class="rpm-beat-dots" data-dots="eighth">
+                <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone" data-beat="2"><span>2</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone" data-beat="4"><span>4</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+              </div>
+              <div class="rpm-pattern-text">1 & 2 & 3 & 4 &</div>
+            </div>
+            <div class="rpm-card-right">
+              <button class="rpm-play-btn" aria-label="Play eighth note"><span class="rpm-play-icon">▶</span></button>
+            </div>
+          </div>
+
+          <!-- SIXTEENTH NOTE -->
+          <div class="rpm-card" data-rhythm="sixteenth" onclick="playRhythm('sixteenth')">
+            <div class="rpm-card-left">
+              <div class="rpm-symbol">𝅘𝅥𝅯</div>
+              <div class="rpm-note-info">
+                <div class="rpm-note-name">Sixteenth Note</div>
+                <div class="rpm-note-uk">Semiquaver</div>
+              </div>
+            </div>
+            <div class="rpm-card-center">
+              <div class="rpm-beats-label">¼ BEAT — 16 notes per measure</div>
+              <div class="rpm-beat-dots" data-dots="sixteenth">
+                <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
+                <div class="rpm-dot active-zone" data-beat="2"><span>2</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
+                <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
+                <div class="rpm-dot active-zone" data-beat="4"><span>4</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
+                <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
+              </div>
+              <div class="rpm-pattern-text">1 e & a 2 e & a 3 e & a 4 e & a</div>
+            </div>
+            <div class="rpm-card-right">
+              <button class="rpm-play-btn" aria-label="Play sixteenth note"><span
+                  class="rpm-play-icon">▶</span></button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- STATUS -->
+        <div class="rpm-status" id="rpm-status">
+          <span class="rpm-status-dot"></span>
+          <span id="rpm-status-text">Click a note type to hear it</span>
+        </div>
+
+        <!-- STOP BUTTON -->
+        <button class="rpm-stop-btn" id="rpm-stop" onclick="stopRhythm()" style="display:none;">
+          ■ Stop Playback
+        </button>
+      </div>
+
+      <!-- IMAGE: NOTE VALUE TREE -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/notetree.jpg" alt="Note Value Tree Diagram showing the halving relationship visually">
+          </div>
+          <span class="img-caption">IMAGE: NOTE VALUE TREE DIAGRAM SHOWING THE HALVING RELATIONSHIP VISUALLY</span>
+        </div>
+      </div>
+
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">⁀</span> Ties & Slurs — Know the Difference</div>
+        <p>These two curved lines look nearly identical but have <strong>completely different meanings</strong>:</p>
+        <div class="compare-grid">
+          <div class="tip-item">
+            <span class="tip-icon">🔗</span>
+            <h4>The Tie ( ⁀ )</h4>
+            <p>Connects two notes of the <strong>same pitch</strong>. You do not re-strike the second note — you simply
+              <strong>add their durations together</strong>. A tied quarter + quarter = one note held for 2 beats.</p>
+            <p style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;">Ties are how composers create note
+              lengths that don't fit standard values, or sustain notes across barlines.</p>
+          </div>
+          <div class="tip-item" style="border-top-color: var(--crimson-light);">
+            <span class="tip-icon">🎶</span>
+            <h4>The Slur</h4>
+            <p>Connects notes of <strong>different pitches</strong>. On the violin, this means playing multiple notes in
+              <strong>one single bow stroke</strong> — the bow does not change direction until the slur ends.</p>
+            <p style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;">Slurs are essential to legato playing
+              and phrasing. They are one of the most common markings you'll see.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🔄</span> Simple vs. Compound Time</div>
+        <p>Beyond just counting beats, rhythm is defined by <strong>how those beats subdivide</strong>:</p>
+        <div class="compare-grid">
+          <div style="padding: 1.25rem; background: var(--parchment); border: 1px solid var(--border);">
+            <h3 style="color: var(--gold-dark); margin-top: 0;">Simple Time</h3>
+            <p><strong>Time signatures:</strong> 2/4, 3/4, 4/4</p>
+            <p>The main beat divides into <strong>two</strong> equal parts. A quarter note becomes two eighth notes.</p>
+            <p style="font-style: italic; font-size: 0.9rem; color: var(--muted);">Feel: Straight, march-like, direct.
+            </p>
+          </div>
+          <div style="padding: 1.25rem; background: var(--parchment); border: 1px solid var(--border);">
+            <h3 style="color: var(--gold-dark); margin-top: 0;">Compound Time</h3>
+            <p><strong>Time signatures:</strong> 6/8, 9/8, 12/8</p>
+            <p>The main beat is "dotted" and divides into <strong>three</strong> equal parts. A dotted quarter becomes
+              three eighth notes.</p>
+            <p style="font-style: italic; font-size: 0.9rem; color: var(--muted);">Feel: Rolling, lilting, dance-like.
+            </p>
+          </div>
+        </div>
+        <div class="callout callout-forest" style="margin-top: 1rem;">
+          <strong>Quick test:</strong> Can the top number be divided by 3 (and the result is greater than 1)? If yes →
+          compound. If no → simple. 6/8 = compound (6 ÷ 3 = 2 groups). 4/4 = simple.
+        </div>
+        <p class="source-note">Source: musictheory.net — "Time Signatures" · Open Music Theory — "Meter"</p>
+      </div>
+
+      <!-- VIDEO PLACEHOLDER -->
+      <div class="video-card">
+        <span class="video-label">📺 Video Resource</span>
+        <div class="video-title">Simple vs. Compound Time — Hear the Difference</div>
+        <div class="video-desc">Listen to examples of simple and compound time to train your ear to recognize the feel.
+        </div>
+        <div class="video-embed">
+          <div
+            style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(245,240,232,0.3); font-family:'JetBrains Mono',monospace; font-size:0.8rem; letter-spacing:0.1em;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UqJxXH2voMI?si=8vPYqoGnLrn-2xTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- SECTION 5: ACCIDENTALS -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">Accidentals</div>
+      <h2>The Rules of <span>Accidentals</span></h2>
+
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">♯♭♮</span> What Are Accidentals?</div>
+        <p>Accidentals are symbols placed directly before a note to <strong>raise or lower its pitch</strong> by a half
+          step (semitone). There are three primary accidentals:</p>
+        <ul style="margin-top: 0.5rem;">
+          <li><strong>Sharp (♯)</strong> — raises the note by one half step. F becomes F♯.</li>
+          <li><strong>Flat (♭)</strong> — lowers the note by one half step. B becomes B♭.</li>
+          <li><strong>Natural (♮)</strong> — cancels a previous sharp or flat, returning to the unaltered pitch.</li>
+        </ul>
+        <p style="margin-top: 0.5rem;">There are also <strong>double sharps (𝄪)</strong> and <strong>double flats
+            (𝄫)</strong>, which raise or lower by <em>two</em> half steps. These are rare but appear in advanced theory
+          and heavily-accidental keys.</p>
+      </div>
+
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">📐</span> The Three Essential Rules</div>
+        <p>Accidentals have very strict "expiration dates" on a staff. <strong>Memorize these rules</strong> — they are
+          universally applied:</p>
+
+        <div class="rule-box">
+          <div class="rule-num">1</div>
+          <div class="rule-content">
+            <strong>The Measure Rule:</strong> An accidental placed before a note stays in effect for that
+            <strong>entire measure</strong> (bar), but <em>only</em> for that specific line or space. A sharp on the
+            third-space C does not affect a C on a ledger line.
+          </div>
+        </div>
+
+        <div class="rule-box">
+          <div class="rule-num">2</div>
+          <div class="rule-content">
+            <strong>The Barline Reset:</strong> Once you cross a vertical barline into the next measure, <strong>all
+              accidentals reset</strong> to the original key signature — unless they are explicitly written again.
+          </div>
+        </div>
+
+        <div class="rule-box">
+          <div class="rule-num">3</div>
+          <div class="rule-content">
+            <strong>Courtesy Accidentals:</strong> Sometimes a composer puts an accidental in
+            <strong>parentheses</strong> — like (♮). This is a "reminder" (also called a cautionary accidental) that a
+            previous sharp or flat from an earlier measure is no longer in effect. It has no technical function but
+            prevents misreading.
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <strong>Violin Tip:</strong> When sight-reading, accidentals are the #1 source of wrong notes. Train yourself to
+        scan ahead: spot accidentals in a measure <em>before</em> you start playing it. Your fingers need preparation
+        time.
+      </div>
+
+      <!-- IMAGE: ACCIDENTALS IN PRACTICE -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/accidental.jpg"
+              alt="Accidentals in Practice showing measure rule and barline reset">
+          </div>
+          <span class="img-caption">IMAGE: ACCIDENTALS IN PRACTICE SHOWING MEASURE RULE AND BARLINE RESET</span>
+        </div>
+      </div>
+
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">🔀</span> Enharmonic Equivalents</div>
+        <p>Two notes can have <strong>different names but the same pitch</strong>. These are called <em>enharmonic
+            equivalents</em>:</p>
+        <table class="summary-table" style="margin-top: 0.5rem;">
+          <tr>
+            <th>Name 1</th>
+            <th>Name 2</th>
+            <th>Same Pitch?</th>
+            <th>When to Use Which</th>
+          </tr>
+          <tr>
+            <td>F♯</td>
+            <td>G♭</td>
+            <td>Yes ✓</td>
+            <td>F♯ in sharp keys (G, D, A); G♭ in flat keys (Gb, Db)</td>
+          </tr>
+          <tr>
+            <td>C♯</td>
+            <td>D♭</td>
+            <td>Yes ✓</td>
+            <td>Context depends on the key</td>
+          </tr>
+          <tr>
+            <td>B♯</td>
+            <td>C♮</td>
+            <td>Yes ✓</td>
+            <td>B♯ appears in C♯ major and G♯ minor</td>
+          </tr>
+          <tr>
+            <td>E♯</td>
+            <td>F♮</td>
+            <td>Yes ✓</td>
+            <td>E♯ appears in F♯ major</td>
+          </tr>
+        </table>
+        <p style="margin-top: 0.5rem;"><strong>Why does this matter?</strong> On the violin, enharmonic notes are
+          fingered identically — F♯ and G♭ are the same finger in the same spot. But in written music, the <em>correct
+            spelling</em> tells other musicians (and you) the <strong>harmonic function</strong> of the note, which
+          affects phrasing and interpretation.</p>
+        <p class="source-note">Source: Open Music Theory — "Accidentals and Key Signatures"</p>
+      </div>
+    </section>
+
+    <!-- ======================== -->
+    <!-- SECTION 6: KEY SIGNATURES -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">Key Signatures</div>
+      <h2>Key Signatures & <span>the Circle of Fifths</span></h2>
+
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">🔑</span> What Is a Key Signature?</div>
+        <p>The sharps (♯) or flats (♭) written at the very beginning of each staff line — right after the clef — form
+          the <strong>key signature</strong>. Instead of writing an accidental every single time a note needs to be
+          raised or lowered, the key signature says: "apply these sharps/flats to <em>every</em> occurrence of these
+          notes throughout the piece."</p>
+        <p>This saves enormous visual clutter and instantly tells a trained musician <strong>what key the music is
+            in</strong>.</p>
+      </div>
+
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">♯</span> Order of Sharps</div>
+        <p>Sharps always appear in this fixed order:</p>
+        <div class="key-sig-flow">
+          <span class="ks-note">F♯</span><span class="ks-arrow">→</span>
+          <span class="ks-note">C♯</span><span class="ks-arrow">→</span>
+          <span class="ks-note">G♯</span><span class="ks-arrow">→</span>
+          <span class="ks-note">D♯</span><span class="ks-arrow">→</span>
+          <span class="ks-note">A♯</span><span class="ks-arrow">→</span>
+          <span class="ks-note">E♯</span><span class="ks-arrow">→</span>
+          <span class="ks-note">B♯</span>
+        </div>
+        <div class="mnemonic-card">
+          <span class="mnemonic-label">Mnemonic</span>
+          <span class="mnemonic-text"><strong>F</strong>at <strong>C</strong>ats <strong>G</strong>o
+            <strong>D</strong>own <strong>A</strong>lleys <strong>E</strong>ating <strong>B</strong>irds</span>
+        </div>
+        <p style="margin-top: 0.5rem;"><strong>Shortcut to find the key:</strong> The last sharp in the key signature is
+          always a <strong>half step below</strong> the major key name. Two sharps (F♯, C♯) → C♯ + half step = <strong>D
+            Major</strong>.</p>
+      </div>
+
+      <div class="content-block forest-accent">
+        <div class="block-title"><span class="icon">♭</span> Order of Flats</div>
+        <p>Flats appear in this fixed order (the <em>reverse</em> of sharps):</p>
+        <div class="key-sig-flow">
+          <span class="ks-note">B♭</span><span class="ks-arrow">→</span>
+          <span class="ks-note">E♭</span><span class="ks-arrow">→</span>
+          <span class="ks-note">A♭</span><span class="ks-arrow">→</span>
+          <span class="ks-note">D♭</span><span class="ks-arrow">→</span>
+          <span class="ks-note">G♭</span><span class="ks-arrow">→</span>
+          <span class="ks-note">C♭</span><span class="ks-arrow">→</span>
+          <span class="ks-note">F♭</span>
+        </div>
+        <div class="mnemonic-card" style="border-left-color: var(--forest-light);">
+          <span class="mnemonic-label" style="color: var(--forest-light);">Mnemonic</span>
+          <span class="mnemonic-text">The word <strong>BEAD</strong> + <strong>G</strong>reatest <strong>C</strong>ommon
+            <strong>F</strong>actor</span>
+        </div>
+        <p style="margin-top: 0.5rem;"><strong>Shortcut to find the key:</strong> The <em>second-to-last</em> flat
+          <strong>is</strong> the major key name. Three flats (B♭, E♭, A♭) → second-to-last = E♭ = <strong>E♭
+            Major</strong>. Exception: one flat (B♭) = <strong>F Major</strong> (must be memorized).</p>
+      </div>
+
       <div class="callout callout-gold" style="margin-top: 1rem;">
-        <strong>The Dot Rule:</strong> A dot after any note increases its value by <strong>half</strong>. A dotted half note = 2 + 1 = <strong>3 beats</strong>. A dotted quarter note = 1 + ½ = <strong>1.5 beats</strong>.
-      </div>
-    </div>
-
-    <!-- =============================== -->
-    <!-- INTERACTIVE RHYTHM PLAYER MODULE -->
-    <!-- =============================== -->
-    <div class="rhythm-player-module" id="rhythm-player">
-      <div class="rpm-header">
-        <span class="rpm-badge">🔊 Interactive</span>
-        <h3 class="rpm-title">Rhythm Player — Hear Each Note Value</h3>
-        <p class="rpm-subtitle">Click any note type below to hear its rhythmic pattern played over <strong>one measure of 4/4 time</strong>. Watch the beat dots light up in real time.</p>
+        <strong>🎻 Violin Tip:</strong> Each key signature tells your left hand which "shape" to assume. For example, a
+        key with <strong>F♯ and C♯</strong> (D Major) means your 2nd finger plays high (close to 3rd finger) on the D
+        and A strings. Recognizing the key signature instantly sets your hand frame — this is the secret to fast
+        sight-reading.
       </div>
 
-      <!-- BPM CONTROL -->
-      <div class="rpm-bpm-control">
-        <span class="rpm-bpm-label">Tempo</span>
-        <button class="rpm-bpm-btn" onclick="adjustBPM(-10)">−</button>
-        <span class="rpm-bpm-value" id="bpm-display">80 BPM</span>
-        <button class="rpm-bpm-btn" onclick="adjustBPM(10)">+</button>
-        <span class="rpm-bpm-hint">Slower = easier to follow</span>
+      <!-- IMAGE: CIRCLE OF FIFTHS -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/circof5.jpg"
+              alt="The Complete Circle of Fifths Diagram showing all major and minor keys with their accidentals">
+          </div>
+          <span class="img-caption">IMAGE: THE COMPLETE CIRCLE OF FIFTHS DIAGRAM SHOWING ALL MAJOR AND MINOR KEYS WITH THEIR ACCIDENTALS</span>
+        </div>
+      </div>
+      <p class="source-note">Source: musictheory.net — "Key Signatures" · Open Music Theory — "The Circle of Fifths"</p>
+    </section>
+
+    <!-- ======================== -->
+    <!-- SECTION 7: DYNAMICS & ARTICULATION -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">Expression</div>
+      <h2>Dynamics & <span>Articulation</span></h2>
+
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">📢</span> Dynamic Markings</div>
+        <p>The staff doesn't just tell you <em>what</em> to play — it also tells you <strong>how</strong> to play it.
+          Dynamics control <strong>volume</strong>, while articulation controls <strong>character</strong>. Together,
+          they transform notes on a page into living music.</p>
+
+        <table class="symbol-table" style="margin-top: 1rem;">
+          <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Meaning</th>
+          </tr>
+          <tr>
+            <td><em style="font-style: italic;">pp</em></td>
+            <td>Pianissimo</td>
+            <td>Very soft — delicate, intimate passages</td>
+          </tr>
+          <tr>
+            <td><em style="font-style: italic;">p</em></td>
+            <td>Piano</td>
+            <td>Soft — gentle, controlled bow weight</td>
+          </tr>
+          <tr>
+            <td><em style="font-style: italic;">mp</em></td>
+            <td>Mezzo-piano</td>
+            <td>Moderately soft — relaxed, conversational</td>
+          </tr>
+          <tr>
+            <td><em style="font-style: italic;">mf</em></td>
+            <td>Mezzo-forte</td>
+            <td>Moderately loud — default comfortable volume</td>
+          </tr>
+          <tr>
+            <td><em style="font-style: italic;">f</em></td>
+            <td>Forte</td>
+            <td>Loud — full arm weight, faster bow speed</td>
+          </tr>
+          <tr>
+            <td><em style="font-style: italic;">ff</em></td>
+            <td>Fortissimo</td>
+            <td>Very loud — maximum projection without forcing</td>
+          </tr>
+        </table>
+
+        <div class="callout callout-gold" style="margin-top: 1rem;">
+          <strong>Crescendo (< ) & Decrescendo (> ):</strong> These "hairpin" markings indicate a
+          <strong>gradual</strong> change in volume — getting louder or softer over a specified duration. On violin,
+          crescendo = gradually add arm weight + move the sounding point closer to the bridge. Decrescendo = the
+          reverse.
+        </div>
       </div>
 
-      <!-- NOTE CARDS -->
-      <div class="rpm-cards">
+      <div class="content-block crimson-accent">
+        <div class="block-title"><span class="icon">✏️</span> Articulation Marks</div>
+        <p>Articulation tells you the <strong>character</strong> of each note — short, long, accented, smooth. For the
+          violinist, each articulation maps to a specific <strong>bowing technique</strong>:</p>
 
-        <!-- WHOLE NOTE -->
-        <div class="rpm-card" data-rhythm="whole" onclick="playRhythm('whole')">
-          <div class="rpm-card-left">
-            <div class="rpm-symbol">𝅝</div>
-            <div class="rpm-note-info">
-              <div class="rpm-note-name">Whole Note</div>
-              <div class="rpm-note-uk">Semibreve</div>
-            </div>
-          </div>
-          <div class="rpm-card-center">
-            <div class="rpm-beats-label">4 BEATS — 1 note fills the entire measure</div>
-            <div class="rpm-beat-dots" data-dots="whole">
-              <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
-              <div class="rpm-dot sustain" data-beat="2"><span>2</span></div>
-              <div class="rpm-dot sustain" data-beat="3"><span>3</span></div>
-              <div class="rpm-dot sustain" data-beat="4"><span>4</span></div>
-            </div>
-            <div class="rpm-pattern-text">Play ———————————————————</div>
-          </div>
-          <div class="rpm-card-right">
-            <button class="rpm-play-btn" aria-label="Play whole note"><span class="rpm-play-icon">▶</span></button>
-          </div>
-        </div>
+        <table class="symbol-table" style="margin-top: 0.75rem;">
+          <tr>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Violin Technique</th>
+          </tr>
+          <tr>
+            <td><strong>.</strong></td>
+            <td>Staccato</td>
+            <td>Short, detached bow strokes — stop the bow between notes</td>
+          </tr>
+          <tr>
+            <td><strong>></strong></td>
+            <td>Accent</td>
+            <td>Begin the note with more arm weight, then release — a "bite"</td>
+          </tr>
+          <tr>
+            <td><strong>—</strong></td>
+            <td>Tenuto</td>
+            <td>Hold for full value with slightly more weight — sustained and emphasized</td>
+          </tr>
+          <tr>
+            <td><strong>^</strong></td>
+            <td>Marcato</td>
+            <td>A strong accent — even more aggressive than > — heavy attack</td>
+          </tr>
+          <tr>
+            <td><strong>⌒</strong></td>
+            <td>Fermata</td>
+            <td>Hold the note longer than its written value — at the performer's discretion</td>
+          </tr>
+        </table>
 
-        <!-- HALF NOTE -->
-        <div class="rpm-card" data-rhythm="half" onclick="playRhythm('half')">
-          <div class="rpm-card-left">
-            <div class="rpm-symbol">𝅗𝅥</div>
-            <div class="rpm-note-info">
-              <div class="rpm-note-name">Half Note</div>
-              <div class="rpm-note-uk">Minim</div>
-            </div>
-          </div>
-          <div class="rpm-card-center">
-            <div class="rpm-beats-label">2 BEATS — 2 notes per measure</div>
-            <div class="rpm-beat-dots" data-dots="half">
-              <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
-              <div class="rpm-dot sustain" data-beat="2"><span>2</span></div>
-              <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
-              <div class="rpm-dot sustain" data-beat="4"><span>4</span></div>
-            </div>
-            <div class="rpm-pattern-text">Play ————— · Play —————</div>
-          </div>
-          <div class="rpm-card-right">
-            <button class="rpm-play-btn" aria-label="Play half note"><span class="rpm-play-icon">▶</span></button>
-          </div>
-        </div>
-
-        <!-- QUARTER NOTE -->
-        <div class="rpm-card" data-rhythm="quarter" onclick="playRhythm('quarter')">
-          <div class="rpm-card-left">
-            <div class="rpm-symbol">♩</div>
-            <div class="rpm-note-info">
-              <div class="rpm-note-name">Quarter Note</div>
-              <div class="rpm-note-uk">Crotchet</div>
-            </div>
-          </div>
-          <div class="rpm-card-center">
-            <div class="rpm-beats-label">1 BEAT — 4 notes per measure</div>
-            <div class="rpm-beat-dots" data-dots="quarter">
-              <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
-              <div class="rpm-dot active-zone" data-beat="2"><span>2</span></div>
-              <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
-              <div class="rpm-dot active-zone" data-beat="4"><span>4</span></div>
-            </div>
-            <div class="rpm-pattern-text">Play · Play · Play · Play</div>
-          </div>
-          <div class="rpm-card-right">
-            <button class="rpm-play-btn" aria-label="Play quarter note"><span class="rpm-play-icon">▶</span></button>
-          </div>
-        </div>
-
-        <!-- EIGHTH NOTE -->
-        <div class="rpm-card" data-rhythm="eighth" onclick="playRhythm('eighth')">
-          <div class="rpm-card-left">
-            <div class="rpm-symbol">♪</div>
-            <div class="rpm-note-info">
-              <div class="rpm-note-name">Eighth Note</div>
-              <div class="rpm-note-uk">Quaver</div>
-            </div>
-          </div>
-          <div class="rpm-card-center">
-            <div class="rpm-beats-label">½ BEAT — 8 notes per measure</div>
-            <div class="rpm-beat-dots" data-dots="eighth">
-              <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone" data-beat="2"><span>2</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone" data-beat="4"><span>4</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-            </div>
-            <div class="rpm-pattern-text">1 & 2 & 3 & 4 &</div>
-          </div>
-          <div class="rpm-card-right">
-            <button class="rpm-play-btn" aria-label="Play eighth note"><span class="rpm-play-icon">▶</span></button>
-          </div>
-        </div>
-
-        <!-- SIXTEENTH NOTE -->
-        <div class="rpm-card" data-rhythm="sixteenth" onclick="playRhythm('sixteenth')">
-          <div class="rpm-card-left">
-            <div class="rpm-symbol">𝅘𝅥𝅯</div>
-            <div class="rpm-note-info">
-              <div class="rpm-note-name">Sixteenth Note</div>
-              <div class="rpm-note-uk">Semiquaver</div>
-            </div>
-          </div>
-          <div class="rpm-card-center">
-            <div class="rpm-beats-label">¼ BEAT — 16 notes per measure</div>
-            <div class="rpm-beat-dots" data-dots="sixteenth">
-              <div class="rpm-dot active-zone" data-beat="1"><span>1</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
-              <div class="rpm-dot active-zone" data-beat="2"><span>2</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
-              <div class="rpm-dot active-zone" data-beat="3"><span>3</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
-              <div class="rpm-dot active-zone" data-beat="4"><span>4</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="e"><span>e</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="&"><span>&</span></div>
-              <div class="rpm-dot active-zone sub" data-beat="a"><span>a</span></div>
-            </div>
-            <div class="rpm-pattern-text">1 e & a 2 e & a 3 e & a 4 e & a</div>
-          </div>
-          <div class="rpm-card-right">
-            <button class="rpm-play-btn" aria-label="Play sixteenth note"><span class="rpm-play-icon">▶</span></button>
-          </div>
-        </div>
-
+        <p style="margin-top: 0.75rem;">These marks are <strong>not optional</strong> — they are integral to the
+          composer's musical intention. Ignoring articulation is like reading a sentence without punctuation:
+          technically the right words, but the meaning is lost.</p>
       </div>
 
-      <!-- STATUS -->
-      <div class="rpm-status" id="rpm-status">
-        <span class="rpm-status-dot"></span>
-        <span id="rpm-status-text">Click a note type to hear it</span>
+      <!-- IMAGE: ARTICULATION MARKS -->
+      <div class="img-grid">
+        <div class="img-card">
+          <div class="img-wrapper">
+            <img src="../../assets/images/articulation.jpg"
+              alt="Articulation Marks on a Staff showing each symbol applied to actual notes">
+          </div>
+          <span class="img-caption">IMAGE: ARTICULATION MARKS ON A STAFF SHOWING EACH SYMBOL APPLIED TO ACTUAL NOTES</span>
+        </div>
       </div>
 
-      <!-- STOP BUTTON -->
-      <button class="rpm-stop-btn" id="rpm-stop" onclick="stopRhythm()" style="display:none;">
-        ■ Stop Playback
-      </button>
-    </div>
+      <!-- VIDEO PLACEHOLDER -->
+      <div class="video-card">
+        <span class="video-label">📺 Video Resource</span>
+        <div class="video-title">Dynamics & Articulation Demonstrated on Violin</div>
+        <div class="video-desc">See and hear each dynamic level and articulation technique on the violin.</div>
+        <div class="video-embed">
+          <div
+            style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(245,240,232,0.3); font-family:'JetBrains Mono',monospace; font-size:0.8rem; letter-spacing:0.1em;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/kVeRmQREqPs?si=b5ETx5bSmH9DI_3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </section>
 
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: Note Value Tree Diagram<br>showing the halving relationship visually</div>
-    </div>
+    <!-- ======================== -->
+    <!-- SECTION 8: PUTTING IT ALL TOGETHER -->
+    <!-- ======================== -->
+    <section class="deep-dive-section">
+      <div class="section-badge">Application</div>
+      <h2>Putting It <span>All Together</span></h2>
 
-    <div class="content-block crimson-accent">
-      <div class="block-title"><span class="icon">⁀</span> Ties & Slurs — Know the Difference</div>
-      <p>These two curved lines look nearly identical but have <strong>completely different meanings</strong>:</p>
-      <div class="compare-grid">
+      <div class="content-block gold-accent">
+        <div class="block-title"><span class="icon">🗺️</span> How to Read a Line of Music — Step by Step</div>
+        <p>When you encounter a new piece, this is the <strong>exact order</strong> in which you should process the
+          information on the staff:</p>
+        <ol style="margin-top: 0.75rem;">
+          <li><strong>Identify the clef</strong> — violin is always treble clef (G-clef). Anchor: 2nd line = G4.</li>
+          <li><strong>Read the key signature</strong> — note which sharps or flats apply. Set your finger frame
+            accordingly.</li>
+          <li><strong>Read the time signature</strong> — how many beats per measure, and what note value gets one beat.
+          </li>
+          <li><strong>Scan for accidentals</strong> — note any additional sharps, flats, or naturals within the
+            measures.</li>
+          <li><strong>Check dynamics and articulation</strong> — how loud, how soft, staccato, legato.</li>
+          <li><strong>Begin slowly</strong> — never sight-read at performance tempo. Start at half speed.</li>
+        </ol>
+      </div>
+
+      <div class="tip-grid" style="margin-top: 1rem;">
         <div class="tip-item">
-          <span class="tip-icon">🔗</span>
-          <h4>The Tie ( ⁀ )</h4>
-          <p>Connects two notes of the <strong>same pitch</strong>. You do not re-strike the second note — you simply <strong>add their durations together</strong>. A tied quarter + quarter = one note held for 2 beats.</p>
-          <p style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;">Ties are how composers create note lengths that don't fit standard values, or sustain notes across barlines.</p>
+          <span class="tip-icon">📝</span>
+          <h4>Daily Sight-Reading Habit</h4>
+          <p>Spend 5–10 minutes every practice session reading something <strong>new</strong>. Start with simple
+            melodies: folk songs, easy duets, children's songs. The goal is exposure — your brain needs to build the
+            connection between symbol and finger automatically.</p>
         </div>
-        <div class="tip-item" style="border-top-color: var(--crimson-light);">
-          <span class="tip-icon">🎶</span>
-          <h4>The Slur</h4>
-          <p>Connects notes of <strong>different pitches</strong>. On the violin, this means playing multiple notes in <strong>one single bow stroke</strong> — the bow does not change direction until the slur ends.</p>
-          <p style="margin-top: 0.5rem; font-style: italic; font-size: 0.9rem;">Slurs are essential to legato playing and phrasing. They are one of the most common markings you'll see.</p>
+        <div class="tip-item" style="border-top-color: var(--forest-light);">
+          <span class="tip-icon">🧩</span>
+          <h4>Flashcard Drill</h4>
+          <p>Make or buy staff flashcards. Hold up a card → name the note → find it on the violin → play it. Target:
+            <strong>under 3 seconds</strong> per note. Once you can do all notes in first position this fast,
+            sight-reading becomes dramatically easier.</p>
         </div>
-      </div>
-    </div>
-
-    <div class="content-block forest-accent">
-      <div class="block-title"><span class="icon">🔄</span> Simple vs. Compound Time</div>
-      <p>Beyond just counting beats, rhythm is defined by <strong>how those beats subdivide</strong>:</p>
-      <div class="compare-grid">
-        <div style="padding: 1.25rem; background: var(--parchment); border: 1px solid var(--border);">
-          <h3 style="color: var(--gold-dark); margin-top: 0;">Simple Time</h3>
-          <p><strong>Time signatures:</strong> 2/4, 3/4, 4/4</p>
-          <p>The main beat divides into <strong>two</strong> equal parts. A quarter note becomes two eighth notes.</p>
-          <p style="font-style: italic; font-size: 0.9rem; color: var(--muted);">Feel: Straight, march-like, direct.</p>
+        <div class="tip-item" style="border-top-color: var(--crimson);">
+          <span class="tip-icon">🎧</span>
+          <h4>Audiation Practice</h4>
+          <p>"Audiation" means <strong>hearing music in your mind</strong> before playing. Look at a line of sheet music
+            and try to "hear" it internally before touching your instrument. This is how professional musicians
+            sight-read at speed — they're hearing ahead of what they're playing.</p>
         </div>
-        <div style="padding: 1.25rem; background: var(--parchment); border: 1px solid var(--border);">
-          <h3 style="color: var(--gold-dark); margin-top: 0;">Compound Time</h3>
-          <p><strong>Time signatures:</strong> 6/8, 9/8, 12/8</p>
-          <p>The main beat is "dotted" and divides into <strong>three</strong> equal parts. A dotted quarter becomes three eighth notes.</p>
-          <p style="font-style: italic; font-size: 0.9rem; color: var(--muted);">Feel: Rolling, lilting, dance-like.</p>
-        </div>
-      </div>
-      <div class="callout callout-forest" style="margin-top: 1rem;">
-        <strong>Quick test:</strong> Can the top number be divided by 3 (and the result is greater than 1)? If yes → compound. If no → simple. 6/8 = compound (6 ÷ 3 = 2 groups). 4/4 = simple.
-      </div>
-      <p class="source-note">Source: musictheory.net — "Time Signatures" · Open Music Theory — "Meter"</p>
-    </div>
-
-    <!-- VIDEO PLACEHOLDER -->
-    <div class="video-card">
-      <span class="video-label">📺 Video Resource</span>
-      <div class="video-title">Simple vs. Compound Time — Hear the Difference</div>
-      <div class="video-desc">Listen to examples of simple and compound time to train your ear to recognize the feel.</div>
-      <div class="video-embed">
-        <div style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(245,240,232,0.3); font-family:'JetBrains Mono',monospace; font-size:0.8rem; letter-spacing:0.1em;">YOUTUBE EMBED — PASTE IFRAME HERE</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================== -->
-  <!-- SECTION 5: ACCIDENTALS -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">Accidentals</div>
-    <h2>The Rules of <span>Accidentals</span></h2>
-
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">♯♭♮</span> What Are Accidentals?</div>
-      <p>Accidentals are symbols placed directly before a note to <strong>raise or lower its pitch</strong> by a half step (semitone). There are three primary accidentals:</p>
-      <ul style="margin-top: 0.5rem;">
-        <li><strong>Sharp (♯)</strong> — raises the note by one half step. F becomes F♯.</li>
-        <li><strong>Flat (♭)</strong> — lowers the note by one half step. B becomes B♭.</li>
-        <li><strong>Natural (♮)</strong> — cancels a previous sharp or flat, returning to the unaltered pitch.</li>
-      </ul>
-      <p style="margin-top: 0.5rem;">There are also <strong>double sharps (𝄪)</strong> and <strong>double flats (𝄫)</strong>, which raise or lower by <em>two</em> half steps. These are rare but appear in advanced theory and heavily-accidental keys.</p>
-    </div>
-
-    <div class="content-block crimson-accent">
-      <div class="block-title"><span class="icon">📐</span> The Three Essential Rules</div>
-      <p>Accidentals have very strict "expiration dates" on a staff. <strong>Memorize these rules</strong> — they are universally applied:</p>
-
-      <div class="rule-box">
-        <div class="rule-num">1</div>
-        <div class="rule-content">
-          <strong>The Measure Rule:</strong> An accidental placed before a note stays in effect for that <strong>entire measure</strong> (bar), but <em>only</em> for that specific line or space. A sharp on the third-space C does not affect a C on a ledger line.
+        <div class="tip-item" style="border-top-color: var(--gold);">
+          <span class="tip-icon">📖</span>
+          <h4>Recommended Resources</h4>
+          <p><strong>musictheory.net</strong> — free interactive lessons on every topic covered here. <strong>Open Music
+              Theory</strong> — a full open-source textbook. <strong>Teoria.com</strong> — ear training and drill
+            exercises.</p>
         </div>
       </div>
 
-      <div class="rule-box">
-        <div class="rule-num">2</div>
-        <div class="rule-content">
-          <strong>The Barline Reset:</strong> Once you cross a vertical barline into the next measure, <strong>all accidentals reset</strong> to the original key signature — unless they are explicitly written again.
-        </div>
+      <div class="callout callout-crimson" style="margin-top: 1rem;">
+        <strong>The Ultimate Goal:</strong> You should eventually read music the same way you read text — instantly
+        recognizing patterns without "spelling out" each note. This takes months of consistent practice, but it is the
+        single most valuable skill in all of music.
       </div>
+    </section>
 
-      <div class="rule-box">
-        <div class="rule-num">3</div>
-        <div class="rule-content">
-          <strong>Courtesy Accidentals:</strong> Sometimes a composer puts an accidental in <strong>parentheses</strong> — like (♮). This is a "reminder" (also called a cautionary accidental) that a previous sharp or flat from an earlier measure is no longer in effect. It has no technical function but prevents misreading.
-        </div>
-      </div>
-    </div>
+  </main>
 
-    <div class="callout callout-gold">
-      <strong>Violin Tip:</strong> When sight-reading, accidentals are the #1 source of wrong notes. Train yourself to scan ahead: spot accidentals in a measure <em>before</em> you start playing it. Your fingers need preparation time.
-    </div>
+  <footer class="page-footer fade-in-d3">
+    <p>Part of <strong>The Complete Violin & Music Theory Academy</strong> · Level I: Beginner Foundation</p>
+    <p style="margin-top: 0.5rem;"><a href="../../index.html#level1">← Return to Main Course</a></p>
+  </footer>
 
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: Accidentals in Practice<br>showing measure rule and barline reset with examples</div>
-    </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+  <script>
+    // ─── RHYTHM PLAYER ENGINE (LOOPING) ─────────────────────────────────────────
+    let rhythmBPM = 80;
+    let rhythmTimers = [];
+    let rhythmPlaying = false;
+    let currentRhythmType = null;
+    let metroHigh = null; // downbeat — bright metallic ping
+    let metroLow = null;  // offbeats — darker metallic tap
+    let measureCount = 0;
 
-    <div class="content-block forest-accent">
-      <div class="block-title"><span class="icon">🔀</span> Enharmonic Equivalents</div>
-      <p>Two notes can have <strong>different names but the same pitch</strong>. These are called <em>enharmonic equivalents</em>:</p>
-      <table class="summary-table" style="margin-top: 0.5rem;">
-        <tr><th>Name 1</th><th>Name 2</th><th>Same Pitch?</th><th>When to Use Which</th></tr>
-        <tr><td>F♯</td><td>G♭</td><td>Yes ✓</td><td>F♯ in sharp keys (G, D, A); G♭ in flat keys (Gb, Db)</td></tr>
-        <tr><td>C♯</td><td>D♭</td><td>Yes ✓</td><td>Context depends on the key</td></tr>
-        <tr><td>B♯</td><td>C♮</td><td>Yes ✓</td><td>B♯ appears in C♯ major and G♯ minor</td></tr>
-        <tr><td>E♯</td><td>F♮</td><td>Yes ✓</td><td>E♯ appears in F♯ major</td></tr>
-      </table>
-      <p style="margin-top: 0.5rem;"><strong>Why does this matter?</strong> On the violin, enharmonic notes are fingered identically — F♯ and G♭ are the same finger in the same spot. But in written music, the <em>correct spelling</em> tells other musicians (and you) the <strong>harmonic function</strong> of the note, which affects phrasing and interpretation.</p>
-      <p class="source-note">Source: Open Music Theory — "Accidentals and Key Signatures"</p>
-    </div>
-  </section>
+    function initRhythmSynths() {
+      if (metroHigh) return;
 
-  <!-- ======================== -->
-  <!-- SECTION 6: KEY SIGNATURES -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">Key Signatures</div>
-    <h2>Key Signatures & <span>the Circle of Fifths</span></h2>
+      // Bright metallic click for downbeats (beat 1)
+      metroHigh = new Tone.MetalSynth({
+        frequency: 400,
+        envelope: { attack: 0.001, decay: 0.08, release: 0.05 },
+        harmonicity: 5.1,
+        modulationIndex: 16,
+        resonance: 5000,
+        octaves: 1.5
+      }).toDestination();
+      metroHigh.volume.value = -12;
 
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">🔑</span> What Is a Key Signature?</div>
-      <p>The sharps (♯) or flats (♭) written at the very beginning of each staff line — right after the clef — form the <strong>key signature</strong>. Instead of writing an accidental every single time a note needs to be raised or lowered, the key signature says: "apply these sharps/flats to <em>every</em> occurrence of these notes throughout the piece."</p>
-      <p>This saves enormous visual clutter and instantly tells a trained musician <strong>what key the music is in</strong>.</p>
-    </div>
+      // Darker metallic click for offbeats
+      metroLow = new Tone.MetalSynth({
+        frequency: 250,
+        envelope: { attack: 0.001, decay: 0.06, release: 0.03 },
+        harmonicity: 5.1,
+        modulationIndex: 12,
+        resonance: 3000,
+        octaves: 1
+      }).toDestination();
+      metroLow.volume.value = -16;
+    }
 
-    <div class="content-block crimson-accent">
-      <div class="block-title"><span class="icon">♯</span> Order of Sharps</div>
-      <p>Sharps always appear in this fixed order:</p>
-      <div class="key-sig-flow">
-        <span class="ks-note">F♯</span><span class="ks-arrow">→</span>
-        <span class="ks-note">C♯</span><span class="ks-arrow">→</span>
-        <span class="ks-note">G♯</span><span class="ks-arrow">→</span>
-        <span class="ks-note">D♯</span><span class="ks-arrow">→</span>
-        <span class="ks-note">A♯</span><span class="ks-arrow">→</span>
-        <span class="ks-note">E♯</span><span class="ks-arrow">→</span>
-        <span class="ks-note">B♯</span>
-      </div>
-      <div class="mnemonic-card">
-        <span class="mnemonic-label">Mnemonic</span>
-        <span class="mnemonic-text"><strong>F</strong>at <strong>C</strong>ats <strong>G</strong>o <strong>D</strong>own <strong>A</strong>lleys <strong>E</strong>ating <strong>B</strong>irds</span>
-      </div>
-      <p style="margin-top: 0.5rem;"><strong>Shortcut to find the key:</strong> The last sharp in the key signature is always a <strong>half step below</strong> the major key name. Two sharps (F♯, C♯) → C♯ + half step = <strong>D Major</strong>.</p>
-    </div>
+    function adjustBPM(delta) {
+      rhythmBPM = Math.max(40, Math.min(160, rhythmBPM + delta));
+      document.getElementById('bpm-display').textContent = rhythmBPM + ' BPM';
+    }
 
-    <div class="content-block forest-accent">
-      <div class="block-title"><span class="icon">♭</span> Order of Flats</div>
-      <p>Flats appear in this fixed order (the <em>reverse</em> of sharps):</p>
-      <div class="key-sig-flow">
-        <span class="ks-note">B♭</span><span class="ks-arrow">→</span>
-        <span class="ks-note">E♭</span><span class="ks-arrow">→</span>
-        <span class="ks-note">A♭</span><span class="ks-arrow">→</span>
-        <span class="ks-note">D♭</span><span class="ks-arrow">→</span>
-        <span class="ks-note">G♭</span><span class="ks-arrow">→</span>
-        <span class="ks-note">C♭</span><span class="ks-arrow">→</span>
-        <span class="ks-note">F♭</span>
-      </div>
-      <div class="mnemonic-card" style="border-left-color: var(--forest-light);">
-        <span class="mnemonic-label" style="color: var(--forest-light);">Mnemonic</span>
-        <span class="mnemonic-text">The word <strong>BEAD</strong> + <strong>G</strong>reatest <strong>C</strong>ommon <strong>F</strong>actor</span>
-      </div>
-      <p style="margin-top: 0.5rem;"><strong>Shortcut to find the key:</strong> The <em>second-to-last</em> flat <strong>is</strong> the major key name. Three flats (B♭, E♭, A♭) → second-to-last = E♭ = <strong>E♭ Major</strong>. Exception: one flat (B♭) = <strong>F Major</strong> (must be memorized).</p>
-    </div>
+    function stopRhythm() {
+      rhythmPlaying = false;
+      currentRhythmType = null;
+      measureCount = 0;
+      rhythmTimers.forEach(t => clearTimeout(t));
+      rhythmTimers = [];
 
-    <div class="callout callout-gold" style="margin-top: 1rem;">
-      <strong>🎻 Violin Tip:</strong> Each key signature tells your left hand which "shape" to assume. For example, a key with <strong>F♯ and C♯</strong> (D Major) means your 2nd finger plays high (close to 3rd finger) on the D and A strings. Recognizing the key signature instantly sets your hand frame — this is the secret to fast sight-reading.
-    </div>
+      document.querySelectorAll('.rpm-dot').forEach(d => {
+        d.classList.remove('lit', 'lit-sustain');
+      });
+      document.querySelectorAll('.rpm-card').forEach(c => c.classList.remove('playing'));
 
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder tall">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: The Complete Circle of Fifths Diagram<br>showing all major and minor keys with their accidentals</div>
-    </div>
-    <p class="source-note">Source: musictheory.net — "Key Signatures" · Open Music Theory — "The Circle of Fifths"</p>
-  </section>
+      const status = document.getElementById('rpm-status');
+      const statusText = document.getElementById('rpm-status-text');
+      const stopBtn = document.getElementById('rpm-stop');
+      if (status) status.classList.remove('active');
+      if (statusText) statusText.textContent = 'Click a note type to hear it';
+      if (stopBtn) stopBtn.style.display = 'none';
+    }
 
-  <!-- ======================== -->
-  <!-- SECTION 7: DYNAMICS & ARTICULATION -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">Expression</div>
-    <h2>Dynamics & <span>Articulation</span></h2>
-
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">📢</span> Dynamic Markings</div>
-      <p>The staff doesn't just tell you <em>what</em> to play — it also tells you <strong>how</strong> to play it. Dynamics control <strong>volume</strong>, while articulation controls <strong>character</strong>. Together, they transform notes on a page into living music.</p>
-
-      <table class="symbol-table" style="margin-top: 1rem;">
-        <tr><th>Symbol</th><th>Name</th><th>Meaning</th></tr>
-        <tr><td><em style="font-style: italic;">pp</em></td><td>Pianissimo</td><td>Very soft — delicate, intimate passages</td></tr>
-        <tr><td><em style="font-style: italic;">p</em></td><td>Piano</td><td>Soft — gentle, controlled bow weight</td></tr>
-        <tr><td><em style="font-style: italic;">mp</em></td><td>Mezzo-piano</td><td>Moderately soft — relaxed, conversational</td></tr>
-        <tr><td><em style="font-style: italic;">mf</em></td><td>Mezzo-forte</td><td>Moderately loud — default comfortable volume</td></tr>
-        <tr><td><em style="font-style: italic;">f</em></td><td>Forte</td><td>Loud — full arm weight, faster bow speed</td></tr>
-        <tr><td><em style="font-style: italic;">ff</em></td><td>Fortissimo</td><td>Very loud — maximum projection without forcing</td></tr>
-      </table>
-
-      <div class="callout callout-gold" style="margin-top: 1rem;">
-        <strong>Crescendo (< ) & Decrescendo (> ):</strong> These "hairpin" markings indicate a <strong>gradual</strong> change in volume — getting louder or softer over a specified duration. On violin, crescendo = gradually add arm weight + move the sounding point closer to the bridge. Decrescendo = the reverse.
-      </div>
-    </div>
-
-    <div class="content-block crimson-accent">
-      <div class="block-title"><span class="icon">✏️</span> Articulation Marks</div>
-      <p>Articulation tells you the <strong>character</strong> of each note — short, long, accented, smooth. For the violinist, each articulation maps to a specific <strong>bowing technique</strong>:</p>
-
-      <table class="symbol-table" style="margin-top: 0.75rem;">
-        <tr><th>Symbol</th><th>Name</th><th>Violin Technique</th></tr>
-        <tr><td><strong>.</strong></td><td>Staccato</td><td>Short, detached bow strokes — stop the bow between notes</td></tr>
-        <tr><td><strong>></strong></td><td>Accent</td><td>Begin the note with more arm weight, then release — a "bite"</td></tr>
-        <tr><td><strong>—</strong></td><td>Tenuto</td><td>Hold for full value with slightly more weight — sustained and emphasized</td></tr>
-        <tr><td><strong>^</strong></td><td>Marcato</td><td>A strong accent — even more aggressive than > — heavy attack</td></tr>
-        <tr><td><strong>⌒</strong></td><td>Fermata</td><td>Hold the note longer than its written value — at the performer's discretion</td></tr>
-      </table>
-
-      <p style="margin-top: 0.75rem;">These marks are <strong>not optional</strong> — they are integral to the composer's musical intention. Ignoring articulation is like reading a sentence without punctuation: technically the right words, but the meaning is lost.</p>
-    </div>
-
-    <!-- IMAGE PLACEHOLDER -->
-    <div class="media-placeholder">
-      <div class="ph-icon">🖼️</div>
-      <div class="ph-text">Image: Articulation Marks on a Staff<br>showing each symbol applied to actual notes</div>
-    </div>
-
-    <!-- VIDEO PLACEHOLDER -->
-    <div class="video-card">
-      <span class="video-label">📺 Video Resource</span>
-      <div class="video-title">Dynamics & Articulation Demonstrated on Violin</div>
-      <div class="video-desc">See and hear each dynamic level and articulation technique on the violin.</div>
-      <div class="video-embed">
-        <div style="display:flex; align-items:center; justify-content:center; height:100%; color:rgba(245,240,232,0.3); font-family:'JetBrains Mono',monospace; font-size:0.8rem; letter-spacing:0.1em;">YOUTUBE EMBED — PASTE IFRAME HERE</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================== -->
-  <!-- SECTION 8: PUTTING IT ALL TOGETHER -->
-  <!-- ======================== -->
-  <section class="deep-dive-section">
-    <div class="section-badge">Application</div>
-    <h2>Putting It <span>All Together</span></h2>
-
-    <div class="content-block gold-accent">
-      <div class="block-title"><span class="icon">🗺️</span> How to Read a Line of Music — Step by Step</div>
-      <p>When you encounter a new piece, this is the <strong>exact order</strong> in which you should process the information on the staff:</p>
-      <ol style="margin-top: 0.75rem;">
-        <li><strong>Identify the clef</strong> — violin is always treble clef (G-clef). Anchor: 2nd line = G4.</li>
-        <li><strong>Read the key signature</strong> — note which sharps or flats apply. Set your finger frame accordingly.</li>
-        <li><strong>Read the time signature</strong> — how many beats per measure, and what note value gets one beat.</li>
-        <li><strong>Scan for accidentals</strong> — note any additional sharps, flats, or naturals within the measures.</li>
-        <li><strong>Check dynamics and articulation</strong> — how loud, how soft, staccato, legato.</li>
-        <li><strong>Begin slowly</strong> — never sight-read at performance tempo. Start at half speed.</li>
-      </ol>
-    </div>
-
-    <div class="tip-grid" style="margin-top: 1rem;">
-      <div class="tip-item">
-        <span class="tip-icon">📝</span>
-        <h4>Daily Sight-Reading Habit</h4>
-        <p>Spend 5–10 minutes every practice session reading something <strong>new</strong>. Start with simple melodies: folk songs, easy duets, children's songs. The goal is exposure — your brain needs to build the connection between symbol and finger automatically.</p>
-      </div>
-      <div class="tip-item" style="border-top-color: var(--forest-light);">
-        <span class="tip-icon">🧩</span>
-        <h4>Flashcard Drill</h4>
-        <p>Make or buy staff flashcards. Hold up a card → name the note → find it on the violin → play it. Target: <strong>under 3 seconds</strong> per note. Once you can do all notes in first position this fast, sight-reading becomes dramatically easier.</p>
-      </div>
-      <div class="tip-item" style="border-top-color: var(--crimson);">
-        <span class="tip-icon">🎧</span>
-        <h4>Audiation Practice</h4>
-        <p>"Audiation" means <strong>hearing music in your mind</strong> before playing. Look at a line of sheet music and try to "hear" it internally before touching your instrument. This is how professional musicians sight-read at speed — they're hearing ahead of what they're playing.</p>
-      </div>
-      <div class="tip-item" style="border-top-color: var(--gold);">
-        <span class="tip-icon">📖</span>
-        <h4>Recommended Resources</h4>
-        <p><strong>musictheory.net</strong> — free interactive lessons on every topic covered here. <strong>Open Music Theory</strong> — a full open-source textbook. <strong>Teoria.com</strong> — ear training and drill exercises.</p>
-      </div>
-    </div>
-
-    <div class="callout callout-crimson" style="margin-top: 1rem;">
-      <strong>The Ultimate Goal:</strong> You should eventually read music the same way you read text — instantly recognizing patterns without "spelling out" each note. This takes months of consistent practice, but it is the single most valuable skill in all of music.
-    </div>
-  </section>
-
-</main>
-
-<footer class="page-footer fade-in-d3">
-  <p>Part of <strong>The Complete Violin & Music Theory Academy</strong> · Level I: Beginner Foundation</p>
-  <p style="margin-top: 0.5rem;"><a href="../../index.html#level1">← Return to Main Course</a></p>
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
-<script>
-// ─── RHYTHM PLAYER ENGINE (LOOPING) ─────────────────────────────────────────
-let rhythmBPM = 80;
-let rhythmTimers = [];
-let rhythmPlaying = false;
-let currentRhythmType = null;
-let metroHigh = null; // downbeat — bright metallic ping
-let metroLow = null;  // offbeats — darker metallic tap
-let measureCount = 0;
-
-function initRhythmSynths() {
-  if (metroHigh) return;
-
-  // Bright metallic click for downbeats (beat 1)
-  metroHigh = new Tone.MetalSynth({
-    frequency: 400,
-    envelope: { attack: 0.001, decay: 0.08, release: 0.05 },
-    harmonicity: 5.1,
-    modulationIndex: 16,
-    resonance: 5000,
-    octaves: 1.5
-  }).toDestination();
-  metroHigh.volume.value = -12;
-
-  // Darker metallic click for offbeats
-  metroLow = new Tone.MetalSynth({
-    frequency: 250,
-    envelope: { attack: 0.001, decay: 0.06, release: 0.03 },
-    harmonicity: 5.1,
-    modulationIndex: 12,
-    resonance: 3000,
-    octaves: 1
-  }).toDestination();
-  metroLow.volume.value = -16;
-}
-
-function adjustBPM(delta) {
-  rhythmBPM = Math.max(40, Math.min(160, rhythmBPM + delta));
-  document.getElementById('bpm-display').textContent = rhythmBPM + ' BPM';
-}
-
-function stopRhythm() {
-  rhythmPlaying = false;
-  currentRhythmType = null;
-  measureCount = 0;
-  rhythmTimers.forEach(t => clearTimeout(t));
-  rhythmTimers = [];
-
-  document.querySelectorAll('.rpm-dot').forEach(d => {
-    d.classList.remove('lit', 'lit-sustain');
-  });
-  document.querySelectorAll('.rpm-card').forEach(c => c.classList.remove('playing'));
-
-  const status = document.getElementById('rpm-status');
-  const statusText = document.getElementById('rpm-status-text');
-  const stopBtn = document.getElementById('rpm-stop');
-  if (status) status.classList.remove('active');
-  if (statusText) statusText.textContent = 'Click a note type to hear it';
-  if (stopBtn) stopBtn.style.display = 'none';
-}
-
-async function playRhythm(type) {
-  // If already playing this type, treat as a toggle (stop)
-  if (rhythmPlaying && currentRhythmType === type) {
-    stopRhythm();
-    return;
-  }
-
-  stopRhythm();
-  await Tone.start();
-  initRhythmSynths();
-
-  rhythmPlaying = true;
-  currentRhythmType = type;
-  measureCount = 0;
-
-  const card = document.querySelector(`.rpm-card[data-rhythm="${type}"]`);
-  if (card) card.classList.add('playing');
-
-  const status = document.getElementById('rpm-status');
-  const statusText = document.getElementById('rpm-status-text');
-  const stopBtn = document.getElementById('rpm-stop');
-  if (status) status.classList.add('active');
-  if (stopBtn) stopBtn.style.display = 'block';
-  if (statusText) statusText.textContent = `Playing ${type} note pattern at ${rhythmBPM} BPM — click again or Stop to end`;
-
-  // Start the first measure (it will loop automatically)
-  scheduleMeasure(type);
-}
-
-function scheduleMeasure(type) {
-  if (!rhythmPlaying || currentRhythmType !== type) return;
-
-  measureCount++;
-  const beatMs = (60 / rhythmBPM) * 1000;
-  const totalDuration = 4 * beatMs;
-
-  const dotsContainer = document.querySelector(`.rpm-beat-dots[data-dots="${type}"]`);
-  const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.rpm-dot')) : [];
-
-  const noteCounts = { whole: 1, half: 2, quarter: 4, eighth: 8, sixteenth: 16 };
-  const durations = { whole: 4, half: 2, quarter: 1, eighth: 0.5, sixteenth: 0.25 };
-  const noteCount = noteCounts[type] || 4;
-  const noteDurBeats = durations[type] || 1;
-
-  const pattern = buildPattern(noteCount, noteDurBeats, dots.length, beatMs);
-
-  // Schedule each click in this measure
-  pattern.forEach((p, i) => {
-    const t = setTimeout(() => {
-      if (!rhythmPlaying || currentRhythmType !== type) return;
-
-      // Play metronome click — high pitch on downbeats, low on others
-      try {
-        const isDownbeat = (i === 0) || (type === 'half' && i === 0) || (type === 'quarter' && i === 0) || (type === 'eighth' && i % 2 === 0 && i % 8 === 0) || (type === 'sixteenth' && i % 4 === 0 && i % 16 === 0);
-        if (i === 0) {
-          metroHigh.triggerAttackRelease('C5', '32n');
-        } else {
-          metroLow.triggerAttackRelease('C4', '32n');
-        }
-      } catch(e) { console.warn(e); }
-
-      // Light up dots
-      if (dots[p.dotIndex]) {
-        dots.forEach(d => d.classList.remove('lit', 'lit-sustain'));
-        dots[p.dotIndex].classList.add('lit');
-
-        // Sustain dots for whole/half notes
-        if (type === 'whole' || type === 'half') {
-          for (let s = p.dotIndex + 1; s < dots.length; s++) {
-            if (dots[s].classList.contains('sustain')) {
-              const sustainDelay = (s - p.dotIndex) * beatMs;
-              const st = setTimeout(() => {
-                if (!rhythmPlaying || currentRhythmType !== type) return;
-                dots[s].classList.add('lit-sustain');
-              }, sustainDelay);
-              rhythmTimers.push(st);
-            } else {
-              break;
-            }
-          }
-        }
+    async function playRhythm(type) {
+      // If already playing this type, treat as a toggle (stop)
+      if (rhythmPlaying && currentRhythmType === type) {
+        stopRhythm();
+        return;
       }
-    }, p.time);
-    rhythmTimers.push(t);
-  });
 
-  // Schedule the NEXT measure to loop
-  const loopTimer = setTimeout(() => {
-    if (rhythmPlaying && currentRhythmType === type) {
+      stopRhythm();
+      await Tone.start();
+      initRhythmSynths();
+
+      rhythmPlaying = true;
+      currentRhythmType = type;
+      measureCount = 0;
+
+      const card = document.querySelector(`.rpm-card[data-rhythm="${type}"]`);
+      if (card) card.classList.add('playing');
+
+      const status = document.getElementById('rpm-status');
+      const statusText = document.getElementById('rpm-status-text');
+      const stopBtn = document.getElementById('rpm-stop');
+      if (status) status.classList.add('active');
+      if (stopBtn) stopBtn.style.display = 'block';
+      if (statusText) statusText.textContent = `Playing ${type} note pattern at ${rhythmBPM} BPM — click again or Stop to end`;
+
+      // Start the first measure (it will loop automatically)
       scheduleMeasure(type);
     }
-  }, totalDuration);
-  rhythmTimers.push(loopTimer);
-}
 
-function buildPattern(noteCount, noteDurationBeats, dotCount, beatMs) {
-  const pattern = [];
-  for (let i = 0; i < noteCount; i++) {
-    const time = i * noteDurationBeats * beatMs;
-    const dotIndex = Math.min(i, dotCount - 1);
-    pattern.push({ time, dotIndex });
-  }
-  return pattern;
-}
-</script>
+    function scheduleMeasure(type) {
+      if (!rhythmPlaying || currentRhythmType !== type) return;
+
+      measureCount++;
+      const beatMs = (60 / rhythmBPM) * 1000;
+      const totalDuration = 4 * beatMs;
+
+      const dotsContainer = document.querySelector(`.rpm-beat-dots[data-dots="${type}"]`);
+      const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.rpm-dot')) : [];
+
+      const noteCounts = { whole: 1, half: 2, quarter: 4, eighth: 8, sixteenth: 16 };
+      const durations = { whole: 4, half: 2, quarter: 1, eighth: 0.5, sixteenth: 0.25 };
+      const noteCount = noteCounts[type] || 4;
+      const noteDurBeats = durations[type] || 1;
+
+      const pattern = buildPattern(noteCount, noteDurBeats, dots.length, beatMs);
+
+      // Schedule each click in this measure
+      pattern.forEach((p, i) => {
+        const t = setTimeout(() => {
+          if (!rhythmPlaying || currentRhythmType !== type) return;
+
+          // Play metronome click — high pitch on downbeats, low on others
+          try {
+            const isDownbeat = (i === 0) || (type === 'half' && i === 0) || (type === 'quarter' && i === 0) || (type === 'eighth' && i % 2 === 0 && i % 8 === 0) || (type === 'sixteenth' && i % 4 === 0 && i % 16 === 0);
+            if (i === 0) {
+              metroHigh.triggerAttackRelease('C5', '32n');
+            } else {
+              metroLow.triggerAttackRelease('C4', '32n');
+            }
+          } catch (e) { console.warn(e); }
+
+          // Light up dots
+          if (dots[p.dotIndex]) {
+            dots.forEach(d => d.classList.remove('lit', 'lit-sustain'));
+            dots[p.dotIndex].classList.add('lit');
+
+            // Sustain dots for whole/half notes
+            if (type === 'whole' || type === 'half') {
+              for (let s = p.dotIndex + 1; s < dots.length; s++) {
+                if (dots[s].classList.contains('sustain')) {
+                  const sustainDelay = (s - p.dotIndex) * beatMs;
+                  const st = setTimeout(() => {
+                    if (!rhythmPlaying || currentRhythmType !== type) return;
+                    dots[s].classList.add('lit-sustain');
+                  }, sustainDelay);
+                  rhythmTimers.push(st);
+                } else {
+                  break;
+                }
+              }
+            }
+          }
+        }, p.time);
+        rhythmTimers.push(t);
+      });
+
+      // Schedule the NEXT measure to loop
+      const loopTimer = setTimeout(() => {
+        if (rhythmPlaying && currentRhythmType === type) {
+          scheduleMeasure(type);
+        }
+      }, totalDuration);
+      rhythmTimers.push(loopTimer);
+    }
+
+    function buildPattern(noteCount, noteDurationBeats, dotCount, beatMs) {
+      const pattern = [];
+      for (let i = 0; i < noteCount; i++) {
+        const time = i * noteDurationBeats * beatMs;
+        const dotIndex = Math.min(i, dotCount - 1);
+        pattern.push({ time, dotIndex });
+      }
+      return pattern;
+    }
+  </script>
 
 
-<!-- ============================================================
+  <!-- ============================================================
      AI PRACTICE COMPANION (Floating)
      ============================================================ -->
-<style>
-#ai-companion {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  pointer-events: none;
-}
-.ai-companion-tooltip {
-  background: rgba(255,255,255,0.04);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(201,168,76,0.15);
-  color: #c9a84c;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  border-radius: 100px;
-  margin-bottom: 0.5rem;
-  margin-right: 1.5rem;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  pointer-events: none;
-}
-#ai-companion:hover .ai-companion-tooltip {
-  opacity: 1;
-  transform: translateY(0);
-}
-.ai-companion-viewer {
-  width: 140px;
-  height: 140px;
-  pointer-events: auto;
-  border-radius: 50%;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-}
-.ai-companion-viewer::before {
-  content: '';
-  position: absolute;
-  inset: -10px;
-  background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  z-index: -1;
-  animation: pulseCompanion 4s ease-in-out infinite;
-}
-.ai-companion-viewer:hover {
-  transform: translateY(-5px) scale(1.05);
-}
-@keyframes pulseCompanion {
-  0%, 100% { opacity: 0.5; transform: scale(0.95); }
-  50% { opacity: 1; transform: scale(1.1); }
-}
-spline-viewer {
-  width: 100%;
-  height: 100%;
-}
-</style>
-<div id="ai-companion">
-  <div class="ai-companion-viewer">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.81/build/spline-viewer.js"></script>
-    <spline-viewer url="https://prod.spline.design/C3hQnlnXyA3bqs1q/scene.splinecode"></spline-viewer>
-  </div>
-</div>
-<script>
-(function removeSplineLogo() {
-  const interval = setInterval(() => {
-    const viewer = document.querySelector('spline-viewer');
-    if (viewer && viewer.shadowRoot) {
-      const logo = viewer.shadowRoot.querySelector('#logo');
-      if (logo) {
-        logo.remove();
-        clearInterval(interval);
+  <style>
+    #ai-companion {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      pointer-events: none;
+    }
+
+    .ai-companion-tooltip {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      color: #c9a84c;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 0.5rem;
+      margin-right: 1.5rem;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      pointer-events: none;
+    }
+
+    #ai-companion:hover .ai-companion-tooltip {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .ai-companion-viewer {
+      width: 140px;
+      height: 140px;
+      pointer-events: auto;
+      border-radius: 50%;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .ai-companion-viewer::before {
+      content: '';
+      position: absolute;
+      inset: -10px;
+      background: radial-gradient(circle, rgba(201, 168, 76, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulseCompanion 4s ease-in-out infinite;
+    }
+
+    .ai-companion-viewer:hover {
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    @keyframes pulseCompanion {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(0.95);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
       }
     }
-  }, 500);
-})();
-</script>
+
+    spline-viewer {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+  <div id="ai-companion">
+    <div class="ai-companion-viewer">
+      <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.81/build/spline-viewer.js"></script>
+      <spline-viewer url="https://prod.spline.design/C3hQnlnXyA3bqs1q/scene.splinecode"></spline-viewer>
+    </div>
+  </div>
+  <script>
+    (function removeSplineLogo() {
+      const interval = setInterval(() => {
+        const viewer = document.querySelector('spline-viewer');
+        if (viewer && viewer.shadowRoot) {
+          const logo = viewer.shadowRoot.querySelector('#logo');
+          if (logo) {
+            logo.remove();
+            clearInterval(interval);
+          }
+        }
+      }, 500);
+    })();
+  </script>
 </body>
+
 </html>
